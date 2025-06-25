@@ -32,7 +32,6 @@ jobs:
           for file in output/*.pdf; do
             filename=$(basename "$file")
             echo "<li><a href=\"$filename\">$filename</a></li>" >> output/index.html
-          done
           echo "</ul></body></html>" >> output/index.html
         
       - name: Deploy to GitHub Pages
