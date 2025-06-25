@@ -25,6 +25,7 @@ jobs:
           for file in ./docs/*.typ; do
             filename=$(basename "$file" .typ)
           typst compile "$file" output/"$filename.pdf"
+          done
         
       - name: Create simple HTML index
         run: |
@@ -32,6 +33,7 @@ jobs:
           for file in output/*.pdf; do
             filename=$(basename "$file")
             echo "<li><a href=\"$filename\">$filename</a></li>" >> output/index.html
+          done
           echo "</ul></body></html>" >> output/index.html
         
       - name: Deploy to GitHub Pages
