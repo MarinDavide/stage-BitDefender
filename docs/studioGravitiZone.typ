@@ -27,4 +27,3 @@ Rilevazione, la rilevazione di minacce avviene con diversi strumenti come i sens
 
 La risposta, infine, permette di investigare sugli incidenti, contenere i pericoli e rimediare ai danni subiti.
 
-Prova prova
