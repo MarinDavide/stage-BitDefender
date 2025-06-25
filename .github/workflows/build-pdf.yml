@@ -27,7 +27,7 @@ jobs:
           typst compile "$file" output/"$filename.pdf"
           done
         
-      - name Create simple HTML index
+      - name: Create simple HTML index
         run: |
           echo "<html><body><h1>PDF Documents</h1><ul>" > output/index.html
           for file in output/*.pdf; do
