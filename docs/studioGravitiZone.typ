@@ -26,3 +26,5 @@ Il secondo punto è la protezione, tramite GravityZone gli endpoint sono potetti
 Rilevazione, la rilevazione di minacce avviene con diversi strumenti come i sensori, la Live Search, e gli EDR, XDR, e MDR.
 
 La risposta, infine, permette di investigare sugli incidenti, contenere i pericoli e rimediare ai danni subiti.
+
+Prova prova
