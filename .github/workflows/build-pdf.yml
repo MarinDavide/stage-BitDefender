@@ -1,0 +1,48 @@
+# workflow file for building a PDF document using GitHub Actions
+
+name: Build Typst PDF
+
+
+on:
+ 
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Typst
+        uses: typst-community/setup-typst@v4
+
+
+      - name: Compile all .typ to PDF
+        run: |
+          mkdir -p output
+          for file in ./docs/*.typ; do
+            filename=$(basename "$file" .typ)
+          typst compile "$file" output/"$filename.pdf"
+          done
+        
+      - name Create simple HTML index
+        run: |
+          echo "<html><body><h1>PDF Documents</h1><ul>" > output/index.html
+          for file in output/*.pdf; do
+            filename=$(basename "$file")
+            echo "<li><a href=\"$filename\">$filename</a></li>" >> output/index.html
+          done
+          echo "</ul></body></html>" >> output/index.html
+          done
+        
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          publish_branch: gh-pages
+          keep_files: false
+          commit_message: "Deploy PDF document"
+
