@@ -43,5 +43,5 @@ jobs:
           publish_dir: ./output
           publish_branch: gh-pages
           keep_files: false
-          commit_message: "Deploy PDF document"
+          commit_message: "Deploy PDF documents"
 
