@@ -25,7 +25,6 @@ jobs:
           for file in ./docs/*.typ; do
             filename=$(basename "$file" .typ)
           typst compile "$file" output/"$filename.pdf"
-          done
         
       - name: Create simple HTML index
         run: |
@@ -35,7 +34,6 @@ jobs:
             echo "<li><a href=\"$filename\">$filename</a></li>" >> output/index.html
           done
           echo "</ul></body></html>" >> output/index.html
-          done
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
