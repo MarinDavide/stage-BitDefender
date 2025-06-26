@@ -1,6 +1,31 @@
-= GravityZone
-== STUDIO DELLA PIATTAFORMA GRAVITYZONE
+#import "template/generale.typ": *
 
+= GravityZone
+== Studio della piattaforma GravityZone
+
+
+#pagebreak()
+#versionTable(content: (
+  [1.3],
+  [25/06/2025],
+  [Davide Marin],
+  [Stesura sezione "Sicurezza per mobile"],
+
+  [1.2],
+  [24/06/2025],
+  [Davide Marin],
+  [Ampliamento capitolto "Livelli di sicurezza", in particolare "Controllo Dispositivi", "Controllo Applicazioni", "Controllo Contenuti", "Servizi di test sicurezza"],
+
+  [1.1],
+  [20/06/2025],
+  [Davide Marin],
+  [Inizio stesura capitolo "Livelli di sicurezza"],
+
+  [1.0],
+  [19/06/2025],
+  [Davide Marin],
+  [Inserimento capitolo "GravityZone"],
+))
 #pagebreak()
 
 = GravityZone
