@@ -6,22 +6,22 @@
 
 #pagebreak()
 #versionTable(content: (
-  [1.3],
+  [0.4],
   [25/06/2025],
   [Davide Marin],
   [Stesura sezione "Sicurezza per mobile"],
 
-  [1.2],
+  [0.3],
   [24/06/2025],
   [Davide Marin],
   [Ampliamento capitolto "Livelli di sicurezza", in particolare "Controllo Dispositivi", "Controllo Applicazioni", "Controllo Contenuti", "Servizi di test sicurezza"],
 
-  [1.1],
+  [0.2],
   [20/06/2025],
   [Davide Marin],
   [Inizio stesura capitolo "Livelli di sicurezza"],
 
-  [1.0],
+  [0.1],
   [19/06/2025],
   [Davide Marin],
   [Inserimento capitolo "GravityZone"],
