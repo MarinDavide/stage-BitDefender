@@ -32,11 +32,11 @@ La risposta, infine, permette di investigare sugli incidenti, contenere i perico
 Gli attaccanti cercano sempre di bypassare gli EDR, questi tentativi si suddividono in due tipologie:
 1.	Tecniche di disabilitazione diretta: si cerca di disabilitare del tutto il sw di sicurezza (basso livello)
 2.	Tecniche avanzate di evasione: più sofisticate, di tre diversi tipi
-  - Callback Evasion: 
+  - *Callback Evasion:* 
     bypassa i messaggi inviati dal sistema al sw di sicurezza dopo determinati eventi
-  - Vulnerabile Drivers: 
+  - *Vulnerabile Drivers: *
     sfruttano vulnerabilità per ottenere privilegi e poter disabilitare componenti di sicurezza
-  - Event Tracing for Windows: 
+  - *Event Tracing for Windows:* 
     terminano le sessioni di tracciamento dagli ETW
 
 
@@ -128,6 +128,10 @@ I secondi, tramite una simulazione di comportamento fileless su PowerShell, ma c
 === Protezione per E-mail
 GravityZone offre diverse opzioni per le e-mail, come filtri antispam, anti-malware e filtri in base al contenuto; inoltre permette di creare dei gruppi di utenti, con regole personalizzate per ogni gruppo.
  
+#figure(
+  image("img/Screenshot 2025-06-20 085643.png", width: 75%),
+  caption: [Lista gruppi di e-mail],
+)
 
 Nella sezione del filtro per contenuto, è possibile creare regole personalizzate (anche diverse per ogni gruppo di e-mail) sul filtraggio in base ad oggetto, corpo e anche allegati della mail.
 Attenzione: se si inserisce sia filtro oggetto sia corpo mail, la mail verrà filtrata se almeno una delle espressioni PER TABELLA sarà presente nella mail; quindi, se solo nell'oggetto è presente un match, ma nel corpo no, la mail NON sarà filtrata.
@@ -136,31 +140,127 @@ Attenzione: se si inserisce sia filtro oggetto sia corpo mail, la mail verrà fi
 Tramite la protezione di rete, è possibile controllare per eventuali pericoli tutto il traffico in entrata e in uscita grazie al Network Attack Defense (NAD).
 Protezione dai malware
 Ci sono diversi approcci possibili:
-  - Rilevamento e prevenzione: 
+  - *Rilevamento e prevenzione:* 
     se impostato rileverà in automatico i pericoli e li bloccherà, cercando la soluzione migliore che può essere disinfettare il file o rimuovere il malware
 
-  - EDR (solo report):
+  - *EDR (solo report):*
     viene abilitato solo il controllo durante l'esecuzione, segnalando ma non bloccando i pericoli trovati, può essere utile in sistemi dove si vuole installare una soluzione EDR leggera.
     È possibile inoltre impostare il livello di protezione nelle diverse fasi “On-access”, “On-Execute” e “On-Demand”, l'ultima permette di creare dei task ad esecuzione programmata.
     La protezione malware di GravityZone si può suddividere in due macro-componenti: “Core” e “Hyper Detect”.
 
-  - Core (di default attivo se è attivo l'anti-malware): 
+  - *Core (di default attivo se è attivo l'anti-malware):* 
     Il sistema può controllare tutti i file locali, può anche estrarre il codice dei vari file e controllarlo per poteziali pericoli.
     Dopo l'estrazione, vengono utilizzati emulatori locali per simulare il comportamento del contenuto analizzato, in caso di necessità si passa poi alla disinfezione.
 
     La disinfezione prova dapprima a disinfettare, appunto, il file chje risulta infetto, in caso non riuscisse lo sposta invece in quarantena per limitare l'infezione. Per alcuni tipi di malware invece, ad esempio nel caso di file interamente malevoli, essi vengono eliminati direttamente dal disco. Oltre a questo, viene anche controllato se il file ha registrato una chiave per far eseguire il malware all'avvio della macchina, e in caso la chiave viene rimossa
-  - Hyper Detect:
+  - *Hyper Detect:*
     è la funzionalità di anti-malware basata su Machine Learning ed è personalizzabile.
+    Tramite questa finestra si possono impostare diversi livelli di aggressività per diverse tipologie di pericoli
 
-Tramite questa finestra si possono impostare diversi livelli di aggressività per diverse tipologie di pericoli
+#figure(
+  image("img/Screenshot 2025-06-20 113308.png", width: 75%),
+  caption: [Schermata di Hyper Detect],
+)
  
 
 === Protezione dei Processi
 La protezione dei processi ha due elementi chiave nel suo funzionamento, ATC e PI:
-  - ATC (Advanced Threat Control) 
-esamina i processi e rileva minacce prima che possano fare danni
-  - PI (Process Introspection)
-controlla i processi e li ferma nel momento in cui cercano di fare operazioni sensibili non autorizzate
+  - *ATC (Advanced Threat Control):* 
+    esamina i processi e rileva minacce prima che possano fare danni
+  - *PI (Process Introspection):*
+    controlla i processi e li ferma nel momento in cui cercano di fare operazioni sensibili non autorizzate
 La configurazione per ATP si trova in Antimalware -> On-Execute
+
+#figure(
+  image("img/Screenshot 2025-06-20 145006.png", width: 75%),
+  caption: [configurazione ATP],
+)
+
+=== Protezione da exploit software
+Il modello di Bitdefender controlla i file per potenziali regole o algoritmi associati a tecniche di exploit conosciute, in questo modo riesce a rilevare sia exploit già conosciuti, sia quelli non ancora conosciuti. Il sistema è continuamente aggiornato attingendo a milioni di sensori sparsi in tutto il mondo che continuamente identificano nuove tecniche di exploit e ne migliorano il rilevamento per tutti gli utenti.
+
+La configurazione per exploit si trova in Antimalware -> Advanced Anti-exploit
+
+#figure(
+  image("img/Screenshot 2025-06-20 145201.png", width: 75%),
+  caption: [Configurazione Anti-exploit],
+)
+
+
+=== Protezione da attacchi “fileless”
+Gli attacchi fileless sono di tipo Living off the Land.
+
+La protezione da attacchi fileless include due tipi di configurazione: AMSI e Command-Line Scanner.
+  - *AMSI (Anti Malware Scan Interface):*
+    AMSI lavora come un ponte tra la macchina e GravityZone, e permette di analizzare diversi contenuti (come script, file, URL, ecc.) in cerca di azioni malevole, il tutto prima che il contenuto sia eseguito, riuscendo anche a “de-offuscare” il codice prima di analizzarlo.
+    I suoi punti deboli sono: la compatibilità solo con sistemi con Windows 10 o Windows server 2016 e più recenti, e sistemi con Office 365 aggiornato e con Excel macro-scanning a runtime; e la possibilità di essere bypassato.
+  - *Command-Line Scanner:*
+    Entra in gioco per rimediare alle mancanze dell'AMSI, offrendo compatibilità con MacOS, Linux, e versioni di Windows in cui non è disponibile AMSI; inoltre offre sicurezza stratificata, analizzando l'attività su riga di comando e ricercando comportamenti soliti di attacchi fileless.
+    Nello specifico previene l'esecuzione di comandi malevoli.
+La configurazione per attacchi fileless si trova in Antimalware -> On-Execute
+
+#figure(
+  image("img/Screenshot 2025-06-20 145305.png", width: 75%),
+  caption: [Configurazione Anti-fileless],
+)
+
+=== Sandbox Analyzer
+Il servizio di Sandbox utilizza degli ambenti virtuali hostati da Bitdefender per analizzare a fondo i file sospetti.
+Prima di passare al sandbox, comunque, il file passa per HyperDetect, e in caso servissero ulteriori analisi viene mandato al sandbox.
+Una volta arrivato nel sandbox, il file viene “detonato” all'interno di un ambiente simile in tutto e per tutto a quelli standard, evitando quindi misure di controllo invasive che possano allertare il file sospetto. L'ambiente rimane in ascolto, controllando e registrando nello specifico:
+  - Ogni file che è stato modificato, eliminato, creato o cambiato
+  - Ogni chiave del Registro di sistema modificata, creata o eliminata
+  - Ogni processo creato, terminato o iniettato
+  - Ogni istruzione API eseguita
+  - Ogni connessione di rete
+La configurazione dell'ambiente sandbox si fa direttamente nella sezione delle policies
  
-CONTINUA...
+
+=== Protezione da Ransomware
+È presente il modulo di mitigazione per ransomware, nello specifico controlla gli endpoint e blocca operazioni che cercano di alterare i dati senza autorizzazione. Una volta rilevato e bloccato l'attacco, si riceve un report direttamente su GravityZone, che include informazioni su cosa è stato intaccato e opzioni automatizzate e manuali di recupero dati.
+Attivando la mitigazione da ransomware, si aggiunge uno strato extra di protezione, che comprende tre aree: sistema, file, e cloud.
+  - *Sistema:*
+    Vengono utilizzati filtri per intercettare la creazione di processi e accessi ai file
+  - *File*
+    In caso un'azione su file sembri sospetta, BitDefender fa un backup preventivo, che si può utilizzare per ripristinare il file, in maniera manuale o automatica, se la minaccia si rivelasse reale
+
+    #figure(
+      image("img/Ransomware-file.jpg", width: 75%),
+      caption: [Funzionamento mitigazione per file],
+    )
+
+  - *Cloud*
+    Il servizio cloud è utile per testare i nuovi algoritmi di ransomware, nonché per mitigare velocemente il rilevamento di falsi positivi e negativi.
+
+La configurazione della mitigazione per ransomware si trova sempre in Antimalware -> On-Execute
+ 
+
+*Sicurezza per mobile*
+Ci sono diverse tipologie di soluzioni per la sicurezza mobile:
+  - *MDM (Mobile Device Management):* controlla le impostazioni di sistema, stato del dispositivo, distribuisce applicazioni e può anche disinstallarle e fare altre operazioni da remoto.
+  - *MAM (Mobile Application Management):* si concentra prettamente sul controllo delle applicazioni. È meno invasivo del MDM dal punto di vista della privacy.
+  - *EMM (Enterprise Mobility Management):* è la fusione di MDM e MAM in un'unica piattaforma.
+  - *UEM (Unified Endpoint Management):* fa un passo avanti rispetto agli EMM, si applica infatti a tutti i dispositivi e non solo ai mobili.
+  - *MTD (Mobile Threat Defense):* soluzione che è pensata per proteggere i dispositivi mobili da attacchi cyber.
+BitDefender offre una combinazione di MDM e MTD, in quanto possono lavorare assieme.
+
+#figure(
+  image("img/Immagine 2025-06-25 085114.png", width: 75%),
+  caption: [Combinazione MTD con MDM],
+)
+ 
+#pagebreak()
+== Rilevamento
+=== Sensori
+I sensori di GravityZone monitorano attivamente i dispositivi, il cloud ecc., per potenziali pericoli, compresi i ransomware.
+EDR, XDR, e MDR
+Tutto parte dagli EPP (Endpoint Protection Platform), sono l'evoluzione degli antivirus, che incorporano multipli layer di sicurezza e tecnologie come l'Advanced Machine Learning.
+Gli EDR (Endpoint Detection and Response) utilizzano le funzionalità degli EPP, estendendone la visibilità prendendo dati da tutti gli endpoint.
+Sono tenuti sotto controllo anche i lateral movement nella rete, ad esempio se un utente inserisce dei dati in una nuova macchina che risulta corrotta, verrà visualizzato come utente a rischio, e saranno quindi indicate le altre macchine sul quale ha effettuato l'accesso come a rischio.
+Inoltre, sono presenti schermate di investigazione più o meno dettagliate e tecniche per mostrare i possibili rischi individuati:
+  - *Incident Advisor:* Semplici informazioni mostrate in una singola pagina
+  - *Extended Root Cause Analysis:* Visualizza un grafico rappresentante la progressione dell'attacco rilevato
+  - *Root Cause Analysis:* Visualizza il flusso dettagliato e relazioni tra processi e operazioni del file system
+Attraverso l'investigazione GravityZone suggerisce le azioni da intraprendere per risolvere i problemi.
+Gli XDR (Extended Detection and Response) invece, vanno oltre gli EDR, estendendo il numero e il tipo di sensori dai quali possono recuperare dati.
+
