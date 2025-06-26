@@ -1,6 +1,12 @@
 #import "template/generale.typ": *
+#set heading(numbering: "1.")
+#set text(
+  font: "IBM Plex Serif",
+  size: 12pt
+)
+#show heading: set text(navy)
 
-= Diario dei progressi
+Diario dei progressi
 #pagebreak()
 
 #versionTable(content:(
@@ -16,9 +22,9 @@
 ))
 
 #pagebreak()
-== 1. Prima settimana (19-27/06)
-=== 1.1 Martedì 24/06/2025
-==== 1.1.1 Riassunto giorni passati
+= Prima settimana (19-27/06)
+== Martedì 24/06/2025
+=== Riassunto giorni passati
 Da giovedì 19 a lunedì 23 ho effettuato uno studio il più approfondito possibile, ma prettamente teorico, sullo strumento antivirus BitDefender GravityZone.
 Ho steso un file di appunti personali su ciò che ho visto sulle pagine di documentazione di BitDefender a mano a mano che approfondivo le diverse funzionalità del portale.
 
@@ -50,15 +56,15 @@ Ho anche testato l'impostazione di altre funzionalità di GravityZone:
   -   Anti-malware “On-Demand”, lanciando una “full scan” programmata del mio pc.
   -   Blocco dispositivi, bloccando tutte le USB tranne una aggiungendola come esclusione.
 
-==== 1.1.3 Difficoltà riscontrate
+=== Difficoltà riscontrate
   - Sembra non essere possibile aggiungere agli endpoint il modulo “Integrity     Monitoring”, in quanto, a differenza di come mostrato nella guida non è presente tra le opzioni nella configurazione dell'agent. Inoltre, anche nella pagina dedicata, non è possibile creare regole: la documentazione parla di un pulsante “Action” che però non è presente nel portale.
   
 
   - Ho provato a testare la funzionalità di “Ransomware activity” che dovrebbe permettere di ripristinare i file affetti da attacchi ransomware dall'interfaccia di GravityZone. Purtroppo, provando ad eseguire un semplice script che convertiva un file di testo “cavia” in B64, non ho attirato l'attenzione da parte di BitDefender, e non ho quindi potuto verificarne la funzionalità.
 
 
-=== 1.2 Mercoledì 25/06/2025
-==== 1.2.1 Cose fatte oggi
+== Mercoledì 25/06/2025
+=== Cose fatte oggi
 Oggi ho studiato anche la parte relativa alla sicurezza mobile, anche se non ho potuto testarla per (credo) mancanza di dispositivi registrati.
 
 Ho testato la funzionalità del Sandbox Analyzer: il sistema permette di inviare al Sandbox qualsiasi file se si avesse il dubbio che possa essere pericoloso, in pochi minuti nella pagina dedicata si riceverà un resoconto della “detonazione” del file, con relativi livelli di severità e comportamenti.
@@ -69,8 +75,13 @@ Ho inoltre configurato una repo GitHub per garantire il versioning della documen
 
 #align(center)[* https://marindavide.github.io/stage-BitDefender/ *]
 
-==== 1.2.2 Difficoltà riscontrate
+=== Difficoltà riscontrate
 Dubbi sulla utilità di alcuni moduli.
 Incongruenze tra la documentazione e il portale GravityZone, che rallentano il lavoro durante la messa in pratica di alcune operazioni.
 
 
+== Giovedì 26/06/2025
+=== Cose fatte oggi
+
+
+=== Difficoltà riscontrate

@@ -1,6 +1,12 @@
 #import "template/generale.typ": *
+#set heading(numbering: "1.")
+#set text(
+  font: "IBM Plex Serif",
+  size: 12pt
+)
+#show heading: set text(navy)
 
-= Deploy - How To
+Deploy - How To
 #pagebreak()
 
 #versionTable(content:(
@@ -12,13 +18,13 @@
 #pagebreak()
 
 = Guida al deploy di GravityZone
-== 1. Accedere a GravityZone Control Center
+== Accedere a GravityZone Control Center
 
 #pagebreak()
-== 2. Installare Security Server
+== Installare Security Server
 
 #pagebreak()
-== 3. Installare gli agenti
+== Installare gli agenti
 
 Per garantire la sicurezza degli endpoint (fisici e virtuali), è necessario installare l'agente di sicurezza su ciascun dispositivo. GravityZone offre diversi metodi per l'installazione degli agenti:
   - *Installazione locale*

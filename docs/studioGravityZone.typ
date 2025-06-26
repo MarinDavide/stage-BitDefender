@@ -1,7 +1,13 @@
 #import "template/generale.typ": *
+#set heading(numbering: "1.")
+#set text(
+  font: "IBM Plex Serif",
+  size: 12pt
+)
+#show heading: set text(navy)
 
-= GravityZone
-== Studio della piattaforma GravityZone
+GravityZone
+Studio della piattaforma GravityZone
 
 
 #pagebreak()
