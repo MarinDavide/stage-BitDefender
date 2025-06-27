@@ -5,6 +5,7 @@
   size: 12pt
 )
 #show heading: set text(navy)
+#show link: underline
 
 #align(center)[#emph(text(fill: blue,size: 45pt)[GravityZone])]
 //Studio della piattaforma GravityZone

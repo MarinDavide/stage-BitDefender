@@ -5,6 +5,7 @@
   size: 12pt
 )
 #show heading: set text(navy)
+#show link: underline
 
 #align(center)[#emph(text(fill: blue,size: 45pt)[Diario dei progressi])]
 #pagebreak()
@@ -110,14 +111,15 @@ Ho continuato a redigere la documentazione relativa al deploy del prodotto.
 
 Ho approfondito la parte di sicurezza per le mail, in particolare come poter gestire le soluzioni che utilizzano Microsoft 365 in cloud.
 
-Ho rovato come impostare il PowerUser su un endpoint:
+Ho trovato e provato come impostare il PowerUser su un endpoint:
   - Inserire nel pacchetto di installazione il modulo "PowerUser"
   - Selezionare, all'interno della Policy che si applicherà all'endpoint, la spunta "Power User" ed inserire la password desiderata.
   - Applicare la policy all'endpoint.
-  - Sull'endpoint, è possibile accedere alla CLI del Power User selezionando l'opzione dopo aver cliccato con il tasto destro sull'icona di BitDefender che si trova in "icone nascoste" nella barra delle applicazioni.
+  - Sull'endpoint, è possibile accedere alla CLI del Power User selezionando l'opzione omonima dopo aver cliccato con il tasto destro sull'icona di BitDefender (che si trova in "icone nascoste" nella barra delle applicazioni).
   - È inoltre possibile accedere alla GUI del Power User, per farlo bisogna aprire il file `EPPowerConsole.exe` che si trova in:
   #align(center)[`c:\Program Files\Bitdefender\Endpoint Security`]
 
+Inoltre, ho preso failiarità sia con la CLI del Power User, sia con quella dell'utente normale, che potrebbe tornare utile in caso di macchine virtuali senza GUI. Per futuro utilizzo, i comandi disponibili per l'utente normale sono disponibili #link("https://www.bitdefender.com/business/support/en/77209-36849-using-the-command-line-interface.html")[*qui*]; mentre quelli per il Power User sono disponibili #link("https://www.bitdefender.com/business/support/en/77209-87461-using-the-power-user-module.html#UUID-06cb7c53-22b7-4f4f-c6a8-941a976c25e6_UUID-61700b4c-3c62-012a-09e2-1a0975cdb90d")[*qui*].
 
 === Difficoltà riscontrate
 Documentazione scarsa e poco chiara per quanto riguarda l'integrazione della sicurezza delle mail con Microsoft 365, inoltre sono incapacitato di testare la funzionalità perché l'azienda possiede già un servizio di sicurezza mail che andrebbe in conflitto con quello di BitDefender.
