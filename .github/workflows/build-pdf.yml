@@ -29,7 +29,7 @@ jobs:
         
       - name: Create simple HTML index
         run: |
-          echo "<html><body><h1>PDF Documents</h1><ul>" > output/index.html
+          echo "<html><head><title>Stage GravityZone</title></head><body><center><h1>Pagina delle documentazione</h1></br><h2>Ecco tutti i documenti aggiornati:</h2><ul>" > output/index.html
           for file in output/*.pdf; do
             filename=$(basename "$file")
             echo "<li><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
@@ -39,7 +39,7 @@ jobs:
             filename=$(basename "$file")
             echo "<li><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
           done
-          echo "</ul></body></html>" >> output/index.html
+          echo "</ul></centrer></body></html>" >> output/index.html
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
