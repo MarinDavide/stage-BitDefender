@@ -7,7 +7,7 @@
 #show heading: set text(navy)
 #show link: underline
 
-#align(center)[#emph(text(fill: blue,size: 45pt)[Deploy - How to])]
+#align(center)[#documentTitle(content: ("Deploy - How to",))]
 #pagebreak()
 
 #versionTable(content:(

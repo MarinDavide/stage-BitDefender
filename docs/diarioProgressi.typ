@@ -7,7 +7,7 @@
 #show heading: set text(navy)
 #show link: underline
 
-#align(center)[#emph(text(fill: blue,size: 45pt)[Diario dei progressi])]
+#align(center)[#documentTitle(content: ("Diario dei progressi",))]
 #pagebreak()
 
 #versionTable(content:(

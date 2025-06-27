@@ -10,3 +10,16 @@
     ..content
   )
 }
+
+#let documentTitle(
+  content: "",
+) = {
+
+  text(
+    fill: blue,
+    size: 45pt,
+    weight: "regular",
+    ..content
+  )
+
+}
