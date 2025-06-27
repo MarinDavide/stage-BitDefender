@@ -43,7 +43,7 @@ Nel frattempo, ho studiato e approfondito personali lacune nelle informazioni ch
 
 Ieri, lunedì 23, ho inoltre iniziato ad applicare alcune politiche alla mia macchina, per vedere se riuscissi a gestirne il funzionamento; purtroppo ho avuto difficoltà e i miei tentativi di applicare regole, in particolare limitazioni web e di applicazioni, non hanno avuto successo.
 
-==== 1.1.2 Cose fatte oggi
+=== Cose fatte oggi
 Oggi sono riuscito a trovare e risolvere i problemi riscontrati ieri. Per la parte web, si trattava di selezionare l'opzione di scannerizzare anche il traffico criptato, in questo modo si rende possibile all'antivirus di effettuare il blocco anche dei siti con protocollo HTTPS. Per quanto riguarda il blocco applicazioni, invece, mi sono assicurato che il percorso segnalato fosse privo di caratteri “speciali”.
 
 Ho iniziato anche una parte di testing per controllare il giusto funzionamento dell'anti-malware: ho simulato “attacchi” innocui sia tramite file sia fileless, i primi tramite la stringa nota fornita da EICAR:
