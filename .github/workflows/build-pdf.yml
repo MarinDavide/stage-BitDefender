@@ -34,6 +34,10 @@ jobs:
             filename=$(basename "$file")
             echo "<li><a href=\"$filename\" target="_blank">$filename</a></li>" >> output/index.html
           done
+          for file in ./*.pdf; do
+            filename=$(basename "$file")
+            echo "<li><a href=\"$filename\" target="_blank">$filename</a></li>" >> output/index.html
+          done
           echo "</ul></body></html>" >> output/index.html
         
       - name: Deploy to GitHub Pages
