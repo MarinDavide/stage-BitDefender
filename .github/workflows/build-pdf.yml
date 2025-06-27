@@ -35,7 +35,7 @@ jobs:
             echo "<li><a href=\"$filename\" target="_blank">$filename</a></li>" >> output/index.html
           done
           for file in ./docs/*.pdf; do
-            filename=$(basename "$file")
+            filename=$(basename "$file" .pdf)
             echo "<li><a href=\"$filename\" target="_blank">$filename</a></li>" >> output/index.html
           done
           echo "</ul></body></html>" >> output/index.html
