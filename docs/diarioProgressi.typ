@@ -87,8 +87,10 @@ Ho iniziato a studiare la parte di deply del prodotto, seguendo la "tabella di m
 
 Ho testato la creazione di un pacchetto di installazione per l'agente, e la sua installazione su un endpoint remoto, che ha avuto successo.
 
-=== Difficoltà riscontrate
+Ho iniziato a studiare la parte di integrazione di Active Directory, e la sua configurazione.
 
+=== Difficoltà riscontrate
+Incongruenze tra la documentazione e il portale GravityZone, che rallentano il lavoro durante la messa in pratica di alcune operazioni.
 
 == Venerdì 27/06/2025
 === Cose fatte oggi
