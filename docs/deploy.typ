@@ -61,4 +61,8 @@ Questo installerà l'agente su tutti gli endpoint selezionati.
 
 #pagebreak()
 = Guida all'integrazione di Active Directory
+Per integrare Active Directory con GravityZone, è sufficiente accedere a GravityZone Control Center, andare nella sezione "Network" e selezionare l'endpoint che si vuole utilizzare come integratore di Active Directory. Una volta selezionato, cliccare su "Action" e poi "Set as Active Directory Integrator".
 
+Ora GravityZone si sincronizzerà con Active Directory ogni ora.
+
+Per indicazioni aggiuntive e troubleshooting, è possibile consultare la guida ufficiale #link("https://www.bitdefender.com/business/support/en/77211-158550-microsoft-active-directory.html")[*qui*].
