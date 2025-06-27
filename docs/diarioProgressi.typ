@@ -10,6 +10,16 @@
 #pagebreak()
 
 #versionTable(content:(
+  [0.4],
+  [27/06/2025],
+  [Davide Marin],
+  [Aggiunta sezione "Venerdì 27/06/2025"],
+
+  [0.3],
+  [26/06/2025],
+  [Davide Marin],
+  [Aggiunta sezione "Giovedì 26/06/2025"],
+
   [0.2],
   [25/06/2025],
   [Davide Marin],
@@ -85,7 +95,7 @@ Incongruenze tra la documentazione e il portale GravityZone, che rallentano il l
 
 Ho iniziato a studiare la parte di deply del prodotto, seguendo la "tabella di marcia" del piano di progetto e iniziato a redigere la documentazione relativa.
 
-Ho testato la creazione di un pacchetto di installazione per l'agente, e la sua installazione su un endpoint remoto, che ha avuto successo.
+Ho testato la creazione di pacchetti di installazione per gli agenti, e la loro installazione su un endpoint remoto, che hano avuto successo.
 
 Ho iniziato a studiare la parte di integrazione di Active Directory, e la sua configurazione.
 
@@ -97,3 +107,17 @@ Incongruenze tra la documentazione e il portale GravityZone, che rallentano il l
 Ho creato una policy personalizzata che comprenda una whitelist per i domini e gli IP necessari per il funzionamneto di PhishBrain, e applicata ad altri endpoint aziendali.
 
 Ho continuato a redigere la documentazione relativa al deploy del prodotto.
+
+Ho approfondito la parte di sicurezza per le mail, in particolare come poter gestire le soluzioni che utilizzano Microsoft 365 in cloud.
+
+Ho rovato come impostare il PowerUser su un endpoint:
+  - Inserire nel pacchetto di installazione il modulo "PowerUser"
+  - Selezionare, all'interno della Policy che si applicherà all'endpoint, la spunta "Power User" ed inserire la password desiderata.
+  - Applicare la policy all'endpoint.
+  - Sull'endpoint, è possibile accedere alla CLI del Power User selezionando l'opzione dopo aver cliccato con il tasto destro sull'icona di BitDefender che si trova in "icone nascoste" nella barra delle applicazioni.
+  - È inoltre possibile accedere alla GUI del Power User, per farlo bisogna aprire il file `EPPowerConsole.exe` che si trova in:
+  #align(center)[`c:\Program Files\Bitdefender\Endpoint Security`]
+
+
+=== Difficoltà riscontrate
+Documentazione scarsa e poco chiara per quanto riguarda l'integrazione della sicurezza delle mail con Microsoft 365, inoltre sono incapacitato di testare la funzionalità perché l'azienda possiede già un servizio di sicurezza mail che andrebbe in conflitto con quello di BitDefender.
