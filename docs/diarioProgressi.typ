@@ -1,7 +1,7 @@
 #import "template/generale.typ": *
 #set heading(numbering: "1.")
 #set text(
-  font: "IBM Plex Serif",
+  font: "Cambria",
   size: 12pt
 )
 #show heading: set text(navy)
@@ -83,5 +83,15 @@ Incongruenze tra la documentazione e il portale GravityZone, che rallentano il l
 == Giovedì 26/06/2025
 === Cose fatte oggi
 
+Ho iniziato a studiare la parte di deply del prodotto, seguendo la "tabella di marcia" del piano di progetto e iniziato a redigere la documentazione relativa.
+
+Ho testato la creazione di un pacchetto di installazione per l'agente, e la sua installazione su un endpoint remoto, che ha avuto successo.
 
 === Difficoltà riscontrate
+
+
+== Venerdì 27/06/2025
+=== Cose fatte oggi
+Ho creato una policy personalizzata che comprenda una whitelist per i domini e gli IP necessari per il funzionamneto di PhishBrain, e applicata ad altri endpoint aziendali.
+
+Ho continuato a redigere la documentazione relativa al deploy del prodotto.
