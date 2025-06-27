@@ -36,8 +36,8 @@
 = Prima settimana (19-27/06)
 == Martedì 24/06/2025
 === Riassunto giorni passati
-Da giovedì 19 a lunedì 23 ho effettuato uno studio il più approfondito possibile, ma prettamente teorico, sullo strumento antivirus BitDefender GravityZone.
-Ho steso un file di appunti personali su ciò che ho visto sulle pagine di documentazione di BitDefender a mano a mano che approfondivo le diverse funzionalità del portale.
+Da giovedì 19 a lunedì 23 ho effettuato uno studio il più approfondito possibile, ma prettamente teorico, sullo strumento antivirus Bitdefender GravityZone.
+Ho steso un file di appunti personali su ciò che ho visto sulle pagine di documentazione di Bitdefender a mano a mano che approfondivo le diverse funzionalità del portale.
 
 Nel frattempo, ho studiato e approfondito personali lacune nelle informazioni che leggevo, come le tecnologie di prevenzione, protezione e mitigazione da parte dell'antivirus, e quelle relative alle modalità di attacco utilizzate comunemente.
 
@@ -60,7 +60,7 @@ In questo modo, ho testato (e verificato) il giusto comportamento di:
   -   *Anti-malware On-Execute Fileless Attack Protection (fileless)*
       Il comando è stato bloccato con relativo messaggio di errore.
   -   *Web Protection Web Traffic Scan (file)*
-      Scaricando il file di test (direttamente dal sito EICAR) BitDefender individua file e .zip contente il file di test, e ne blocca il download.
+      Scaricando il file di test (direttamente dal sito EICAR) Bitdefender individua file e .zip contente il file di test, e ne blocca il download.
 tutti gli eventi sono stati inoltre registrati sul portale di GravityZone.
 
 Ho anche testato l'impostazione di altre funzionalità di GravityZone:
@@ -71,7 +71,7 @@ Ho anche testato l'impostazione di altre funzionalità di GravityZone:
   - Sembra non essere possibile aggiungere agli endpoint il modulo “Integrity     Monitoring”, in quanto, a differenza di come mostrato nella guida non è presente tra le opzioni nella configurazione dell'agent. Inoltre, anche nella pagina dedicata, non è possibile creare regole: la documentazione parla di un pulsante “Action” che però non è presente nel portale.
   
 
-  - Ho provato a testare la funzionalità di “Ransomware activity” che dovrebbe permettere di ripristinare i file affetti da attacchi ransomware dall'interfaccia di GravityZone. Purtroppo, provando ad eseguire un semplice script che convertiva un file di testo “cavia” in B64, non ho attirato l'attenzione da parte di BitDefender, e non ho quindi potuto verificarne la funzionalità.
+  - Ho provato a testare la funzionalità di “Ransomware activity” che dovrebbe permettere di ripristinare i file affetti da attacchi ransomware dall'interfaccia di GravityZone. Purtroppo, provando ad eseguire un semplice script che convertiva un file di testo “cavia” in B64, non ho attirato l'attenzione da parte di Bitdefender, e non ho quindi potuto verificarne la funzionalità.
 
 
 == Mercoledì 25/06/2025
@@ -84,7 +84,7 @@ Ho testato la configurazione di ulteriori politiche, arricchendo ciò che era st
 
 Ho inoltre configurato una repo GitHub per garantire il versioning della documentazione che sto redando, la pagina della documentazione aggiornata è disponibile al link:
 
-#align(center)[* https://marindavide.github.io/stage-BitDefender/ *]
+#align(center)[* https://marindavide.github.io/stage-Bitdefender/ *]
 
 === Difficoltà riscontrate
 Dubbi sulla utilità di alcuni moduli.
@@ -115,13 +115,13 @@ Ho trovato e provato come impostare il PowerUser su un endpoint:
   - Inserire nel pacchetto di installazione il modulo "PowerUser"
   - Selezionare, all'interno della Policy che si applicherà all'endpoint, la spunta "Power User" ed inserire la password desiderata.
   - Applicare la policy all'endpoint.
-  - Sull'endpoint, è possibile accedere alla CLI del Power User selezionando l'opzione omonima dopo aver cliccato con il tasto destro sull'icona di BitDefender (che si trova in "icone nascoste" nella barra delle applicazioni).
+  - Sull'endpoint, è possibile accedere alla CLI del Power User selezionando l'opzione omonima dopo aver cliccato con il tasto destro sull'icona di Bitdefender (che si trova in "icone nascoste" nella barra delle applicazioni).
   - È inoltre possibile accedere alla GUI del Power User, per farlo bisogna aprire il file `EPPowerConsole.exe` che si trova in:
   #align(center)[`c:\Program Files\Bitdefender\Endpoint Security`]
 
 Inoltre, ho preso failiarità sia con la CLI del Power User, sia con quella dell'utente normale, che potrebbe tornare utile in caso di macchine virtuali senza GUI. Per futuro utilizzo, i comandi disponibili per l'utente normale sono disponibili #link("https://www.bitdefender.com/business/support/en/77209-36849-using-the-command-line-interface.html")[*qui*]; mentre quelli per il Power User sono disponibili #link("https://www.bitdefender.com/business/support/en/77209-87461-using-the-power-user-module.html#UUID-06cb7c53-22b7-4f4f-c6a8-941a976c25e6_UUID-61700b4c-3c62-012a-09e2-1a0975cdb90d")[*qui*].
 
 === Difficoltà riscontrate
-Documentazione scarsa e poco chiara per quanto riguarda l'integrazione della sicurezza delle mail con Microsoft 365, inoltre sono incapacitato di testare la funzionalità perché l'azienda possiede già un servizio di sicurezza mail che andrebbe in conflitto con quello di BitDefender.
+Documentazione scarsa e poco chiara per quanto riguarda l'integrazione della sicurezza delle mail con Microsoft 365, inoltre sono incapacitato di testare la funzionalità perché l'azienda possiede già un servizio di sicurezza mail che andrebbe in conflitto con quello di Bitdefender.
 
 

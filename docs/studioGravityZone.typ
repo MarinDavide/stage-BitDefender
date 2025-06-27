@@ -40,7 +40,7 @@ Piattaforma di cybersecurity che gestisce prevenzione, protezione, rilevamento e
 
 Dispone di una console dalla quale si può visualizzare la propria esposizione al rischio di attacchi. La console funziona raccogliendo dati da diversi sensori.
 
-Inoltre, è disponibile l'interfaccia "Incident Advisor" che permette di visualizzare le azioni guidate disponibili per risolvere i problemi rilevati da BitDefender.
+Inoltre, è disponibile l'interfaccia "Incident Advisor" che permette di visualizzare le azioni guidate disponibili per risolvere i problemi rilevati da Bitdefender.
 
 GravityZone funziona tramite la strategia "Multi-layered Security", che sfrutta AI e Machine Learning per la protezione dagli attacchi.
 
@@ -73,9 +73,9 @@ Gli attaccanti cercano sempre di bypassare gli EDR, questi tentativi si suddivid
 
 
 == Mitigazione Callback Evasion
-BitDefender prevede la tecnologia CBE (Callback Evasion Detection), che monitora costantemente se alcune callback critiche per la sicurezza subiscono dei tentativi di essere disabilitate. In caso rilevi operazioni sospetta, la CBE genera un alert.
+Bitdefender prevede la tecnologia CBE (Callback Evasion Detection), che monitora costantemente se alcune callback critiche per la sicurezza subiscono dei tentativi di essere disabilitate. In caso rilevi operazioni sospetta, la CBE genera un alert.
 
-La CBE monitora inoltre se vengono disabilitate le callback dai driver di BitDefender, permettendo di allertare l'utente in caso i driver non siano più in grado di ricevere notifiche di operazioni critiche nel sistema.
+La CBE monitora inoltre se vengono disabilitate le callback dai driver di Bitdefender, permettendo di allertare l'utente in caso i driver non siano più in grado di ricevere notifiche di operazioni critiche nel sistema.
 
 == Mitigazione Vulnerable Drivers 
 È presente il BEST (Bitdefender Endpoint Security Tools) agent, esso controlla le applicazioni sconosciute e i driver nel sistema, in cerca di operazioni di driver che cerchino di ottenere accessi non autorizzati. In caso ne trovasse, BEST può disabilitare l'accesso al driver, oppure “disinfettarlo”.
@@ -85,7 +85,7 @@ L'ATC (Advanced Threat Control) monitora gli eventuali tentativi di modifica a f
 L'ATC può quindi individuare e disabilitare il processo che sta modificando quei file, allertando della cosa l'utente.
 
 == Ottimizzazione di Cloud e Virtualizzazione
-BitDefender GravityZone riesce ad essere efficace ed efficiente anche su sistemi cloud o virtualizzati, grazie a integrazioni con tecnologie da Citrix, Nutanix, VMware, e cloud pubblici come Amazon AWS e Microsoft Azure.
+Bitdefender GravityZone riesce ad essere efficace ed efficiente anche su sistemi cloud o virtualizzati, grazie a integrazioni con tecnologie da Citrix, Nutanix, VMware, e cloud pubblici come Amazon AWS e Microsoft Azure.
 
 #pagebreak()
 = Livelli di sicurezza
@@ -146,7 +146,7 @@ Di base il controllo avverrebbe solo su http e SMTP, ma con il Intercept Encrypt
 
 
 === Servizi di test sicurezza
-BitDefender dispone anche di servizi per testare la sicurezza della propria azienda, senza ricorrere in rischi reali, si può fare in maniera automatizzata, oppure tramite ethical hackers. Sono anche disponibili diversi livelli dove si forniscono più o meno dati agli attaccanti per testare le proprie barriere.
+Bitdefender dispone anche di servizi per testare la sicurezza della propria azienda, senza ricorrere in rischi reali, si può fare in maniera automatizzata, oppure tramite ethical hackers. Sono anche disponibili diversi livelli dove si forniscono più o meno dati agli attaccanti per testare le proprie barriere.
 Ho comunque provveduto ad effettuare dei test sull'antivirus, attraverso “attacchi” file e fileless innocui, i primi tramite la stringa nota dell'EICAR:
 
 #align(center)[* X5O!P%\@AP\[4\PZX54(P^)7CC)7}\$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!\$H+H\* *]
@@ -254,7 +254,7 @@ Attivando la mitigazione da ransomware, si aggiunge uno strato extra di protezio
   - *Sistema:*
     Vengono utilizzati filtri per intercettare la creazione di processi e accessi ai file
   - *File*
-    In caso un'azione su file sembri sospetta, BitDefender fa un backup preventivo, che si può utilizzare per ripristinare il file, in maniera manuale o automatica, se la minaccia si rivelasse reale
+    In caso un'azione su file sembri sospetta, Bitdefender fa un backup preventivo, che si può utilizzare per ripristinare il file, in maniera manuale o automatica, se la minaccia si rivelasse reale
 
     #figure(
       image("img/Ransomware-file.jpg", width: 75%),
@@ -274,7 +274,7 @@ Ci sono diverse tipologie di soluzioni per la sicurezza mobile:
   - *EMM (Enterprise Mobility Management):* è la fusione di MDM e MAM in un'unica piattaforma.
   - *UEM (Unified Endpoint Management):* fa un passo avanti rispetto agli EMM, si applica infatti a tutti i dispositivi e non solo ai mobili.
   - *MTD (Mobile Threat Defense):* soluzione che è pensata per proteggere i dispositivi mobili da attacchi cyber.
-BitDefender offre una combinazione di MDM e MTD, in quanto possono lavorare assieme.
+Bitdefender offre una combinazione di MDM e MTD, in quanto possono lavorare assieme.
 
 #figure(
   image("img/Immagine 2025-06-25 085114.png", width: 75%),
