@@ -7,10 +7,15 @@
 #show heading: set text(navy)
 #show link: underline
 
-Deploy - How To
+#align(center)[#emph(text(fill: blue,size: 45pt)[Deploy - How to])]
 #pagebreak()
 
 #versionTable(content:(
+  [0.2],
+  [27/06/2025],
+  [Davide Marin],
+  [Stesura sezioni "Installare Security Server" e "Guida all'integrazione di Active Directory"],
+
   [0.1],
   [26/06/2025],
   [Davide Marin],
@@ -19,6 +24,9 @@ Deploy - How To
 #pagebreak()
 
 = Guida al deploy di GravityZone
+Questa guida ha lo scopo di essere più diretta e semplice possibile, per permettere un'installazione semplice e veloce di GravityZone.
+La guida ufficiale e completa è invece disponibile #link("https://www.bitdefender.com/business/support/en/77209-77397-installation.html")[*qui*].
+
 == Accedere a GravityZone Control Center
 Questa è la parte più semplice, ma fondamentale. Collegarsi alla pagina di login di GravityZone, e inserire le credenziali relative al proprio account, impostare il 2FA o SSO e continuare. 
 
@@ -53,3 +61,4 @@ Questo installerà l'agente su tutti gli endpoint selezionati.
 
 #pagebreak()
 = Guida all'integrazione di Active Directory
+

@@ -6,8 +6,8 @@
 )
 #show heading: set text(navy)
 
-GravityZone
-Studio della piattaforma GravityZone
+#align(center)[#emph(text(fill: blue,size: 45pt)[GravityZone])]
+//Studio della piattaforma GravityZone
 
 
 #pagebreak()

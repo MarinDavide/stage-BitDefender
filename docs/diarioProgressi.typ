@@ -6,7 +6,7 @@
 )
 #show heading: set text(navy)
 
-Diario dei progressi
+#align(center)[#emph(text(fill: blue,size: 45pt)[Diario dei progressi])]
 #pagebreak()
 
 #versionTable(content:(
