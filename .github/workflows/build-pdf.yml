@@ -34,6 +34,8 @@ jobs:
             filename=$(basename "$file")
             echo "<li><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
           done
+          </br>
+          echo "<h2>Proposta di Stage:</h2>" >> output/index.html
           for file in ./docs/*.pdf; do
             cp "$file" output/
             filename=$(basename "$file")
