@@ -123,3 +123,5 @@ Inoltre, ho preso failiarità sia con la CLI del Power User, sia con quella dell
 
 === Difficoltà riscontrate
 Documentazione scarsa e poco chiara per quanto riguarda l'integrazione della sicurezza delle mail con Microsoft 365, inoltre sono incapacitato di testare la funzionalità perché l'azienda possiede già un servizio di sicurezza mail che andrebbe in conflitto con quello di BitDefender.
+
+
