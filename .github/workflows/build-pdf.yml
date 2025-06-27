@@ -32,10 +32,12 @@ jobs:
           echo "<html><body><h1>PDF Documents</h1><ul>" > output/index.html
           for file in output/*.pdf; do
             filename=$(basename "$file")
-            echo "<li><a href=\"$filename\" target="_blank">$filename</a></li>" >> output/index.html
+            echo "<li><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
           done
           for file in ./docs/*.pdf; do
-            echo "<li><a href=\"file\" target="_blank">$filename</a></li>" >> output/index.html
+            cp "$file" output/
+            filename=$(basename "$file")
+            echo "<li><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
           done
           echo "</ul></body></html>" >> output/index.html
         
