@@ -148,11 +148,11 @@ Di base il controllo avverrebbe solo su http e SMTP, ma con il Intercept Encrypt
 BitDefender dispone anche di servizi per testare la sicurezza della propria azienda, senza ricorrere in rischi reali, si può fare in maniera automatizzata, oppure tramite ethical hackers. Sono anche disponibili diversi livelli dove si forniscono più o meno dati agli attaccanti per testare le proprie barriere.
 Ho comunque provveduto ad effettuare dei test sull'antivirus, attraverso “attacchi” file e fileless innocui, i primi tramite la stringa nota dell'EICAR:
 
-#align(center)[STRINGA]
+#align(center)[* X5O!P%\@AP\[4\PZX54(P^)7CC)7}\$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!\$H+H\* *]
 
 I secondi, tramite una simulazione di comportamento fileless su PowerShell, ma con effettuo innocuo, tramite comando:
 
-#align(center)[powershell -nop -w hidden -c " IEX ' Write Output TestFilelessAttack ' "]
+#align(center)[*powershell -nop -w hidden -c " IEX ' Write Output TestFilelessAttack ' "*]
 
 #pagebreak()
 == Protezione
