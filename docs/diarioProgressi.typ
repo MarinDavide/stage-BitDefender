@@ -11,6 +11,11 @@
 #pagebreak()
 
 #versionTable(content:(
+  [0.5],
+  [01/07/2025],
+  [Davide Marin],
+  [Aggiunte sezioni "Lunedì 30/06/2025" e "Martedì 01/07/2025"],
+  
   [0.4],
   [27/06/2025],
   [Davide Marin],
@@ -69,7 +74,6 @@ Ho anche testato l'impostazione di altre funzionalità di GravityZone:
 
 === Difficoltà riscontrate
   - Sembra non essere possibile aggiungere agli endpoint il modulo “Integrity     Monitoring”, in quanto, a differenza di come mostrato nella guida non è presente tra le opzioni nella configurazione dell'agent. Inoltre, anche nella pagina dedicata, non è possibile creare regole: la documentazione parla di un pulsante “Action” che però non è presente nel portale.
-  
 
   - Ho provato a testare la funzionalità di “Ransomware activity” che dovrebbe permettere di ripristinare i file affetti da attacchi ransomware dall'interfaccia di GravityZone. Purtroppo, provando ad eseguire un semplice script che convertiva un file di testo “cavia” in B64, non ho attirato l'attenzione da parte di Bitdefender, e non ho quindi potuto verificarne la funzionalità.
 
@@ -125,3 +129,17 @@ Inoltre, ho preso failiarità sia con la CLI del Power User, sia con quella dell
 Documentazione scarsa e poco chiara per quanto riguarda l'integrazione della sicurezza delle mail con Microsoft 365, inoltre sono incapacitato di testare la funzionalità perché l'azienda possiede già un servizio di sicurezza mail che andrebbe in conflitto con quello di Bitdefender.
 
 
+== Lunedì 30/06/2025
+=== Cose fatte oggi
+Oggi ho studiato la parte relativa ai security containers.
+Inoltre, ho iniziato a vedere la parte di API e provato alcune chiamate tramire script in Python.
+
+=== Difficoltà riscontrate
+nessuna difficoltàò particolare.
+
+
+== Martedì 01/07/2025
+=== Cose fatte oggi
+
+
+=== Difficoltà riscontrate
