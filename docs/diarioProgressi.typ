@@ -11,35 +11,40 @@
 #pagebreak()
 
 #versionTable(content:(
-  [0.5],
-  [01/07/2025],
+  [0.6],
+  [02/07],
   [Davide Marin],
-  [Aggiunte sezioni "Lunedì 30/06/2025" e "Martedì 01/07/2025"],
+  [Aggiunta sezione "Mercoledì 02/07"],
+
+  [0.5],
+  [01/07],
+  [Davide Marin],
+  [Aggiunte sezioni "Lunedì 30/06" e "Martedì 01/07"],
   
   [0.4],
-  [27/06/2025],
+  [27/06],
   [Davide Marin],
-  [Aggiunta sezione "Venerdì 27/06/2025"],
+  [Aggiunta sezione "Venerdì 27/06"],
 
   [0.3],
-  [26/06/2025],
+  [26/06],
   [Davide Marin],
-  [Aggiunta sezione "Giovedì 26/06/2025"],
+  [Aggiunta sezione "Giovedì 26/06"],
 
   [0.2],
-  [25/06/2025],
+  [25/06],
   [Davide Marin],
-  [Aggiunta sezione "Mercoledì 25/06/2025"],
+  [Aggiunta sezione "Mercoledì 25/06"],
 
   [0.1],
-  [24/06/2025],
+  [24/06],
   [Davide Marin],
   [Creazione documento, inserimento riassunto e aggiornamento odierno]
 ))
 
 #pagebreak()
 = Prima settimana (19-27/06)
-== Martedì 24/06/2025
+== Martedì 24/06
 === Riassunto giorni passati
 Da giovedì 19 a lunedì 23 ho effettuato uno studio il più approfondito possibile, ma prettamente teorico, sullo strumento antivirus Bitdefender GravityZone.
 Ho steso un file di appunti personali su ciò che ho visto sulle pagine di documentazione di Bitdefender a mano a mano che approfondivo le diverse funzionalità del portale.
@@ -78,7 +83,7 @@ Ho anche testato l'impostazione di altre funzionalità di GravityZone:
   - Ho provato a testare la funzionalità di “Ransomware activity” che dovrebbe permettere di ripristinare i file affetti da attacchi ransomware dall'interfaccia di GravityZone. Purtroppo, provando ad eseguire un semplice script che convertiva un file di testo “cavia” in B64, non ho attirato l'attenzione da parte di Bitdefender, e non ho quindi potuto verificarne la funzionalità.
 
 
-== Mercoledì 25/06/2025
+== Mercoledì 25/06
 === Cose fatte oggi
 Oggi ho studiato anche la parte relativa alla sicurezza mobile, anche se non ho potuto testarla per (credo) mancanza di dispositivi registrati.
 
@@ -95,7 +100,7 @@ Dubbi sulla utilità di alcuni moduli.
 Incongruenze tra la documentazione e il portale GravityZone, che rallentano il lavoro durante la messa in pratica di alcune operazioni.
 
 
-== Giovedì 26/06/2025
+== Giovedì 26/06
 === Cose fatte oggi
 
 Ho iniziato a studiare la parte di deply del prodotto, seguendo la "tabella di marcia" del piano di progetto e iniziato a redigere la documentazione relativa.
@@ -107,7 +112,7 @@ Ho iniziato a studiare la parte di integrazione di Active Directory, e la sua co
 === Difficoltà riscontrate
 Incongruenze tra la documentazione e il portale GravityZone, che rallentano il lavoro durante la messa in pratica di alcune operazioni.
 
-== Venerdì 27/06/2025
+== Venerdì 27/06
 === Cose fatte oggi
 Ho creato una policy personalizzata che comprenda una whitelist per i domini e gli IP necessari per il funzionamneto di PhishBrain, e applicata ad altri endpoint aziendali.
 
@@ -129,17 +134,22 @@ Inoltre, ho preso failiarità sia con la CLI del Power User, sia con quella dell
 Documentazione scarsa e poco chiara per quanto riguarda l'integrazione della sicurezza delle mail con Microsoft 365, inoltre sono incapacitato di testare la funzionalità perché l'azienda possiede già un servizio di sicurezza mail che andrebbe in conflitto con quello di Bitdefender.
 
 
-== Lunedì 30/06/2025
+= Seconda settimana (30/06-04/07)
+== Lunedì 30/06
 === Cose fatte oggi
 Oggi ho studiato la parte relativa ai security containers.
 Inoltre, ho iniziato a vedere la parte di API e provato alcune chiamate tramire script in Python.
 
 === Difficoltà riscontrate
-nessuna difficoltàò particolare.
+nessuna difficoltà particolare.
 
 
-== Martedì 01/07/2025
+== Martedì 01/07
 === Cose fatte oggi
-
+Oggi mi sono concentrato sulla parte di API, e di monitoraggio e metigiazione del rischio degli endpoint
 
 === Difficoltà riscontrate
+La piattaforma non permette di visualizzare le modifiche effettuate, per la mitigazione dei rischi, in tempo reale, il che rende difficile avere un riscontro delle modifiche effettuate.
+
+
+== Mercoledì 02/07
