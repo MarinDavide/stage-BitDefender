@@ -72,16 +72,16 @@ Gli attaccanti cercano sempre di bypassare gli EDR, questi tentativi si suddivid
     terminano le sessioni di tracciamento dagli ETW
 
 
-== Mitigazione Callback Evasion
+=== Mitigazione Callback Evasion
 BitDefender prevede la tecnologia CBE (Callback Evasion Detection), che monitora costantemente se alcune callback critiche per la sicurezza subiscono dei tentativi di essere disabilitate. In caso rilevi operazioni sospetta, la CBE genera un alert.
 
 La CBE monitora inoltre se vengono disabilitate le callback dai driver di BitDefender, permettendo di allertare l'utente in caso i driver non siano più in grado di ricevere notifiche di operazioni critiche nel sistema.
 
-== Mitigazione Vulnerable Drivers 
+=== Mitigazione Vulnerable Drivers 
 È presente il BEST (Bitdefender Endpoint Security Tools) agent, esso controlla le applicazioni sconosciute e i driver nel sistema, in cerca di operazioni di driver che cerchino di ottenere accessi non autorizzati. In caso ne trovasse, BEST può disabilitare l'accesso al driver, oppure “disinfettarlo”.
 
-== Mitigazione Event Tracing for Windows (ETW)
-L'ATC (Advanced Threat Control) monitora gli eventuali tentativi di modifica a file come EtwEventWrite function, di solito ponendo come prima istruzione return 0 (successo) e quindi così bloccare l'event logging per alcuni eventi.
+=== Mitigazione Event Tracing for Windows (ETW)
+L'ATC (Advanced Threat Control) monitora gli eventuali tentativi di modifica a file come `EtwEventWrite function`, di solito ponendo come prima istruzione return 0 (successo) e quindi così bloccare l'event logging per alcuni eventi.
 L'ATC può quindi individuare e disabilitare il processo che sta modificando quei file, allertando della cosa l'utente.
 
 == Ottimizzazione di Cloud e Virtualizzazione
