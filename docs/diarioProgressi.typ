@@ -153,3 +153,17 @@ La piattaforma non permette di visualizzare le modifiche effettuate, per la miti
 
 
 == Mercoledì 02/07
+
+
+== Giovedì 03/07
+
+=== Cose fatte oggi
+In mattinata ho ripassato e organizzato le idee per la presentazione ai colleghi del pomeriggio.
+Nel complesso la presentazione si può ritenere soddisfacente, anche se carente nella parte di presentazione iniziale del prodotto.
+
+=== Difficoltà riscontrate
+Nessuna difficoltà tecnica, ne ho riscontrate nell'organizzare la presentazione.
+
+
+== Venerdì 04/07
+Oggi ho controllato alcune funzionalità, in base ai feedback ricevuti dai colleghi durante la presentazione di ieri.
