@@ -146,14 +146,17 @@ nessuna difficoltà particolare.
 
 == Martedì 01/07
 === Cose fatte oggi
-Oggi mi sono concentrato sulla parte di API, e di monitoraggio e metigiazione del rischio degli endpoint
+Oggi mi sono concentrato sulla parte di API, e di monitoraggio e mitigiazione del rischio degli endpoint
 
 === Difficoltà riscontrate
 La piattaforma non permette di visualizzare le modifiche effettuate, per la mitigazione dei rischi, in tempo reale, il che rende difficile avere un riscontro delle modifiche effettuate.
 
 
 == Mercoledì 02/07
-
+=== Cose fatte oggi
+Tra le varie operazioni di oggi, ho esplorato la funzionalità "search" degli incidenti.
+=== Difficoltà riscontrate
+Nessuna difficoltà particolare.
 
 == Giovedì 03/07
 
@@ -166,4 +169,24 @@ Nessuna difficoltà tecnica, ne ho riscontrate nell'organizzare la presentazione
 
 
 == Venerdì 04/07
+=== Cose fatte oggi
 Oggi ho controllato alcune funzionalità, in base ai feedback ricevuti dai colleghi durante la presentazione di ieri.
+
+Ho lavorato per portare il mio endpoint a 0 vulnerabilità e rischi, in modo da poterlo replicare in futuro su altre macchine.
+
+Ho iniziato a verificare il funzionamento della parte di reportistica e di politiche di detection e esclusione personalizzate.
+
+=== Difficoltà riscontrate
+La parte di detection e esclusione personalizzate non è molto chiara, sembrano esserci notevoli limiti nella corretta esecuzione delle regole.
+
+
+
+= Terza settimana (07-11/07)
+== Lunedì 07/07
+=== Cose fatte oggi
+Ho continuato a lavorare sulla parte di detection e esclusione personalizzate.
+Ho inoltre visto il funzionamento della blocklist, che permette di bloccare l'esecuzione di file e processi specifici.
+
+
+=== Difficoltà riscontrate
+
