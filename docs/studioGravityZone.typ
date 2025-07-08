@@ -212,7 +212,7 @@ Ci sono diversi approcci possibili:
     Il sistema può controllare tutti i file locali, può anche estrarre il codice dei vari file e controllarlo per poteziali pericoli.
     Dopo l'estrazione, vengono utilizzati emulatori locali per simulare il comportamento del contenuto analizzato, in caso di necessità si passa poi alla disinfezione.
 
-    La disinfezione prova dapprima a disinfettare, appunto, il file chje risulta infetto, in caso non riuscisse lo sposta invece in quarantena per limitare l'infezione. Per alcuni tipi di malware invece, ad esempio nel caso di file interamente malevoli, essi vengono eliminati direttamente dal disco. Oltre a questo, viene anche controllato se il file ha registrato una chiave per far eseguire il malware all'avvio della macchina, e in caso la chiave viene rimossa
+    La disinfezione prova dapprima a disinfettare, appunto, il file che risulta infetto, in caso non riuscisse lo sposta invece in quarantena per limitare l'infezione. Per alcuni tipi di malware invece, ad esempio nel caso di file interamente malevoli, essi vengono eliminati direttamente dal disco. Oltre a questo, viene anche controllato se il file ha registrato una chiave per far eseguire il malware all'avvio della macchina, e in caso la chiave viene rimossa
 
   - *Hyper Detect:*
     è la funzionalità di anti-malware basata su Machine Learning ed è personalizzabile.
