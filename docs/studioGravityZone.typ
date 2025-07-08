@@ -13,6 +13,11 @@
 
 #pagebreak()
 #versionTable(content: (
+  [0.5],
+  [25/06/2025],
+  [Davide Marin],
+  [Modifiche al contenuto],
+
   [0.4],
   [25/06/2025],
   [Davide Marin],
@@ -42,7 +47,9 @@ Dispone di una console dalla quale si può visualizzare la propria esposizione a
 
 Inoltre, è disponibile l'interfaccia "Incident Advisor" che permette di visualizzare le azioni guidate disponibili per risolvere i problemi rilevati da BitDefender.
 
-GravityZone funziona tramite la strategia "Multi-layered Security", che sfrutta AI e Machine Learning per la protezione dagli attacchi.
+GravityZone funziona tramite la s 
+
+trategia "Multi-layered Security", che sfrutta AI e Machine Learning per la protezione dagli attacchi.
 
 == Multi-layered Security
 Tutte le strategie di protezione valide utilizzano la sicurezza multilivello, operando sapendo che "nessun sistema è completamente sicuro". La sicurezza multilivello si suddivide in Prevenzione, Protezione, Rilevamento e Risposta.
@@ -56,6 +63,8 @@ Il primo passo è "masterare" le capacità di prevenzione, identificando e corre
 
 Il secondo punto è la protezione, tramite GravityZone gli endpoint sono potetti da minacce conosciute e sconosciute.
 Rilevazione, la rilevazione di minacce avviene con diversi strumenti come i sensori, la Live Search, e gli EDR, XDR, e MDR.
+
+
 
 La risposta, infine, permette di investigare sugli incidenti, contenere i pericoli e rimediare ai danni subiti.
 
@@ -93,11 +102,15 @@ BitDefender GravityZone riesce ad essere efficace ed efficiente anche su sistemi
 === Patch Management
 Trova bug, errori di configurazione e obsolescenze che possono essere sfruttati per degli attacchi, e li risolve con delle patch.
 
-GravityZone mette a disposizione uno strumento per eseguire scansioni delle patch disponibili per le proprie macchine, è possibile avviarle manualmente selezionando la macchina desiderata nella sezione “Network” o tramite la finestra “Policies” per creare delle routine automatizzate
+GravityZone mette a disposizione uno strumento per eseguire scansioni delle patch disponibili per le proprie macchine, è possibile avviarle manualmente (on-demand) selezionando la macchina desiderata nella sezione “Network” e premendo sull'opzione "Patch Scan", oppure automaticamente creando prima una "Maintenance Window" (selezionando la voce "Configuration profiles" dal menu a sinitra) con le regole desiderate, e poi assegnandola alla policy interessata.
 
+#figure(
+  image("img/Screenshot 2025-07-08 104059.png", width: 95%),
+  caption: [Maintenance Window],
+)
 
 === Risk Management
-Cloud (CSPM+)
+==== Cloud (CSPM+)
 Per accedere alla configurazione bisogna accedere alla console dedicata (DA TROVARE).
 
 Il suo scopo non si limita a garantire il rispetto delle compliant per quanto riguarda la configurazione delle risorse in cloud, ma controlla anche che lo IAM (Cloud Identity and Access Management sia rispettato.
@@ -117,36 +130,49 @@ Si configura nelle Policies, sotto la voce “Risk Management”.
 ==== Compliance Manager
 Il compliance manager permette di visualizzare chiaramente raccomandazioni da seguire per rispettare tutte le norme sulla sicurezza.
 
-È possibile decidere se risolvere un determinato rischio, tramite una procedura guidata, oppure se ignorarlo.
-È anche possibile creare report per certificare gli standard di compliance.
+È possibile decidere se risolvere un determinato rischio, tramite una procedura guidata, oppure se ignorarlo. Questa operazione nelllo specifico, è possibile effettuarla anche tramite la schermata "Findings", per avere una panoramica di tutte le macchine, oppure "Resources", per i singoli endpoint, applicando ilfiltro per la compliance desidereata.
+
+È anche possibile creare report per certificare gli standard di compliance. Questa funzione però, necessita licenze specifiche per ogni tipologia di compliance.
 
 
-=== Criptazione del disco
+==== Criptazione del disco
 È possibile effettuare una criptazione completa del disco e dei dispositivi esterni al pc, sia su Windows che su MacOs che su Linux.
 
 
-=== Controllo Dispositivi
+==== Controllo Dispositivi
 È possibile creare regole per bloccare un certo tipo di dispositivi (es. chiavette o cd), o dare permessi solo a dispositivi con determinati ID.
 
 Ad esempio, per limitare le USB, selezionare su “External Storage” l'opzione “Custom” e impostare “block” su “USB”. Per aggiungere un'eccezione, andare sulla schermata apposita e aggiungere l'eccezione; si potrà inserirla da dispositivi già conosciuti, oppure manualmente tramite ID. Per inserire l'esclusione manualmente, l'ID dell'USB si può trovare in proprietà -> hardware -> proprietà -> eventi -> scorrere il pannello che si visualizza fino alla fine, l'ID è quello segnato in “Dispositivo padre”
 
 
-=== Controllo Applicazioni
+==== Controllo Applicazioni
 Come per i dispositivi, è possibile limitare l'uso a determinate applicazioni, escludendone altre, impostare regole ed eccezioni.
 
 Si può inserire il percorso esatto, controllando sia corretto e privo di caratteri extra, oppure il nome dell'eseguibile (consigliato)
-Controllo Contenuti
-È possibile controllare e limitare l'accesso a determinati contenuti, per motivi di sicurezza, produttività, professionalità ecc. indipendentemente dalla rete i cui ci si trova, utile quindi per lavoro da remoto.
 
-Per il web, prima creare la regola su Configuration profiles -> Web Access Scheduler; poi andare sulla policy ed assegnare il profilo appena configurato in Network Protection -> Content Control. Infine, ricordarsi di ATTIVARE Intercept Encrypted Traffic in Network Protection -> General.
+Si può effettuare il blocco sia all'interno di una policy, sia direttamente nella sezione "Blocklist", che la applicherà quindi a tutti gli endpoint
+
+#figure(
+  image("img/Immagine 2025-07-08 110217.png", width: 95%),
+  caption: [Blocco applicazione da policy],
+)
+
+
+==== Controllo Contenuti
+È possibile controllare e limitare l'accesso a determinati contenuti, per motivi di sicurezza, produttività, professionalità ecc. indipendentemente dalla rete in cui ci si trova, utile quindi per lavoro da remoto.
+
+Per il web, prima creare la regola su Configuration profiles -> Web Access Scheduler, poi, andare sulla policy ed assegnare il profilo appena configurato in Network Protection -> Content Control. Infine, ricordarsi di ATTIVARE Intercept Encrypted Traffic in Network Protection -> General.
 
 Per il data protection, sempre all'interno di Network Protection -> Content Control, si possono inserire i dati da proteggere, consigliato è di non inserire interamente dati sensibili, ma magari una loro parte univoca, e selezionare “match case” invece di “hole word” nella parte da scannerizzare.
 
-Di base il controllo avverrebbe solo su http e SMTP, ma con il Intercept Encrypted Traffic attivo, verrà controllato anche il traffico HTTPS.
+Di base il controllo avverrebbe solo su HTTP e SMTP, ma con il Intercept Encrypted Traffic attivo, verrà controllato anche il traffico HTTPS.
+
+Per tutti i tipi di controlli è possibile inserire delle escluzioni per i siti fidati, per farlo inserirli nella sezione "Generale".
 
 
-=== Servizi di test sicurezza
+==== Servizi di test sicurezza
 BitDefender dispone anche di servizi per testare la sicurezza della propria azienda, senza ricorrere in rischi reali, si può fare in maniera automatizzata, oppure tramite ethical hackers. Sono anche disponibili diversi livelli dove si forniscono più o meno dati agli attaccanti per testare le proprie barriere.
+
 Ho comunque provveduto ad effettuare dei test sull'antivirus, attraverso “attacchi” file e fileless innocui, i primi tramite la stringa nota dell'EICAR:
 
 #align(center)[* X5O!P%\@AP\[4\PZX54(P^)7CC)7}\$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!\$H+H\* *]
@@ -168,6 +194,8 @@ GravityZone offre diverse opzioni per le e-mail, come filtri antispam, anti-malw
 Nella sezione del filtro per contenuto, è possibile creare regole personalizzate (anche diverse per ogni gruppo di e-mail) sul filtraggio in base ad oggetto, corpo e anche allegati della mail.
 Attenzione: se si inserisce sia filtro oggetto sia corpo mail, la mail verrà filtrata se almeno una delle espressioni PER TABELLA sarà presente nella mail; quindi, se solo nell'oggetto è presente un match, ma nel corpo no, la mail NON sarà filtrata.
 
+Per la configurazione della protezione mail, però, è necessario licenza e integrazione specifica di Microsoft 365, le aziende potrebbero quindi avere già, o optare per, una soluzione più specifica per le e-mail.
+
 === Protezione di rete
 Tramite la protezione di rete, è possibile controllare per eventuali pericoli tutto il traffico in entrata e in uscita grazie al Network Attack Defense (NAD).
 Protezione dai malware
@@ -185,6 +213,7 @@ Ci sono diversi approcci possibili:
     Dopo l'estrazione, vengono utilizzati emulatori locali per simulare il comportamento del contenuto analizzato, in caso di necessità si passa poi alla disinfezione.
 
     La disinfezione prova dapprima a disinfettare, appunto, il file chje risulta infetto, in caso non riuscisse lo sposta invece in quarantena per limitare l'infezione. Per alcuni tipi di malware invece, ad esempio nel caso di file interamente malevoli, essi vengono eliminati direttamente dal disco. Oltre a questo, viene anche controllato se il file ha registrato una chiave per far eseguire il malware all'avvio della macchina, e in caso la chiave viene rimossa
+
   - *Hyper Detect:*
     è la funzionalità di anti-malware basata su Machine Learning ed è personalizzabile.
     Tramite questa finestra si possono impostare diversi livelli di aggressività per diverse tipologie di pericoli
@@ -251,6 +280,7 @@ La configurazione dell'ambiente sandbox si fa direttamente nella sezione delle p
 === Protezione da Ransomware
 È presente il modulo di mitigazione per ransomware, nello specifico controlla gli endpoint e blocca operazioni che cercano di alterare i dati senza autorizzazione. Una volta rilevato e bloccato l'attacco, si riceve un report direttamente su GravityZone, che include informazioni su cosa è stato intaccato e opzioni automatizzate e manuali di recupero dati.
 Attivando la mitigazione da ransomware, si aggiunge uno strato extra di protezione, che comprende tre aree: sistema, file, e cloud.
+
   - *Sistema:*
     Vengono utilizzati filtri per intercettare la creazione di processi e accessi ai file
   - *File*
