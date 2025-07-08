@@ -187,7 +187,7 @@ I secondi, tramite una simulazione di comportamento fileless su PowerShell, ma c
 GravityZone offre diverse opzioni per le e-mail, come filtri antispam, anti-malware e filtri in base al contenuto; inoltre permette di creare dei gruppi di utenti, con regole personalizzate per ogni gruppo.
  
 #figure(
-  image("img/Screenshot 2025-06-20 085643.png", width: 75%),
+  image("img/Screenshot 2025-06-20 085643.png", width: 95%),
   caption: [Lista gruppi di e-mail],
 )
 
@@ -208,18 +208,18 @@ Ci sono diversi approcci possibili:
     È possibile inoltre impostare il livello di protezione nelle diverse fasi “On-access”, “On-Execute” e “On-Demand”, l'ultima permette di creare dei task ad esecuzione programmata.
     La protezione malware di GravityZone si può suddividere in due macro-componenti: “Core” e “Hyper Detect”.
 
-  - *Core (di default attivo se è attivo l'anti-malware):* 
-    Il sistema può controllare tutti i file locali, può anche estrarre il codice dei vari file e controllarlo per poteziali pericoli.
-    Dopo l'estrazione, vengono utilizzati emulatori locali per simulare il comportamento del contenuto analizzato, in caso di necessità si passa poi alla disinfezione.
+    - *Core (di default attivo se è attivo l'anti-malware):* 
+      Il sistema può controllare tutti i file locali, può anche estrarre il codice dei vari file e controllarlo per poteziali pericoli.
+      Dopo l'estrazione, vengono utilizzati emulatori locali per simulare il comportamento del contenuto analizzato, in caso di necessità si passa poi alla disinfezione.
 
-    La disinfezione prova dapprima a disinfettare, appunto, il file che risulta infetto, in caso non riuscisse lo sposta invece in quarantena per limitare l'infezione. Per alcuni tipi di malware invece, ad esempio nel caso di file interamente malevoli, essi vengono eliminati direttamente dal disco. Oltre a questo, viene anche controllato se il file ha registrato una chiave per far eseguire il malware all'avvio della macchina, e in caso la chiave viene rimossa
+      La disinfezione prova dapprima a disinfettare, appunto, il file che risulta infetto, in caso non riuscisse lo sposta invece in quarantena per limitare l'infezione. Per alcuni tipi di malware invece, ad esempio nel caso di file interamente malevoli, essi vengono eliminati direttamente dal disco. Oltre a questo, viene anche controllato se il file ha registrato una chiave per far eseguire il malware all'avvio della macchina, e in caso la chiave viene rimossa
 
-  - *Hyper Detect:*
-    è la funzionalità di anti-malware basata su Machine Learning ed è personalizzabile.
-    Tramite questa finestra si possono impostare diversi livelli di aggressività per diverse tipologie di pericoli
+    - *Hyper Detect:*
+      è la funzionalità di anti-malware basata su Machine Learning ed è personalizzabile.
+      Tramite questa finestra si possono impostare diversi livelli di aggressività per diverse tipologie di pericoli
 
 #figure(
-  image("img/Screenshot 2025-06-20 113308.png", width: 75%),
+  image("img/Screenshot 2025-06-20 113308.png", width: 95%),
   caption: [Schermata di Hyper Detect],
 )
  
@@ -233,7 +233,7 @@ La protezione dei processi ha due elementi chiave nel suo funzionamento, ATC e P
 La configurazione per ATP si trova in Antimalware -> On-Execute
 
 #figure(
-  image("img/Screenshot 2025-06-20 145006.png", width: 75%),
+  image("img/Screenshot 2025-06-20 145006.png", width: 95%),
   caption: [configurazione ATP],
 )
 
@@ -243,7 +243,7 @@ Il modello di Bitdefender controlla i file per potenziali regole o algoritmi ass
 La configurazione per exploit si trova in Antimalware -> Advanced Anti-exploit
 
 #figure(
-  image("img/Screenshot 2025-06-20 145201.png", width: 75%),
+  image("img/Screenshot 2025-06-20 145201.png", width: 95%),
   caption: [Configurazione Anti-exploit],
 )
 
@@ -255,13 +255,14 @@ La protezione da attacchi fileless include due tipi di configurazione: AMSI e Co
   - *AMSI (Anti Malware Scan Interface):*
     AMSI lavora come un ponte tra la macchina e GravityZone, e permette di analizzare diversi contenuti (come script, file, URL, ecc.) in cerca di azioni malevole, il tutto prima che il contenuto sia eseguito, riuscendo anche a “de-offuscare” il codice prima di analizzarlo.
     I suoi punti deboli sono: la compatibilità solo con sistemi con Windows 10 o Windows server 2016 e più recenti, e sistemi con Office 365 aggiornato e con Excel macro-scanning a runtime; e la possibilità di essere bypassato.
+
   - *Command-Line Scanner:*
     Entra in gioco per rimediare alle mancanze dell'AMSI, offrendo compatibilità con MacOS, Linux, e versioni di Windows in cui non è disponibile AMSI; inoltre offre sicurezza stratificata, analizzando l'attività su riga di comando e ricercando comportamenti soliti di attacchi fileless.
     Nello specifico previene l'esecuzione di comandi malevoli.
 La configurazione per attacchi fileless si trova in Antimalware -> On-Execute
 
 #figure(
-  image("img/Screenshot 2025-06-20 145305.png", width: 75%),
+  image("img/Screenshot 2025-06-20 145305.png", width: 95%),
   caption: [Configurazione Anti-fileless],
 )
 
@@ -287,7 +288,7 @@ Attivando la mitigazione da ransomware, si aggiunge uno strato extra di protezio
     In caso un'azione su file sembri sospetta, BitDefender fa un backup preventivo, che si può utilizzare per ripristinare il file, in maniera manuale o automatica, se la minaccia si rivelasse reale
 
     #figure(
-      image("img/Ransomware-file.jpg", width: 75%),
+      image("img/Ransomware-file.jpg", width: 95%),
       caption: [Funzionamento mitigazione per file],
     )
 
@@ -307,7 +308,7 @@ Ci sono diverse tipologie di soluzioni per la sicurezza mobile:
 BitDefender offre una combinazione di MDM e MTD, in quanto possono lavorare assieme.
 
 #figure(
-  image("img/Immagine 2025-06-25 085114.png", width: 75%),
+  image("img/Immagine 2025-06-25 085114.png", width: 95%),
   caption: [Combinazione MTD con MDM],
 )
  
@@ -315,14 +316,23 @@ BitDefender offre una combinazione di MDM e MTD, in quanto possono lavorare assi
 == Rilevamento
 === Sensori
 I sensori di GravityZone monitorano attivamente i dispositivi, il cloud ecc., per potenziali pericoli, compresi i ransomware.
-EDR, XDR, e MDR
+
+=== EDR, XDR, e MDR
 Tutto parte dagli EPP (Endpoint Protection Platform), sono l'evoluzione degli antivirus, che incorporano multipli layer di sicurezza e tecnologie come l'Advanced Machine Learning.
 Gli EDR (Endpoint Detection and Response) utilizzano le funzionalità degli EPP, estendendone la visibilità prendendo dati da tutti gli endpoint.
 Sono tenuti sotto controllo anche i lateral movement nella rete, ad esempio se un utente inserisce dei dati in una nuova macchina che risulta corrotta, verrà visualizzato come utente a rischio, e saranno quindi indicate le altre macchine sul quale ha effettuato l'accesso come a rischio.
+
+Gli XDR (Extended Detection and Response) invece, vanno oltre al funzionamento degli EDR, estendendo il numero e il tipo di sensori dai quali possono recuperare dati.
+
+=== Investigazione degli incidenti
+La pagina "Incidents" permette di visualizzare tutti gli incidenti rilevati e le azioni che sono state prese in automatico e quelle consigliate da BitDefender per risolvere i problemi.
 Inoltre, sono presenti schermate di investigazione più o meno dettagliate e tecniche per mostrare i possibili rischi individuati:
   - *Incident Advisor:* Semplici informazioni mostrate in una singola pagina
-  - *Extended Root Cause Analysis:* Visualizza un grafico rappresentante la progressione dell'attacco rilevato
-  - *Root Cause Analysis:* Visualizza il flusso dettagliato e relazioni tra processi e operazioni del file system
+  - *Graph:* Visualizza un grafico rappresentante la progressione dell'attacco rilevato
+  - *Alerts:* Visualizza il flusso dettagliato e relazioni tra processi e operazioni del file system
 Attraverso l'investigazione GravityZone suggerisce le azioni da intraprendere per risolvere i problemi.
-Gli XDR (Extended Detection and Response) invece, vanno oltre gli EDR, estendendo il numero e il tipo di sensori dai quali possono recuperare dati.
+
+=== Live Search
+A disposizione dell'utente c'è ache la Live Search (che per essere utilizzata deve esssere prima attivata nella policy degli endpoint interessati), che permette di effettuare ricerche in tempo reale sugli endpoint, per reperire diverse informazioni. 
+Questa funzionalità si rivela utile nel caso si riscontrassero degli attacchi, per monitorare lo stato dellla rete e dei dispositivi in tempo realte, per capire al meglio come itervenire.
 
