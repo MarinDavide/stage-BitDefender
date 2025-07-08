@@ -16,7 +16,7 @@
   [0.5],
   [08/07/2025],
   [Davide Marin],
-  [Modifiche al contenuto],
+  [Modifiche al contenuto, aggiunte sezioni del capitolo "Rilevamento"],
 
   [0.4],
   [25/06/2025],
@@ -333,6 +333,6 @@ Inoltre, sono presenti schermate di investigazione più o meno dettagliate e tec
 Attraverso l'investigazione GravityZone suggerisce le azioni da intraprendere per risolvere i problemi.
 
 === Live Search
-A disposizione dell'utente c'è ache la Live Search (che per essere utilizzata deve esssere prima attivata nella policy degli endpoint interessati), che permette di effettuare ricerche in tempo reale sugli endpoint, per reperire diverse informazioni. 
+A disposizione dell'utente c'è ache la Live Search (che per essere utilizzata deve esssere prima attivata nella policy degli endpoint interessati), che permette di effettuare ricerche, tramite query "SQL-like", in tempo reale sugli endpoint per reperire diverse informazioni. 
 Questa funzionalità si rivela utile nel caso si riscontrassero degli attacchi, per monitorare lo stato dellla rete e dei dispositivi in tempo realte, per capire al meglio come itervenire.
 
