@@ -14,7 +14,7 @@
 #pagebreak()
 #versionTable(content: (
   [0.5],
-  [25/06/2025],
+  [08/07/2025],
   [Davide Marin],
   [Modifiche al contenuto],
 
