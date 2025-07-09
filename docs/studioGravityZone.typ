@@ -336,3 +336,14 @@ Attraverso l'investigazione GravityZone suggerisce le azioni da intraprendere pe
 A disposizione dell'utente c'è ache la Live Search (che per essere utilizzata deve esssere prima attivata nella policy degli endpoint interessati), che permette di effettuare ricerche, tramite query "SQL-like", in tempo reale sugli endpoint per reperire diverse informazioni. 
 Questa funzionalità si rivela utile nel caso si riscontrassero degli attacchi, per monitorare lo stato dellla rete e dei dispositivi in tempo realte, per capire al meglio come itervenire.
 
+
+== Risposta
+=== Threat Response
+Bitdefender offre diverse opzioni di risposta in caso di attacchi subiti, se le operazioni di protezione non fossero bastate.
+Dalla pagina degli incidenti è infatti possibile visualizzare le azioni consigliate (isolare endpoint, mettere in quarantena il file, ecc.) per ogni incidente. È disponibile anche una pagina deidcata, chiamata "Response" disponibile nel dettaglio degli incidenti, qui è possibile visualizzare le operazioni da intraprendere sottoforma di lista.
+
+#figure(
+  image("img/Immagine 2025-07-09 152039.png", width: 95%),
+  caption: [Lista operazioni consigliate],
+)
+
