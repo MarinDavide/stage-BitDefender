@@ -56,7 +56,7 @@ Una volta installato l'agente con ruolo Relay, sarà possibile, tramite la fines
 Sulla finestra che si apre, cliccare su "Create", compilare i campi e prestare attenzione a selezionare tutti i moduli che si vogliono utilizzare sugli endpoint (è comunque possibile modificare i moduli in seguito, per ogni endpoint), e salvare.
 
 Una volta creato il pacchetto, andare nella pagina "Network", selezionare tutti gli endpoint sui quali si vuole installare l'agente e cliccare "Action" e poi "install agent". Nella finestra che si apre, bisogna insrire le credenziali di amministratore dell'endpoint (se si ha selezionato un gruppo di endpoint sotto ad un DC, inserire le credenziali del domain administrator), selezionare il Relay a cui fare "affidamento" ed infine il pacchetto di installazione desiderato.
-Questo installerà l'agente su tutti gli endpoint selezionati.
+Questo installerà l'agente su tutti gli endpoint selezionati. 
 
 
 #pagebreak()
