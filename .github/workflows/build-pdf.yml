@@ -58,7 +58,7 @@ jobs:
                         /*Variabili colori*/
                         :root {
                         --main-bg-color: #2a2a2a;
-                        --list-bg-color: #4d2323;
+                        --list-bg-color: #3a1f1f;
                         --text-color: #1f1f1f;
                         --link-color: #fcb52f;
                         --text-color-light: #fff4f6
@@ -123,7 +123,7 @@ jobs:
                        .document-list li {
                          background-color: var(--list-bg-color);
                          border: 1px solid #ddd;
-                         margin-bottom: 0.05rem;
+                         margin-bottom: 0.08rem;
                          padding: 1rem 1.5rem;
                          border-radius: 6px;
                          transition: background-color 0.2s ease, box-shadow 0.2s ease;
