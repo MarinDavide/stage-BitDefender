@@ -11,6 +11,29 @@
 #pagebreak()
 
 #versionTable(content:(
+  [0.10],
+  [10/07],
+  [Davide Marin],
+  [Aggiunte sezioni "Martedì 08, Mercoledì 09 e Giovedì 10/07"],
+
+  [0.9],
+  [09/07],
+
+  [0.9],
+  [02/07],
+  [Davide Marin],
+  [Aggiunta sezione "Lunedì 07/07"],
+
+  [0.8],
+  [02/07],
+  [Davide Marin],
+  [Aggiunta sezione "Venerdì 04/07"],
+
+  [0.7],
+  [02/07],
+  [Davide Marin],
+  [Aggiunta sezione "Giovedì 03/07"],
+
   [0.6],
   [02/07],
   [Davide Marin],
@@ -39,13 +62,12 @@
   [0.1],
   [24/06],
   [Davide Marin],
-  [Creazione documento, inserimento riassunto e aggiornamento odierno]
+  [Creazione documento, aggiunte sezioni riassunto e "Lunedì 24/06"]
 ))
 
 #pagebreak()
 = Prima settimana (19-27/06)
-== Martedì 24/06
-=== Riassunto giorni passati
+== Riassunto giorni passati
 Da giovedì 19 a lunedì 23 ho effettuato uno studio il più approfondito possibile, ma prettamente teorico, sullo strumento antivirus Bitdefender GravityZone.
 Ho steso un file di appunti personali su ciò che ho visto sulle pagine di documentazione di Bitdefender a mano a mano che approfondivo le diverse funzionalità del portale.
 
@@ -53,6 +75,7 @@ Nel frattempo, ho studiato e approfondito personali lacune nelle informazioni ch
 
 Ieri, lunedì 23, ho inoltre iniziato ad applicare alcune politiche alla mia macchina, per vedere se riuscissi a gestirne il funzionamento; purtroppo ho avuto difficoltà e i miei tentativi di applicare regole, in particolare limitazioni web e di applicazioni, non hanno avuto successo.
 
+== Martedì 24/06
 === Cose fatte oggi
 Oggi sono riuscito a trovare e risolvere i problemi riscontrati ieri. Per la parte web, si trattava di selezionare l'opzione di scannerizzare anche il traffico criptato, in questo modo si rende possibile all'antivirus di effettuare il blocco anche dei siti con protocollo HTTPS. Per quanto riguarda il blocco applicazioni, invece, mi sono assicurato che il percorso segnalato fosse privo di caratteri “speciali”.
 
@@ -188,5 +211,10 @@ Ho continuato a lavorare sulla parte di detection e esclusione personalizzate.
 Ho inoltre visto il funzionamento della blocklist, che permette di bloccare l'esecuzione di file e processi specifici.
 
 
-=== Difficoltà riscontrate
+== Martedì 08/07 e Mercoledì 09/07
+=== Cose  fatte
+Ho rivisto tutte le funzionalità del prodotto e la documentazione redatta, apportando aggiunte  e modifiche, in vista della futura applicazione su clienti reali.
 
+
+== Giovedì 10/07
+=== Cose fatte oggi
