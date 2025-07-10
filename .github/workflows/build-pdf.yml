@@ -132,6 +132,45 @@ jobs:
                         .content-link {
                         margin-top: 1em;
                         }
+
+                        .document-list {
+                         list-style: none;
+                         padding: 0;
+                         margin: 2rem 0;
+                         max-width: 800px;
+                         margin-left: auto;
+                         margin-right: auto;
+                         font-family: "Segoe UI", sans-serif;
+                       }
+                       
+                       .document-list li {
+                         background-color: #f9f9f9;
+                         border: 1px solid #ddd;
+                         margin-bottom: 0.75rem;
+                         padding: 1rem 1.5rem;
+                         border-radius: 10px;
+                         transition: background-color 0.2s ease, box-shadow 0.2s ease;
+                         display: flex;
+                         align-items: center;
+                         justify-content: space-between;
+                         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                       }
+                       
+                       .document-list li:hover {
+                         background-color: #eef2ff;
+                         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                       }
+                       
+                       .document-list li a {
+                         color: #2a2a2a;
+                         text-decoration: none;
+                         font-weight: 500;
+                         flex-grow: 1;
+                       }
+                       
+                       .document-list li a:hover {
+                         text-decoration: underline;
+                       }
                     </style>
                 </head>
                 <body>
@@ -150,12 +189,12 @@ jobs:
                         <section class="content">
                             <h2>Documenti</h2>
                             <div class="lista-doc">
-                                <ul>" > output/index.html
+                                <ul class="document-list">" > output/index.html
           for file in output/*.pdf; do
             filename=$(basename "$file")
             echo "<li><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
           done
-          echo "</ul><h2>Proposta di Stage</h2><ul>" >> output/index.html
+          echo "</ul><h2>Proposta di Stage</h2><ul class="document-list">" >> output/index.html
           for file in ./docs/*.pdf; do
             cp "$file" output/
             filename=$(basename "$file")
