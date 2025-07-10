@@ -1,7 +1,128 @@
-<html><head><title>Stage GravityZone</title></head><body><center><h1>Pagina della documentazione</h1></center></br><h2>Ecco tutti i documenti aggiornati:</h2><ul>
+<!DOCTYPE html>
+      <html>
+      <head>
+          <meta charset=UTF-8>
+      
+          <link rel=stylesheet href=CSS/style.css media=screen/>
+          <title>Documentazione</title>
+      
+          <style>
+              * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              }
+      
+              body {
+              background-color: var(--main-bg-color);
+              font-family: Arial;
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              align-items: center;
+              height: 100%;
+              line-height: 1.5em
+              }
+      
+              /*Variabili colori*/
+              :root {
+              --main-bg-color: #332222;
+              --wrapper-bg-color: #ecdbdb;
+              --text-color: #1f1f1f;
+              --link-color: #fcb52f;
+              }
+      
+              /* Wrapper */
+              .wrapper {
+              margin-top: 0.5em;
+              margin-bottom: 0.5em;
+              background-color: var(--wrapper-bg-color);
+              width: 100%;
+              max-width: 1200px;
+              height: fit-content;
+              box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
+              border-radius: 0.5em;
+              padding: 0.5em;
+              }
+      
+              .link {
+              color: var(--link-color);
+              }
+      
+              /* Titolo h1 */
+              h1 {
+              font-family: Russo One, sans-serif;
+              font-weight: 400;
+              font-size: 2.5em;
+              white-space: nowrap;
+              display: flex;
+              }
+      
+              .inline-list {
+              list-style-type: /;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              gap: 0.5em
+              }
+      
+              .inline-list li:not(:first-child)::before {
+              content: /;
+              margin: 0;
+              }
+      
+              .inline-list li {
+              display: inline;
+              }
+      
+      
+              .listcards {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 1em;
+              }
+      
+      
+              .content h2 {
+                  font-size: 2.5em;
+                  text-align: center;
+                  margin: 0.5em;
+                  color: var(--main-bg-color);
+                  line-height: 1.2em;
+              }
+      
+              .content p {
+              font-size: 1.2em;
+              line-height: 1.5em;
+              color: var(--text-color);
+              text-align: center;
+              }
+      
+              .content-link {
+              margin-top: 1em;
+              }
+          </style>
+      </head>
+      <body>
+          <div class=wrapper>
+          <main id=main-content>
+              
+              <!-- Intestazione -->
+              <section class=content>
+                  <h2>Stage Bitdefender</h2>
+                  <p>
+                      Sito della documentazione del progetto di stage Gestione della Sicurezza Aziendale: Caso studio con Bitdefender.
+                  </p>
+              </section>
+      
+              <!-- Documentyi -->
+              <section class=content>
+                  <h2>Documenti</h2>
+                  <div class=lista-doc>
+                      <ul>
 <li><a href="deploy.pdf" target="_blank">deploy.pdf</a></li>
 <li><a href="diarioProgressi.pdf" target="_blank">diarioProgressi.pdf</a></li>
 <li><a href="studioGravityZone.pdf" target="_blank">studioGravityZone.pdf</a></li>
-</ul></br><h2>Proposta di Stage:</h2>
+</div></section></main></div></body></html>
 <li><a href="Proposta stage Davide Marin_250625_151853.pdf" target="_blank">Proposta stage Davide Marin_250625_151853.pdf</a></li>
 </body></html>
