@@ -86,47 +86,22 @@ jobs:
                             font-size: 3.5em;
                             text-align: center;
                             margin: 0.5em;
-                            color: var(--main-bg-color);
+                            color: var(--text-color-light);
                             line-height: 1.2em;
                         }
-                
-                        .inline-list {
-                        list-style-type: "/";
-                        padding: 0;
-                        margin: 0;
-                        display: flex;
-                        gap: 0.5em
-                        }
-                
-                        .inline-list li:not(:first-child)::before {
-                        content: "/";
-                        margin: 0;
-                        }
-                
-                        .inline-list li {
-                        display: inline;
-                        }
-                
-                
-                        .listcards {
-                        display: grid;
-                        grid-template-columns: repeat(4, 1fr);
-                        gap: 1em;
-                        }
-                
-                
+
                         .content h2 {
                             font-size: 2.5em;
                             text-align: center;
                             margin: 0.5em;
-                            color: var(--main-bg-color);
+                            color: var(--text-color-light);
                             line-height: 1.2em;
                         }
                 
                         .content p {
                         font-size: 1.2em;
                         line-height: 1.5em;
-                        color: var(--text-color);
+                        color: var(--text-color-light);
                         text-align: center;
                         }
                 
