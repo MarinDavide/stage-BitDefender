@@ -152,8 +152,7 @@ jobs:
                        }
 
                        .icon {
-                         width: 20px;
-                         height: 20px;
+                         width: 25px;
                          object-fit: contain;
                          margin-right: 0.5rem;
                          vertical-align: middle;
@@ -185,7 +184,7 @@ jobs:
           for file in ./docs/*.pdf; do
             cp "$file" output/
             filename=$(basename "$file")
-            echo "<li><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
+            echo "<li><img src="assets/pdf-icon.png" class="icon" /><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
           done
           echo "</ul></div></section></main></div></body></html>" >> output/index.html
         
