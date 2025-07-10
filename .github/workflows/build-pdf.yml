@@ -22,6 +22,8 @@ jobs:
       - name: Compile all .typ to PDF
         run: |
           mkdir -p output
+          mkdir -p output/assets
+          cp assets/pdf-icon.png output/assets/
           for file in ./docs/*.typ; do
             filename=$(basename "$file" .typ)
           typst compile "$file" output/"$filename.pdf"
@@ -169,7 +171,7 @@ jobs:
                                 <ul class="document-list">" > output/index.html
           for file in output/*.pdf; do
             filename=$(basename "$file")
-            echo "<li><img src="assets/pdf-icon.png" alt="PDF" class="icon" /><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
+            echo "<li><img src="assets/pdf-icon.png" class="icon" /><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
           done
           echo "</ul><h2>Proposta di Stage</h2><ul class="document-list">" >> output/index.html
           for file in ./docs/*.pdf; do
