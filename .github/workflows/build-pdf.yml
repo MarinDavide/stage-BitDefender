@@ -169,7 +169,7 @@ jobs:
                                 <ul class="document-list">" > output/index.html
           for file in output/*.pdf; do
             filename=$(basename "$file")
-            echo "<li><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
+            echo "<li><img src="assets/pdf-icon.png" alt="PDF" class="icon" /><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
           done
           echo "</ul><h2>Proposta di Stage</h2><ul class="document-list">" >> output/index.html
           for file in ./docs/*.pdf; do
