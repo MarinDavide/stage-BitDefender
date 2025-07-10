@@ -123,7 +123,7 @@ jobs:
                        .document-list li {
                          background-color: var(--list-bg-color);
                          border: 1px solid #ddd;
-                         margin-bottom: 0.08rem;
+                         margin-bottom: 0.1rem;
                          padding: 1rem 1.5rem;
                          border-radius: 6px;
                          transition: background-color 0.2s ease, box-shadow 0.2s ease;
