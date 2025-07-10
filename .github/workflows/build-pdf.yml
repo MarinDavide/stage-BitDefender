@@ -140,7 +140,7 @@ jobs:
                         
                         <!-- Intestazione -->
                         <section class="content">
-                            <h2>Stage Bitdefender</h2>
+                            <h1>Stage Bitdefender</h1>
                             <p>
                                 Sito della documentazione del progetto di stage "Gestione della Sicurezza Aziendale: Caso studio con Bitdefender".
                             </p>
@@ -155,13 +155,13 @@ jobs:
             filename=$(basename "$file")
             echo "<li><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
           done
-          echo "</div></section></main></div></body></html>" >> output/index.html
+          echo "</ul><h2>Proposta di Stage</h2><ul>" >> output/index.html
           for file in ./docs/*.pdf; do
             cp "$file" output/
             filename=$(basename "$file")
             echo "<li><a href=\"$filename\" target=\"_blank\">$filename</a></li>" >> output/index.html
           done
-          echo "</body></html>" >> output/index.html
+          echo "</ul></div></section></main></div></body></html>" >> output/index.html
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
