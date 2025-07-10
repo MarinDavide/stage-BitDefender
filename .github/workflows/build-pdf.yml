@@ -150,6 +150,14 @@ jobs:
                        .document-list li a:hover {
                          text-decoration: underline;
                        }
+
+                       .document-list a img {
+                         width: 20px;
+                         height: 20px;
+                         object-fit: contain;
+                         margin-right: 0.5rem;
+                         vertical-align: middle;
+                       }
                     </style>
                 </head>
                 <body>
