@@ -24,6 +24,7 @@ jobs:
           mkdir -p output
           mkdir -p output/assets
           cp assets/pdf-icon.png output/assets/
+          cp assets/favicon.png output/assets/
           for file in ./docs/*.typ; do
             filename=$(basename "$file" .typ)
           typst compile "$file" output/"$filename.pdf"
@@ -38,7 +39,7 @@ jobs:
                 
                     <link rel="stylesheet" href="CSS/style.css" media="screen"/>
                     <title>Documentazione</title>
-                
+                    <link rel="icon" href="assets/title.png" type="image/png">
                     <style>
                         * {
                         margin: 0;
