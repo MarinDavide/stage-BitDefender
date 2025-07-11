@@ -169,14 +169,18 @@ jobs:
                               margin-left: 0em;
                               margin-right: 0em;
                             }
+                            .document-list li {
+                              margin-bottom: 0.8rem;
+                            }
 
                             .lista-doc{
                               max-width: 100%;
                             }
 
                             .document-list li a {
-                              font-size: 1.7em;
+                              font-size: 1.5em;
                             }
+                            
                         }
 
                         /* Tablet: da 601px a 1024px */
