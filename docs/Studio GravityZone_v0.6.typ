@@ -13,6 +13,11 @@
 
 #pagebreak()
 #versionTable(content: (
+  [0.6],
+  [11/07/2025],
+  [Davide Marin],
+  [Modifiche al contenuto, aggiunta sezione "Blocklist"],
+
   [0.5],
   [08/07/2025],
   [Davide Marin],
