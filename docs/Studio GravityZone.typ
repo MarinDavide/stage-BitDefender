@@ -150,7 +150,11 @@ Come per i dispositivi, è possibile limitare l'uso a determinate applicazioni, 
 
 Si può inserire il percorso esatto, controllando sia corretto e privo di caratteri extra, oppure il nome dell'eseguibile (consigliato)
 
-Si può effettuare il blocco sia all'interno di una policy, sia direttamente nella sezione "Blocklist", che la applicherà quindi a tutti gli endpoint
+Si può effettuare il blocco sia all'interno di una policy, sia direttamente nella sezione "Blocklist", che la applicherà quindi a tutti gli endpoint.
+
+===== Blocklist
+La blocklist permette di bloccare le applicazioni in maniera centralizzata, senza dover creare una policy ad hoc per ogni applicazione da bloccare. Si può accedere alla blocklist dalla sezione "Incidents" -> "Blocklist".
+Le regole della blocklist però, verranno applicate solo agli endpoint che nella policy hanno abilitato la funzione "Blocklist", e in caso di blocco di un'applicazione, dovranno essere abilitati anche "content control" e "applicaton blocklist" all'interno della policy.
 
 #figure(
   image("img/Immagine 2025-07-08 110217.png", width: 95%),
