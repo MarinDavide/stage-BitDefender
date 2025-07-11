@@ -57,7 +57,8 @@ jobs:
                         height: 100%;
                         line-height: 1.5em
                         }
-                
+
+                                   
                         /*Variabili colori*/
                         :root {
                         --main-bg-color: #2a2a2a;
@@ -75,8 +76,6 @@ jobs:
                         width: 100%;
                         max-width: 1200px;
                         height: fit-content;
-                        box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
-                        border-radius: 0.5em;
                         padding: 0.5em;
                         }
                 
@@ -112,13 +111,17 @@ jobs:
                         margin-top: 1em;
                         }
 
+                        .lista-doc{
+                          max-width: 70%;
+                          margin: 0 auto;
+                        }
+
                         .document-list {
                          list-style: none;
                          padding: 0;
-                         margin: 2rem 0;
-                         max-width: 800px;
-                         margin-left: auto;
-                         margin-right: auto;
+                         width: 100%;
+                         margin-left: 2em;
+                         margin-right: 2em;
                          font-family: "Segoe UI", sans-serif;
                          color: var(--text-color-light);
                        }
@@ -126,7 +129,7 @@ jobs:
                        .document-list li {
                          background-color: var(--list-bg-color);
                          border: 1px solid #ddd;
-                         margin-bottom: 0.1rem;
+                         margin-bottom: 0.4rem;
                          padding: 1rem 1.5rem;
                          border-radius: 6px;
                          transition: background-color 0.2s ease, box-shadow 0.2s ease;
@@ -158,6 +161,39 @@ jobs:
                          margin-right: 0.5rem;
                          vertical-align: middle;
                        }
+
+                        @media (max-width: 600px) {
+                            .document-list {
+                              margin-left: 0em;
+                              margin-right: 0em;
+                            }
+                            .document-list li {
+                              margin-bottom: 0.8rem;
+                            }
+
+                            .lista-doc{
+                              max-width: 100%;
+                            }
+
+                            .document-list li a {
+                              font-size: 1.5em;
+                            }
+                            
+                        }
+
+                        /* Tablet: da 601px a 1024px */
+                        @media (min-width: 601px) and (max-width: 1024px) {
+                            .document-list {
+                              margin-left: 0em;
+                              margin-right: 0em;
+                            }
+                            .lista-doc{
+                              max-width: 100%;
+                            }
+                            .document-list li a {
+                              font-size: 1.2em;
+                            }
+                        }   
                     </style>
                 </head>
                 <body>
