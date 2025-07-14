@@ -117,7 +117,14 @@ Qui è possibile impostare con quale endpoint con ruolo "Relay" comunicare, e im
 In questa pagina è possibile definire le impostazioni relative agli aggiornamenti degli agenti, come ad esempio la frequenza di aggiornamento del prodotto e dei sistemi di sicurezza.
 ==== Security Telemetry
 In caso si disponesse di un server SIEM (soluzione di gestione delle informazioni e degli eventi di sicurezza), è possibile configurare la comunicazione con quest'ultimo in questa pagina.
+
 === Relay
+
+#bestPractices[
+  === Best Practices
+  Per la configurazione della voce "Policy", si consiglia
+]
+
 
 == Protection & Monitoring
 === Antimalware

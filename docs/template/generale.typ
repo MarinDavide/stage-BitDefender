@@ -23,3 +23,10 @@
   )
 
 }
+
+#let bestPractices(body) = {
+  show heading: set text(red, style: "italic")
+  set text(red, style: "italic")
+  [#body]
+}
+
