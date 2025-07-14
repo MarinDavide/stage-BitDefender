@@ -36,7 +36,7 @@
 Questa guida ha lo scopo di essere più diretta e semplice possibile, per permettere un'installazione semplice e veloce di GravityZone.
 La guida ufficiale e completa è invece disponibile #link("https://www.bitdefender.com/business/support/en/77209-77397-installation.html")[*qui*].
 
-== Accedere a GravityZone Control Center
+== GravityZone Control Center
 Questa è la parte più semplice, ma fondamentale. Collegarsi alla pagina di login di GravityZone, e inserire le credenziali relative al proprio account, impostare il 2FA o SSO e continuare. 
 
 A questo punto ci verrà richiesto di creare almeno un pacchetto di installazione per i nostri agent che dovremmo installare sugli endpoint.
@@ -112,10 +112,14 @@ In questa pagina è possibile definire alcune impostazioni riguardanti l'install
   caption: [Aggiungi nuova politica di protezione],
 )
 ==== Communication
-Qui è possibile impostare con quale endpoint con ruolo "Relay" comunicare, e impostare diverse priorità in caso ci fossero più Relay. 
+Qui è possibile impostare con quale endpoint con ruolo "Relay" comunicare, e impostare diverse priorità in caso ci fossero più Relay. Impostare la comunicazione con il relay aiuta ad alleggerire il carico di lavoro sugli endpoint, delegando la comunicazione con il Control Center al relay.
+==== Update
+In questa pagina è possibile definire le impostazioni relative agli aggiornamenti degli agenti, come ad esempio la frequenza di aggiornamento del prodotto e dei sistemi di sicurezza.
+==== Security Telemetry
+In caso si disponesse di un server SIEM (soluzione di gestione delle informazioni e degli eventi di sicurezza), è possibile configurare la comunicazione con quest'ultimo in questa pagina.
+=== Relay
 
 == Protection & Monitoring
-=== Relay
 === Antimalware
 === Sandbox Analyzer
 === Firewall
@@ -139,3 +143,5 @@ Qui è possibile impostare con quale endpoint con ruolo "Relay" comunicare, e im
 
 #pagebreak()
 = Guida al patch management
+#pagebreak()
+= Altre funzionalità
