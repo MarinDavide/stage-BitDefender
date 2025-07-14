@@ -52,9 +52,7 @@ Dispone di una console dalla quale si può visualizzare la propria esposizione a
 
 Inoltre, è disponibile l'interfaccia "Incident Advisor" che permette di visualizzare le azioni guidate disponibili per risolvere i problemi rilevati da BitDefender.
 
-GravityZone funziona tramite la s 
-
-trategia "Multi-layered Security", che sfrutta AI e Machine Learning per la protezione dagli attacchi.
+GravityZone funziona tramite la strategia "Multi-layered Security", che sfrutta AI e Machine Learning per la protezione dagli attacchi.
 
 == Multi-layered Security
 Tutte le strategie di protezione valide utilizzano la sicurezza multilivello, operando sapendo che "nessun sistema è completamente sicuro". La sicurezza multilivello si suddivide in Prevenzione, Protezione, Rilevamento e Risposta.
