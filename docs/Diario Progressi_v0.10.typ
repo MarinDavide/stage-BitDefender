@@ -114,7 +114,7 @@ Ho testato la funzionalità del Sandbox Analyzer: il sistema permette di inviare
 
 Ho testato la configurazione di ulteriori politiche, arricchendo ciò che era stato fatto nei giorni precedenti.
 
-Ho inoltre configurato una repo GitHub per garantire il versioning della documentazione che sto redando, la pagina della documentazione aggiornata è disponibile al link:
+Ho inoltre configurato una repo GitHub per garantire il versioning della documentazione che sto redigendo, la pagina della documentazione aggiornata è disponibile al link:
 
 #align(center)[* https://marindavide.github.io/stage-Bitdefender/ *]
 
@@ -126,9 +126,9 @@ Incongruenze tra la documentazione e il portale GravityZone, che rallentano il l
 == Giovedì 26/06
 === Cose fatte oggi
 
-Ho iniziato a studiare la parte di deply del prodotto, seguendo la "tabella di marcia" del piano di progetto e iniziato a redigere la documentazione relativa.
+Ho iniziato a studiare la parte di deploy del prodotto, seguendo la "tabella di marcia" del piano di progetto e iniziato a redigere la documentazione relativa.
 
-Ho testato la creazione di pacchetti di installazione per gli agenti, e la loro installazione su un endpoint remoto, che hano avuto successo.
+Ho testato la creazione di pacchetti di installazione per gli agenti, e la loro installazione su un endpoint remoto, che hanno avuto successo.
 
 Ho iniziato a studiare la parte di integrazione di Active Directory, e la sua configurazione.
 
@@ -137,7 +137,7 @@ Incongruenze tra la documentazione e il portale GravityZone, che rallentano il l
 
 == Venerdì 27/06
 === Cose fatte oggi
-Ho creato una policy personalizzata che comprenda una whitelist per i domini e gli IP necessari per il funzionamneto di PhishBrain, e applicata ad altri endpoint aziendali.
+Ho creato una policy personalizzata che comprenda una whitelist per i domini e gli IP necessari per il funzionamento di PhishBrain, e applicata ad altri endpoint aziendali.
 
 Ho continuato a redigere la documentazione relativa al deploy del prodotto.
 
@@ -147,11 +147,11 @@ Ho trovato e provato come impostare il PowerUser su un endpoint:
   - Inserire nel pacchetto di installazione il modulo "PowerUser"
   - Selezionare, all'interno della Policy che si applicherà all'endpoint, la spunta "Power User" ed inserire la password desiderata.
   - Applicare la policy all'endpoint.
-  - Sull'endpoint, è possibile accedere alla CLI del Power User selezionando l'opzione omonima dopo aver cliccato con il tasto destro sull'icona di Bitdefender (che si trova in "icone nascoste" nella barra delle applicazioni).
+  - Sul endpoint, è possibile accedere alla CLI del Power User selezionando l'opzione omonima dopo aver cliccato con il tasto destro sull'icona di Bitdefender (che si trova in "icone nascoste" nella barra delle applicazioni).
   - È inoltre possibile accedere alla GUI del Power User, per farlo bisogna aprire il file `EPPowerConsole.exe` che si trova in:
   #align(center)[`c:\Program Files\Bitdefender\Endpoint Security`]
 
-Inoltre, ho preso failiarità sia con la CLI del Power User, sia con quella dell'utente normale, che potrebbe tornare utile in caso di macchine virtuali senza GUI. Per futuro utilizzo, i comandi disponibili per l'utente normale sono disponibili #link("https://www.bitdefender.com/business/support/en/77209-36849-using-the-command-line-interface.html")[*qui*]; mentre quelli per il Power User sono disponibili #link("https://www.bitdefender.com/business/support/en/77209-87461-using-the-power-user-module.html#UUID-06cb7c53-22b7-4f4f-c6a8-941a976c25e6_UUID-61700b4c-3c62-012a-09e2-1a0975cdb90d")[*qui*].
+Inoltre, ho preso familiarità sia con la CLI del Power User, sia con quella dell'utente normale, che potrebbe tornare utile in caso di macchine virtuali senza GUI. Per futuro utilizzo, i comandi disponibili per l'utente normale sono disponibili #link("https://www.bitdefender.com/business/support/en/77209-36849-using-the-command-line-interface.html")[*qui*]; mentre quelli per il Power User sono disponibili #link("https://www.bitdefender.com/business/support/en/77209-87461-using-the-power-user-module.html#UUID-06cb7c53-22b7-4f4f-c6a8-941a976c25e6_UUID-61700b4c-3c62-012a-09e2-1a0975cdb90d")[*qui*].
 
 === Difficoltà riscontrate
 Documentazione scarsa e poco chiara per quanto riguarda l'integrazione della sicurezza delle mail con Microsoft 365, inoltre sono incapacitato di testare la funzionalità perché l'azienda possiede già un servizio di sicurezza mail che andrebbe in conflitto con quello di Bitdefender.
@@ -161,7 +161,7 @@ Documentazione scarsa e poco chiara per quanto riguarda l'integrazione della sic
 == Lunedì 30/06
 === Cose fatte oggi
 Oggi ho studiato la parte relativa ai security containers.
-Inoltre, ho iniziato a vedere la parte di API e provato alcune chiamate tramire script in Python.
+Inoltre, ho iniziato a vedere la parte di API e provato alcune chiamate tramite script in Python.
 
 === Difficoltà riscontrate
 nessuna difficoltà particolare.
@@ -169,7 +169,7 @@ nessuna difficoltà particolare.
 
 == Martedì 01/07
 === Cose fatte oggi
-Oggi mi sono concentrato sulla parte di API, e di monitoraggio e mitigiazione del rischio degli endpoint
+Oggi mi sono concentrato sulla parte di API, e di monitoraggio e mitigazione del rischio degli endpoint
 
 === Difficoltà riscontrate
 La piattaforma non permette di visualizzare le modifiche effettuate, per la mitigazione dei rischi, in tempo reale, il che rende difficile avere un riscontro delle modifiche effettuate.

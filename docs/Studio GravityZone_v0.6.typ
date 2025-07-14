@@ -31,7 +31,7 @@
   [0.3],
   [24/06/2025],
   [Davide Marin],
-  [Ampliamento capitolto "Livelli di sicurezza", in particolare "Controllo Dispositivi", "Controllo Applicazioni", "Controllo Contenuti", "Servizi di test sicurezza"],
+  [Ampliamento capitolo "Livelli di sicurezza", in particolare "Controllo Dispositivi", "Controllo Applicazioni", "Controllo Contenuti", "Servizi di test sicurezza"],
 
   [0.2],
   [20/06/2025],
@@ -55,14 +55,14 @@ Inoltre, è disponibile l'interfaccia "Incident Advisor" che permette di visuali
 GravityZone funziona tramite la strategia "Multi-layered Security", che sfrutta AI e Machine Learning per la protezione dagli attacchi.
 
 == Multi-layered Security
-Tutte le strategie di protezione valide utilizzano la sicurezza multilivello, operando sapendo che "nessun sistema è completamente sicuro". La sicurezza multilivello si suddivide in Prevenzione, Protezione, Rilevamento e Risposta.
+Tutte le strategie di protezione valide utilizzano la sicurezza multi-livello, operando sapendo che "nessun sistema è completamente sicuro". La sicurezza multi-livello si suddivide in Prevenzione, Protezione, Rilevamento e Risposta.
 
 #figure(
   image("img/Multi-layered.png", width: 50%),
-  caption: [Sicurezza multilivello],
+  caption: [Sicurezza multi-livello],
 )
 
-Il primo passo è "masterare" le capacità di prevenzione, identificando e correggendo le vulnerabilità, implementando patch e soluzioni di risk management, prima che gli attori di rischio possano sfruttarle a loro vantaggio.
+Il primo passo è ottimizzare le capacità di prevenzione, identificando e correggendo le vulnerabilità, implementando patch e soluzioni di risk management, prima che gli attori di rischio possano sfruttarle a loro vantaggio.
 
 Il secondo punto è la protezione, tramite GravityZone gli endpoint sono potetti da minacce conosciute e sconosciute.
 Rilevazione, la rilevazione di minacce avviene con diversi strumenti come i sensori, la Live Search, e gli EDR, XDR, e MDR.
@@ -105,7 +105,7 @@ BitDefender GravityZone riesce ad essere efficace ed efficiente anche su sistemi
 === Patch Management
 Trova bug, errori di configurazione e obsolescenze che possono essere sfruttati per degli attacchi, e li risolve con delle patch.
 
-GravityZone mette a disposizione uno strumento per eseguire scansioni delle patch disponibili per le proprie macchine, è possibile avviarle manualmente (on-demand) selezionando la macchina desiderata nella sezione “Network” e premendo sull'opzione "Patch Scan", oppure automaticamente creando prima una "Maintenance Window" (selezionando la voce "Configuration profiles" dal menu a sinitra) con le regole desiderate, e poi assegnandola alla policy interessata.
+GravityZone mette a disposizione uno strumento per eseguire scansioni delle patch disponibili per le proprie macchine, è possibile avviarle manualmente (on-demand) selezionando la macchina desiderata nella sezione “Network” e premendo sull'opzione "Patch Scan", oppure automaticamente creando prima una "Maintenance Window" (selezionando la voce "Configuration profiles" dal menu a sinistra) con le regole desiderate, e poi assegnandola alla policy interessata.
 
 #figure(
   image("img/Screenshot 2025-07-08 104059.png", width: 95%),
@@ -133,7 +133,7 @@ Si configura nelle Policies, sotto la voce “Risk Management”.
 ==== Compliance Manager
 Il compliance manager permette di visualizzare chiaramente raccomandazioni da seguire per rispettare tutte le norme sulla sicurezza.
 
-È possibile decidere se risolvere un determinato rischio, tramite una procedura guidata, oppure se ignorarlo. Questa operazione nelllo specifico, è possibile effettuarla anche tramite la schermata "Findings", per avere una panoramica di tutte le macchine, oppure "Resources", per i singoli endpoint, applicando ilfiltro per la compliance desidereata.
+È possibile decidere se risolvere un determinato rischio, tramite una procedura guidata, oppure se ignorarlo. Questa operazione nello specifico, è possibile effettuarla anche tramite la schermata "Findings", per avere una panoramica di tutte le macchine, oppure "Resources", per i singoli endpoint, applicando il filtro per la compliance desiderata.
 
 È anche possibile creare report per certificare gli standard di compliance. Questa funzione però, necessita licenze specifiche per ogni tipologia di compliance.
 
@@ -157,7 +157,7 @@ Si può effettuare il blocco sia all'interno di una policy, sia direttamente nel
 
 ===== Blocklist
 La blocklist permette di bloccare le applicazioni in maniera centralizzata, senza dover creare una policy ad hoc per ogni applicazione da bloccare. Si può accedere alla blocklist dalla sezione "Incidents" -> "Blocklist".
-Le regole della blocklist però, verranno applicate solo agli endpoint che nella policy hanno abilitato la funzione "Blocklist", e in caso di blocco di un'applicazione, dovranno essere abilitati anche "content control" e "applicaton blocklist" all'interno della policy.
+Le regole della blocklist però, verranno applicate solo agli endpoint che nella policy hanno abilitato la funzione "Blocklist", e in caso di blocco di un'applicazione, dovranno essere abilitati anche "content control" e "application blocklist" all'interno della policy.
 
 #figure(
   image("img/Immagine 2025-07-08 110217.png", width: 95%),
@@ -174,13 +174,13 @@ Per il data protection, sempre all'interno di Network Protection -> Content Cont
 
 Di base il controllo avverrebbe solo su HTTP e SMTP, ma con il Intercept Encrypted Traffic attivo, verrà controllato anche il traffico HTTPS.
 
-Per tutti i tipi di controlli è possibile inserire delle escluzioni per i siti fidati, per farlo inserirli nella sezione "Generale".
+Per tutti i tipi di controlli è possibile inserire delle esclusioni per i siti fidati, per farlo inserirli nella sezione "Generale".
 
 
 ==== Servizi di test sicurezza
 BitDefender dispone anche di servizi per testare la sicurezza della propria azienda, senza ricorrere in rischi reali, si può fare in maniera automatizzata, oppure tramite ethical hackers. Sono anche disponibili diversi livelli dove si forniscono più o meno dati agli attaccanti per testare le proprie barriere.
 
-Ho comunque provveduto ad effettuare dei test sull'antivirus, attraverso “attacchi” file e fileless innocui, i primi tramite la stringa nota dell'EICAR:
+Ho comunque provveduto ad effettuare dei test sul antivirus, attraverso “attacchi” file e fileless innocui, i primi tramite la stringa nota di EICAR:
 
 #align(center)[* X5O!P%\@AP\[4\PZX54(P^)7CC)7}\$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!\$H+H\* *]
 
@@ -191,7 +191,7 @@ I secondi, tramite una simulazione di comportamento fileless su PowerShell, ma c
 #pagebreak()
 == Protezione
 === Protezione per E-mail
-GravityZone offre diverse opzioni per le e-mail, come filtri antispam, anti-malware e filtri in base al contenuto; inoltre permette di creare dei gruppi di utenti, con regole personalizzate per ogni gruppo.
+GravityZone offre diverse opzioni per le e-mail, come filtri anti-spam, anti-malware e filtri in base al contenuto; inoltre permette di creare dei gruppi di utenti, con regole personalizzate per ogni gruppo.
  
 #figure(
   image("img/Screenshot 2025-06-20 085643.png", width: 95%),
@@ -216,7 +216,7 @@ Ci sono diversi approcci possibili:
     La protezione malware di GravityZone si può suddividere in due macro-componenti: “Core” e “Hyper Detect”.
 
     - *Core (di default attivo se è attivo l'anti-malware):* 
-      Il sistema può controllare tutti i file locali, può anche estrarre il codice dei vari file e controllarlo per poteziali pericoli.
+      Il sistema può controllare tutti i file locali, può anche estrarre il codice dei vari file e controllarlo per potenziali pericoli.
       Dopo l'estrazione, vengono utilizzati emulatori locali per simulare il comportamento del contenuto analizzato, in caso di necessità si passa poi alla disinfezione.
 
       La disinfezione prova dapprima a disinfettare, appunto, il file che risulta infetto, in caso non riuscisse lo sposta invece in quarantena per limitare l'infezione. Per alcuni tipi di malware invece, ad esempio nel caso di file interamente malevoli, essi vengono eliminati direttamente dal disco. Oltre a questo, viene anche controllato se il file ha registrato una chiave per far eseguire il malware all'avvio della macchina, e in caso la chiave viene rimossa
@@ -264,7 +264,7 @@ La protezione da attacchi fileless include due tipi di configurazione: AMSI e Co
     I suoi punti deboli sono: la compatibilità solo con sistemi con Windows 10 o Windows server 2016 e più recenti, e sistemi con Office 365 aggiornato e con Excel macro-scanning a runtime; e la possibilità di essere bypassato.
 
   - *Command-Line Scanner:*
-    Entra in gioco per rimediare alle mancanze dell'AMSI, offrendo compatibilità con MacOS, Linux, e versioni di Windows in cui non è disponibile AMSI; inoltre offre sicurezza stratificata, analizzando l'attività su riga di comando e ricercando comportamenti soliti di attacchi fileless.
+    Entra in gioco per rimediare alle mancanze di AMSI, offrendo compatibilità con MacOS, Linux, e versioni di Windows in cui non è disponibile AMSI; inoltre offre sicurezza stratificata, analizzando l'attività su riga di comando e ricercando comportamenti soliti di attacchi fileless.
     Nello specifico previene l'esecuzione di comandi malevoli.
 La configurazione per attacchi fileless si trova in Antimalware -> On-Execute
 
@@ -291,7 +291,7 @@ Attivando la mitigazione da ransomware, si aggiunge uno strato extra di protezio
 
   - *Sistema:*
     Vengono utilizzati filtri per intercettare la creazione di processi e accessi ai file
-  - *File*
+  - *File:*
     In caso un'azione su file sembri sospetta, BitDefender fa un backup preventivo, che si può utilizzare per ripristinare il file, in maniera manuale o automatica, se la minaccia si rivelasse reale
 
     #figure(
@@ -299,7 +299,7 @@ Attivando la mitigazione da ransomware, si aggiunge uno strato extra di protezio
       caption: [Funzionamento mitigazione per file],
     )
 
-  - *Cloud*
+  - *Cloud:*
     Il servizio cloud è utile per testare i nuovi algoritmi di ransomware, nonché per mitigare velocemente il rilevamento di falsi positivi e negativi.
 
 La configurazione della mitigazione per ransomware si trova sempre in Antimalware -> On-Execute
@@ -340,14 +340,14 @@ Inoltre, sono presenti schermate di investigazione più o meno dettagliate e tec
 Attraverso l'investigazione GravityZone suggerisce le azioni da intraprendere per risolvere i problemi.
 
 === Live Search
-A disposizione dell'utente c'è ache la Live Search (che per essere utilizzata deve esssere prima attivata nella policy degli endpoint interessati), che permette di effettuare ricerche, tramite query "SQL-like", in tempo reale sugli endpoint per reperire diverse informazioni. 
-Questa funzionalità si rivela utile nel caso si riscontrassero degli attacchi, per monitorare lo stato dellla rete e dei dispositivi in tempo realte, per capire al meglio come itervenire.
+A disposizione dell'utente c'è ache la Live Search (che per essere utilizzata deve essere prima attivata nella policy degli endpoint interessati), che permette di effettuare ricerche, tramite query "SQL-like", in tempo reale sugli endpoint per reperire diverse informazioni. 
+Questa funzionalità si rivela utile nel caso si riscontrassero degli attacchi, per monitorare lo stato della rete e dei dispositivi in tempo reale, per capire al meglio come intervenire.
 
 
 == Risposta
 === Threat Response
 Bitdefender offre diverse opzioni di risposta in caso di attacchi subiti, se le operazioni di protezione non fossero bastate.
-Dalla pagina degli incidenti è infatti possibile visualizzare le azioni consigliate (isolare endpoint, mettere in quarantena il file, ecc.) per ogni incidente. È disponibile anche una pagina deidcata, chiamata "Response" disponibile nel dettaglio degli incidenti, qui è possibile visualizzare le operazioni da intraprendere sottoforma di lista.
+Dalla pagina degli incidenti è infatti possibile visualizzare le azioni consigliate (isolare endpoint, mettere in quarantena il file, ecc.) per ogni incidente. È disponibile anche una pagina dedicata, chiamata "Response" disponibile nel dettaglio degli incidenti, qui è possibile visualizzare le operazioni da intraprendere sotto forma di lista.
 
 #figure(
   image("img/Immagine 2025-07-09 152039.png", width: 95%),
