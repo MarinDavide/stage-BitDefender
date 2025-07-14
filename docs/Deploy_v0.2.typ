@@ -27,7 +27,11 @@
   [Creazione documento e inizio stesura]
 ))
 #pagebreak()
-
+#outline(
+  title: [Indice],
+  depth: 3
+)
+#pagebreak()
 = Guida al deploy di GravityZone
 Questa guida ha lo scopo di essere più diretta e semplice possibile, per permettere un'installazione semplice e veloce di GravityZone.
 La guida ufficiale e completa è invece disponibile #link("https://www.bitdefender.com/business/support/en/77209-77397-installation.html")[*qui*].
@@ -109,6 +113,29 @@ In questa pagina è possibile definire alcune impostazioni riguardanti l'install
 )
 ==== Communication
 Qui è possibile impostare con quale endpoint con ruolo "Relay" comunicare, e impostare diverse priorità in caso ci fossero più Relay. 
+
+== Protection & Monitoring
+=== Relay
+=== Antimalware
+=== Sandbox Analyzer
+=== Firewall
+=== Network Protection
+=== Patch Management
+=== Device Control
+=== Incident Sensori
+=== Risk Management
+=== Blocklist
+=== Live Search
+
+
+
+
+
+
+
+
+
+
 
 #pagebreak()
 = Guida al patch management

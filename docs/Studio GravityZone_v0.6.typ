@@ -44,6 +44,10 @@
   [Inserimento capitolo "GravityZone"],
 ))
 #pagebreak()
+#outline(
+  title: [Indice],
+)
+#pagebreak()
 
 = GravityZone
 Piattaforma di cybersecurity che gestisce prevenzione, protezione, rilevamento e risposta ad attacchi cyber per aziende di qualsiasi dimensione, comprendendo protezione per server cloud e anche terminali utente, compresi dispositivi mobili.
