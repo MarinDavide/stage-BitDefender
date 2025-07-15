@@ -32,6 +32,11 @@
   depth: 3
 )
 #pagebreak()
+#outline(
+  target: figure,
+  title: [Lista delle immagini],
+)
+#pagebreak()
 = Guida al deploy di GravityZone
 Questa guida ha lo scopo di essere più diretta e semplice possibile, per permettere un'installazione semplice e veloce di GravityZone.
 La guida ufficiale e completa è invece disponibile #link("https://www.bitdefender.com/business/support/en/77209-77397-installation.html")[*qui*].
@@ -97,8 +102,12 @@ Qui è possibile definire il nome della politica e se essa è collaborativa o me
 In questa pagina è possibile scegliere se "ereditare" la configurazione di un determinato modulo da un'altra policy. Attenzione, scegliendo di ereditare le regole da un'altra policy, si andrà a creare "un puntatore" alla policy da cui si ereditano le regole, e non una copia delle regole; modificando la policy da cui si ereditano le regole quindi, le modifiche verranno applicate anche a quella corrente.
 #figure(
   image("img/inheritance.png", width: 95%),
-  caption: [Aggiungi nuova politica di protezione],
+  caption: [Aggiungi ereditarietà di un modulo],
 )
+#bestPractices[
+  ==== Best Practices
+Per la configurazione della voce "Policy", si consiglia di non aggiungere regole di ereditarietà, a meno che non si sia sicuri che le possibili modifiche apportate al modulo della policy "madre" vadano bene anche per la policy corrente; in tutti gli altri casi, è consigliato clonare la policy madre per poter lavorare sulle due politiche indipendentemente.
+]
 
 === Agent
 Nella sezione "Agent" è possibile definire le impostazioni relative agli agenti che utilizzeranno questa policy.
@@ -109,7 +118,7 @@ In questa pagina si possono scegliere quali notifiche vedranno gli utenti sui lo
 In questa pagina è possibile definire alcune impostazioni riguardanti l'installazione e i permessi dell'agente. È possibile infatti inserire impostare una password per limitare la disinstallazione dell'agente, impostare il server di proxy se presente, e rendere o meno l'agente un "Power User". Il Power User è un utente che, tramite console, può gestire le proprie impostazioni della policy.
 #figure(
   image("img/agent_settings.png", width: 85%),
-  caption: [Aggiungi nuova politica di protezione],
+  caption: [Impostare il power user],
 )
 ==== Communication
 Qui è possibile impostare con quale endpoint con ruolo "Relay" comunicare, e impostare diverse priorità in caso ci fossero più Relay. Impostare la comunicazione con il relay aiuta ad alleggerire il carico di lavoro sugli endpoint, delegando la comunicazione con il Control Center al relay.
@@ -117,13 +126,13 @@ Qui è possibile impostare con quale endpoint con ruolo "Relay" comunicare, e im
 In questa pagina è possibile definire le impostazioni relative agli aggiornamenti degli agenti, come ad esempio la frequenza di aggiornamento del prodotto e dei sistemi di sicurezza.
 ==== Security Telemetry
 In caso si disponesse di un server SIEM (soluzione di gestione delle informazioni e degli eventi di sicurezza), è possibile configurare la comunicazione con quest'ultimo in questa pagina.
+#bestPractices()[
+==== Best Practices
 
+]
 === Relay
 
-#bestPractices[
-  === Best Practices
-  Per la configurazione della voce "Policy", si consiglia
-]
+
 
 
 == Protection & Monitoring

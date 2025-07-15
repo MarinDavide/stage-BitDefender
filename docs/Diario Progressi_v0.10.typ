@@ -71,7 +71,11 @@
   depth: 2
 )
 #pagebreak()
-
+#outline(
+  target: figure,
+  title: [Lista delle immagini],
+)
+#pagebreak()
 = Prima settimana (19-27/06)
 == Riassunto giorni passati
 Da giovedì 19 a lunedì 23 ho effettuato uno studio il più approfondito possibile, ma prettamente teorico, sullo strumento antivirus Bitdefender GravityZone.
