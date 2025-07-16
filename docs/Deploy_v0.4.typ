@@ -220,21 +220,21 @@ Impostare la scansione anche ogni giorno, meglio in orari dove il computer non �
 )
 ]
 
-== Blocklist
+=== Blocklist
 Nella pagina blocklist è possibile configurare quali controlli saranno efficaci su questa policy. Disattivando "Application path" ad esempio, se fossero presenti delle applicazioni inserite tramite path nella blocklist, esse non sarebbero bloccate per gli utenti con questa policy.
 #figure(
   image("img/blocklist.png", width: 85%),
   caption: [Configurazione Blocklist], 
 )
 #bestPractices()[
-=== Best Practices
+==== Best Practices
 Spuntare tutte le tipologie di controllo, tranne DDL files e Script files per non causare problemi durante l'esecuzione delle applicazioni. Ricordarsi che alcuni di questi controlli dipendono anche dall'attivazione del modulo della rispettiva categoria (es. Network connection non funzionerà se il firewall è disattivato).
 ]
 
-== Live Search
+=== Live Search
 Attivando la live search si rende possibile effettuare delle query per ottenere informazioni sugli endpoint. Le informazioni possono essere utili per la diagnostica in caso di incidenti nella rete. Per effettuare le ricerche in tempo reale è necessario creare le query nella pagina "Incidents -> Search" nel menu a sinistra.
 #bestPractices()[
-=== Best Practices
+==== Best Practices
 Si consiglia di attivarla, in quanto non comporta nessun carico extra finché non vengono eseguite delle query dalla schermata apposita.
 ]
 
