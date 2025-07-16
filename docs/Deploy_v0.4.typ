@@ -171,9 +171,7 @@ Il firewall di bitdefender permette di controllare le connessioni in entrata e i
 
 #bestPractices()[
 ==== Best Practices
-Per quanto riguarda il firewall, in caso il cliente disponesse già di un firewall esterno  è possibile anche disattivare il modulo, ricordandosi di deselezionare la spunta "Firewall" all'interno della sezione #link(<notifications>)[Agent -> Notifications]. In caso si volesse mantenere il firewall invece, lasciare le impostazioni di default ricordandosi di aggiungere le porte da escludere in Firewall -> General.
-
-Inserire poi tutte le regole necessarie in FIrewall -> Rules.
+Per quanto riguarda il firewall, in caso il cliente disponesse già di un firewall esterno  è possibile anche disattivare il modulo, ricordandosi di deselezionare la spunta "Firewall" all'interno della sezione #link(<notifications>)[Agent -> Notifications]. In caso si volesse mantenere il firewall invece, lasciare le impostazioni di default ricordandosi di aggiungere le porte da escludere in Firewall -> General. Inserire poi tutte le regole necessarie in FIrewall -> Rules.
 ]
 === Network Protection
 Il modulo Network Protection permetta di applicare filtri e controlli su web e applicazioni.
@@ -206,7 +204,20 @@ Collegare prima i dispositivi fidati e dopo attivare il blocco, in questo modo s
 
 
 === Incident Sensor
+
+
 === Risk Management
+Questa pagina permette di configurare la regola di scansione dei rischi, queste scansioni individuano vulnerabilità date da impostazioni delle applicazioni o da registri di sistema inutilizzati, inoltre individuano anche il rischio associato ad ogni utente. Sempre in questa schermata è possibile abilitare il PHASR, sistema di machine learning che, dopo un periodo di training (circa 30 giorni), fornisce consigli su che modifiche applicare ai vari utenti per migliorarne la sicurezza.
+#bestPractices()[
+==== Best Practices
+Impostare la scansione anche ogni giorno, meglio in orari dove il computer non è utilizzato, ma è una scansione più leggera rispetto ad una full scan. Consigliato è anche attivare il PHASR, impostando tutto su "Direct Control", in questo modo non verranno applicate le misure individuate automaticamente, ma saranno solo consigliate e attenderanno approvazione.
+#figure(
+  image("img/risk_management.png", width: 95%),
+  caption: [Configurazione Risk Management],
+)
+]
+
+
 === Blocklist
 === Live Search
 
