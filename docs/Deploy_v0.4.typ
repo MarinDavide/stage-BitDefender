@@ -140,7 +140,7 @@ In questa sezione viene definita la politica vera e propria, che è composta da 
 Il modulo antimalware è molto completo, e diviso in diverse sezioni:
   - *On-Access:* In questa sezione è definito il livello di aggressività della scansione che avviene al momento dell'accesso ai file. 
   - *On-Execute:* In questa sezione è definito il livello di aggressività della scansione che avviene al momento dell'esecuzione dei file eseguibili. Inoltre è possibile attivare o disattivare alcuni tipi di controlli, come quello per gli attacchi fileless o ransomware.
-  - *On-Demand:* Qui è possibile creare una regola di scansione, sono disponibili delle tipologie predefinite, come quick o full scan, oppure è possibile crearla custom, per personalizzare più a fondo la scansione (scegliere su quali cartelle effettuarla, la profondità e minutezza...). In questa schermata inoltre, premendo su "Edit" all'interno del paragrafo "Contextual Scan", si possono personalizzare le impostazioni di scansione per le cartelle locali e quelle di dispositivi esterni. 
+  - *On-Demand:* Qui è possibile creare una regola di scansione, sono disponibili delle tipologie predefinite, come quick o full scan, oppure è possibile crearla custom, per personalizzare più a fondo la scansione (scegliere su quali cartelle effettuarla, la profondità e minutezza, ecc.). In questa schermata inoltre, premendo su "Edit" all'interno del paragrafo "Contextual Scan", si possono personalizzare le impostazioni di scansione per le cartelle locali e quelle di dispositivi esterni. 
   #figure(
     image("img/scan_settings.png", width: 95%),
     caption: [Impostazioni di scansione],
@@ -148,7 +148,7 @@ Il modulo antimalware è molto completo, e diviso in diverse sezioni:
   - *Anti Tampering:* Qui è possibile attivare o disattivare i controlli anti-tampering, in particolare sui driver sensibili e sulle call-back evasion.
   - *Hyper Detect:* In questa pagina è possibile attivare e configurare per quali minacce utilizzare Hyper Detect, un sistema di analisi di Bitdefender basato su machine learning.
   - *Advanced Anti-exploit:* Qui si possono gestire i controlli su diversi tipi di exploit, 
-  - *Security Servers*:
+  - *Security Servers:* 
   - *Settings:*
   - *Exclusions:*
 #bestPractices()[
@@ -204,6 +204,7 @@ Collegare prima i dispositivi fidati e dopo attivare il blocco, in questo modo s
 
 
 === Incident Sensor
+Questo modulo è fondamentale per poter utilizzare la funzionalità di rilevamento incidenti, e relativa pagina "Incidents" nel menu a sinistra.
 
 
 === Risk Management
@@ -217,11 +218,23 @@ Impostare la scansione anche ogni giorno, meglio in orari dove il computer non �
 )
 ]
 
-
 === Blocklist
+Nella pagina blocklist è possibile configurare quali controlli saranno efficaci su questa policy. Disattivando "Application path" ad esempio, se fossero presenti delle applicazioni inserite tramite path nella blocklist, esse non sarebbero bloccate per gli utenti con questa policy.
+#figure(
+  image("img/blocklist.png", width: 85%),
+  caption: [Configurazione Blocklist], 
+)
+#bestPractices()[
+=== Best Practices
+Spuntare tutte le tipologie di controllo, tranne DDL files e Script files per non causare problemi durante l'esecuzione delle applicazioni. Ricordarsi che alcuni di questi controlli dipendono anche dall'attivazione del modulo della rispettiva categoria (es. Network connection non funzionerà se il firewall è disattivato).
+]
+
 === Live Search
-
-
+Attivando la live search si rende possibile effettuare delle query per ottenere informazioni sugli endpoint. Le informazioni possono essere utili per la diagnostica in caso di incidenti nella rete. Per effettuare le ricerche in tempo reale è necessario creare le query nella pagina "Incidents -> Search" nel menu a sinistra.
+#bestPractices()[
+=== Best Practices
+Si consiglia di attivarla, in quanto non comporta nessun carico extra finché non vengono eseguite delle query dalla schermata apposita.
+]
 
 
 
@@ -257,8 +270,24 @@ Se si è impostato un endpoint come server di cache per le patch qui è possibil
 ]
 
 == Creazione Web Access Control Scheduler <webAccessControl>
+È possibile creare un Web Access Control Scheduler nella sezione "Policies -> Configuration Profiles -> Web Access Control Scheduler". 
 
+Nella schermata che si apre, è possibile creare una o più regole di controllo, il sistema propone categorie di siti selezionabili per il controllo (come social network, gioco d'azzardo, shopping ecc.). Per ogni regola è possibile selezionare gli intervalli di tempo per cui essa sarà in vigore e anche se bloccare completamente le pagine oppure mostrare solo un warning all'utente.
+#figure(
+  image("img/webAccess_scheduler.png", width: 95%),
+  caption: [Creazione Web Access Control Scheduler],
+)
+#bestPractices()[
+=== Best Practices
+Perché la schedule funzioni a dovere, è necessario aver attivato la scansione HTTPS in Network Protection -> General.
+
+]
 
 == Creazione liste di esclusioni <listeEsclusioni>
+Tramite le liste di esclusioni, è possibile creare dei gruppi di esclusioni, in modo da poterle aggiungere a più policy in maniera rapida e semplice.
+Innanzitutto, andare alla sezione "Policy -> Configuration Profiles -> Exclusions". Se non si ha già una lista, premere su "New List", a questo punto inserire un nome e tutte le esclusioni che vogliamo.
+
+Altrimenti, è anche possibile creare direttamente un'esclusione tramite pulsante "Add Exclusion", e poi è possibile assegnarla a tutte le liste che vogliamo selezionandola e premendo su "Assign to Lists".
+
 
 ]

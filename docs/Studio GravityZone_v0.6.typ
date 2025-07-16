@@ -115,7 +115,7 @@ GravityZone mette a disposizione uno strumento per eseguire scansioni delle patc
 
 === Risk Management
 ==== Cloud (CSPM+)
-Per accedere alla configurazione bisogna accedere alla console dedicata (DA TROVARE).
+Per accedere alla configurazione bisogna accedere alla console dedicata.
 
 Il suo scopo non si limita a garantire il rispetto delle compliant per quanto riguarda la configurazione delle risorse in cloud, ma controlla anche che lo IAM (Cloud Identity and Access Management sia rispettato.
 
