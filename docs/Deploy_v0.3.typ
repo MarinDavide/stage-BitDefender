@@ -11,6 +11,11 @@
 #pagebreak()
 
 #versionTable(content:(
+  [0.4],
+  [16/07/2025],
+  [Davide Marin],
+  [Continuo stesura capitoli 2 e 5],
+
   [0.3],
   [14/07/2025],
   [Davide Marin],
@@ -108,7 +113,7 @@ Per la configurazione della voce "Policy", si consiglia di non aggiungere regole
 === Agent
 Nella sezione "Agent" è possibile definire le impostazioni relative agli agenti che utilizzeranno questa policy.
 
-  - *Notifications:* In questa pagina si possono scegliere quali notifiche vedranno gli utenti sui loro endpoint; è possibile scegliere sia la tipologia di notifica, sia per quali eventi mostrarle.
+  - *Notifications:* In questa pagina si possono scegliere quali notifiche vedranno gli utenti sui loro endpoint; è possibile scegliere sia la tipologia di notifica, sia per quali eventi mostrarle. <notifications>
   - *Settings:* In questa pagina è possibile definire alcune impostazioni riguardanti l'installazione e i permessi dell'agente. È possibile infatti inserire impostare una password per limitare la disinstallazione dell'agente, impostare il server di proxy se presente, e rendere o meno l'agente un "Power User". Il Power User è un utente che, tramite console, può gestire le proprie impostazioni della policy.
 #figure(
   image("img/agent_settings.png", width: 85%),
@@ -120,7 +125,11 @@ Nella sezione "Agent" è possibile definire le impostazioni relative agli agenti
 #bestPractices()[
 ==== Best Practices
 Per quanto riguarda la sezione "Agent", si consiglia per i diversi punti:
-  - *Notifications:* impostare solo di tipo "notification pop-up" (non richiedono input utente) e solo per gli eventi che interessano direttamente l'utente (es. blocco applicazione o dispositivo), lasciare invece il controllo degli incidenti malware al team di sicurezza tramite Control Center, per non allarmare inutilmente gli utenti in caso di falsi positivi.
+  - *Notifications:* impostare solo di tipo "notification pop-up" (non richiedono input utente) e solo per gli eventi che interessano direttamente l'utente (es. blocco applicazione o dispositivo), lasciare invece il controllo degli incidenti malware al team di sicurezza tramite Control Center, per non allarmare inutilmente gli utenti in caso di falsi positivi. Disattivare le notifiche dei moduli che non si vogliono utilizzare. 
+    #figure(
+      image("img/notifications.png", width: 85%),
+      caption: [Esempio notifiche Agent],
+    )
   - *Settings:* impostare la password di disinstallazione. A meno di casi particolari, non impostare l'agente come Power User.
   - *Communication:* impostare tutti i Relay come endpoint di comunicazione, assegnandogli la stessa priorità, in modo da far scegliere a Bitdefender quale Relay utilizzare in base alla disponibilità.
   - *Update:* lasciare le impostazioni di default.
@@ -137,21 +146,20 @@ In questa sezione viene definita la politica vera e propria, che è composta da 
 Il modulo antimalware è molto completo, e diviso in diverse sezioni:
   - *On-Access:* In questa sezione è definito il livello di aggressività della scansione che avviene al momento dell'accesso ai file. 
   - *On-Execute:* In questa sezione è definito il livello di aggressività della scansione che avviene al momento dell'esecuzione dei file eseguibili. Inoltre è possibile attivare o disattivare alcuni tipi di controlli, come quello per gli attacchi fileless o ransomware.
-  - *On-Demand:* Qui è possibile associare alla policy una regola di scansione, per vedere come crearne una fare riferimento al paragrafo "#link(<maintenanceWindow>)[Creazione Maintenance Windows]". In questa schermata inoltre, premendo su "Edit" all'interno del paragrafo "Contextual Scan", si possono personalizzare le impostazioni di scansione per le cartelle locali e quelle di dispositivi esterni. 
+  - *On-Demand:* Qui è possibile creare una regola di scansione, sono disponibili delle tipologie predefinite, come quick o full scan, oppure è possibile crearla custom, per personalizzare più a fondo la scansione (scegliere su quali cartelle effettuarla, la profondità e minutezza...). In questa schermata inoltre, premendo su "Edit" all'interno del paragrafo "Contextual Scan", si possono personalizzare le impostazioni di scansione per le cartelle locali e quelle di dispositivi esterni. 
   #figure(
     image("img/scan_settings.png", width: 95%),
     caption: [Impostazioni di scansione],
   )
   - *Anti Tampering:* Qui è possibile attivare o disattivare i controlli anti-tampering, in particolare sui driver sensibili e sulle call-back evasion.
-  - *Hyper Detect:* In questa pagina è possibile attivare e configurare per quali minacce utilizzare Hyper Detect, 
-  un sistema di analisi di Bitdefender basato su machine learning.
+  - *Hyper Detect:* In questa pagina è possibile attivare e configurare per quali minacce utilizzare Hyper Detect, un sistema di analisi di Bitdefender basato su machine learning.
   - *Advanced Anti-exploit:* Qui si possono gestire i controlli su diversi tipi di exploit, 
   - *Security Servers*:
   - *Settings:*
   - *Exclusions:*
 #bestPractices()[
 ==== Best Practices
-Per quanto riguarda il modulo antimalware, il consiglio è quello di attivare tutti i controlli disponibili (di default dovrebbero tutti essere attivi tranne la mitigazione ransomware all'interno di "On-Execute"). Per quanto riguarda lo scan On-Demand, prima di assegnare una window alla policy è necessario crearne una, per farlo, fare riferimento al paragrafo "#link(<maintenanceWindow>)[Creazione Maintenance Windows]".
+Per quanto riguarda il modulo antimalware, il consiglio è quello di attivare tutti i controlli disponibili (di default dovrebbero tutti essere attivi tranne la mitigazione ransomware all'interno di "On-Execute"). Per quanto riguarda lo scan On-Demand, è consigliato impostare una full scan, magari a giorni alterni, in un momento in cui le macchine sono accese ma non utilizzate (la scansione NON impedisce nessuna operazione sulla macchina, ma potrebbe appesantirne il carico di lavoro).
 
 ]
 === Sandbox Analyzer
@@ -162,11 +170,39 @@ Si consiglia di attivare la funzione, mantenendo però la "analysis mode" su "Mo
 ]
 
 === Firewall   
+Il firewall di bitdefender permette di controllare le connessioni in entrata e in uscita direttamente sul endpoint.
+  - *General:*
+  - *Settings:*
+  - *Rules:*
 
+#bestPractices()[
+==== Best Practices
+Per quanto riguarda il firewall, in caso il cliente disponesse già di un firewall esterno  è possibile anche disattivare il modulo, ricordandosi di deselezionare la spunta "Firewall" all'interno della sezione #link(<notifications>)[Agent -> Notifications]. In caso si volesse mantenere il firewall invece, lasciare le impostazioni di default ricordandosi di aggiungere le porte da escludere in Firewall -> General.
 
+Inserire poi tutte le regole necessarie in FIrewall -> Rules.
+]
 === Network Protection
+Il modulo Network Protection permetta di applicare filtri e controlli su web e applicazioni.
+  - *General:* Qui si imposta se controllare o meno anche il traffico criptato e di quale tipo, e si aggiungo le eventuali esclusioni ai controlli (sia URL o IP sia applicazioni) <networkGeneral>
+  - *Content Control:* Nella schermata content control è possibile attivare il controllo web, selezionando una regola precedentemente creata, per farlo seguire la guida al paragrafo "#link(<webAccessControl>)[5.2 Creazione Web Access Control Scheduler]". È anche possibile creare una blacklist di applicazioni per impedirne l'esecuzione. Infine, è possibile inserire una lista di dati sensibili, questa lista bloccherà l'invio di questi dati scansionando tutte le tipologie di traffico spuntate nella sezione #link(<networkGeneral>)[Network Protection -> General], in caso di blocco l'utente visualizzerà un alert.
+  - *Web Protection:* Qui è possibile attivare il controllo phishing, il controllo web in real time e la scansione email.
+  - *Network Attacks:* Qui è possibile attivare e impostare la difesa dagli attacchi web. È possibile scegliere per ogni tipologia di attacco se bloccarne l'accesso o creare solamente un alert nel Control Center.
+#bestPractices()[
+==== Best Practices
+  - *General:* Attivare la scansione del traffico criptato e anche il controllo https. Aggiungere alle esclusioni siti e applicazioni utilizzati frequentemente e/o sensibili (es. banca, gestionali, ecc.).
+  - *Content Control:* se presente, assegnare al web access control la schedule creata precedentemente come spiegato nel paragrafo "#link(<webAccessControl>)[5.2 Creazione Web Access Control Scheduler]". In caso si volessero aggiungere dei dati sensibili al Data Protection, si consiglia di non aggiungere, ad esempio, una password per intero, ma piuttosto una sua parte univoca (es. con password "Psd!23@" inserire "!23@").
+  - *Web Protection:* Mantenere le impostazioni di default, ovvero tutto attivo tranne il controllo mail (senza exchange protection configurato non ha alcun effetto).
+  - *Network Attacks:* Attivare RDP traffic e settare tutti i controlli su "block".
+]
+
 === Patch Management
+Qui è possibile associare alla policy una maintenance window creata precedentemente, per crearne una fare riferimento al paragrafo "#link(<maintenanceWindow>)[5.1 Creazione Maintenance Windows]"
+
 === Device Control
+  - *Rules:* Nella schermata rules è possibile bloccare determinati tipi di dispositivi divisi per categorie, in caso non si volesse bloccare un'intera categoria ma una specifica tipologia di dispositivo per quella categoria, è possibile selezionare la categoria, premere su custom, e settare su "block" solo quella tipologia. Ad esempio, per bloccare le chiavette USB, selezionare "External Storage" e settare solo "USB" su "block".
+  - *Exclusions:* Qui è possibile aggiungere determinati dispositivi "fidati" che potranno esssere utilizzati nonstante le regole di blocco, nel caso delle USB si possono inserire da dispositivi già conosciuti, oppure manualmente tramite ID.
+
+
 === Incident Sensori
 === Risk Management
 === Blocklist
@@ -206,5 +242,8 @@ Se si è impostato un endpoint come server di cache per le patch qui è possibil
   caption: [Patch Caching Server],
 )
 ]
+
+== Creazione Web Access Control Scheduler <webAccessControl>
+
 
 == Creazione liste di esclusioni <listeEsclusioni>
