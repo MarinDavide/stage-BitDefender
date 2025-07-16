@@ -127,11 +127,13 @@ Per quanto riguarda la sezione "Agent", si consiglia per i diversi punti:
   - *Settings:* impostare la password di disinstallazione. A meno di casi particolari, non impostare l'agente come Power User.
   - *Communication:* impostare tutti i Relay come endpoint di comunicazione, assegnandogli la stessa priorità, in modo da far scegliere a Bitdefender quale Relay utilizzare in base alla disponibilità.
   - *Update:* lasciare le impostazioni di default.
-
 ]
 === Relay
-
-
+Qui è possibile vedere le impostazioni relative agli endpoint con ruolo relay, in particolare è possibile impostare i server di proxy e le location di update (che normalmente è il cloud di bitdefender).
+#bestPractices()[
+==== Best Practices
+Il consiglio, per quanto riguarda la sezione relay, è quello di mantenere le impostazioni di default, andando ad aggiungere i server di proxy, se disponibili, nella sezione Relay -> Communication.
+]
 
 
 == Protection & Monitoring
@@ -148,9 +150,9 @@ Il modulo antimalware è molto completo, e diviso in diverse sezioni:
   - *Anti Tampering:* Qui è possibile attivare o disattivare i controlli anti-tampering, in particolare sui driver sensibili e sulle call-back evasion.
   - *Hyper Detect:* In questa pagina è possibile attivare e configurare per quali minacce utilizzare Hyper Detect, un sistema di analisi di Bitdefender basato su machine learning.
   - *Advanced Anti-exploit:* Qui si possono gestire i controlli su diversi tipi di exploit, 
-  - *Security Servers:* 
-  - *Settings:*
-  - *Exclusions:*
+  - *Security Servers:* Qui è possibile associare un security server alla policy, per farlo è sufficiente selezionare il Security Server desiderato dal menu a scomparsa e premere "+".
+  - *Settings:* Qui sono disponibili alcune opzioni aggiuntive per la policy, in particolare relativi alla quarantena dei file.
+  - *Exclusions:* Qui è possibile creare delle esclusioni per determinati file ,applicazioni o processi, oppure è possibile associare una lista di esclusioni precedentemente creata, per vedere come crearne una, fare riferimento al paragrafo "#link(<listeEsclusioni>)[5.3 Creazione liste di esclusioni]"
 #bestPractices()[
 ==== Best Practices
 Per quanto riguarda il modulo antimalware, il consiglio è quello di attivare tutti i controlli disponibili (di default dovrebbero tutti essere attivi tranne la mitigazione ransomware all'interno di "On-Execute"). Per quanto riguarda lo scan On-Demand, è consigliato impostare una full scan, magari a giorni alterni, in un momento in cui le macchine sono accese ma non utilizzate (la scansione NON impedisce nessuna operazione sulla macchina, ma potrebbe appesantirne il carico di lavoro).
@@ -218,7 +220,7 @@ Impostare la scansione anche ogni giorno, meglio in orari dove il computer non �
 )
 ]
 
-=== Blocklist
+== Blocklist
 Nella pagina blocklist è possibile configurare quali controlli saranno efficaci su questa policy. Disattivando "Application path" ad esempio, se fossero presenti delle applicazioni inserite tramite path nella blocklist, esse non sarebbero bloccate per gli utenti con questa policy.
 #figure(
   image("img/blocklist.png", width: 85%),
@@ -229,7 +231,7 @@ Nella pagina blocklist è possibile configurare quali controlli saranno efficaci
 Spuntare tutte le tipologie di controllo, tranne DDL files e Script files per non causare problemi durante l'esecuzione delle applicazioni. Ricordarsi che alcuni di questi controlli dipendono anche dall'attivazione del modulo della rispettiva categoria (es. Network connection non funzionerà se il firewall è disattivato).
 ]
 
-=== Live Search
+== Live Search
 Attivando la live search si rende possibile effettuare delle query per ottenere informazioni sugli endpoint. Le informazioni possono essere utili per la diagnostica in caso di incidenti nella rete. Per effettuare le ricerche in tempo reale è necessario creare le query nella pagina "Incidents -> Search" nel menu a sinistra.
 #bestPractices()[
 === Best Practices
