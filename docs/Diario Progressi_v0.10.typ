@@ -1,11 +1,5 @@
 #import "template/generale.typ": *
-#set heading(numbering: "1.")
-#set text(
-  font: "Cambria",
-  size: 12pt
-)
-#show heading: set text(navy)
-#show link: underline
+#docStyle[
 
 #align(center)[#documentTitle(content: ("Diario dei progressi",))]
 #pagebreak()
@@ -228,3 +222,5 @@ Ho rivisto tutte le funzionalità del prodotto e la documentazione redatta, appo
 
 == Giovedì 10/07
 === Cose fatte oggi
+
+]

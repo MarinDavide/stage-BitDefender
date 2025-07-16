@@ -1,14 +1,7 @@
 #import "template/generale.typ": *
-#set heading(numbering: "1.")
-#set text(
-  font: "Cambria",
-  size: 12pt
-)
-#show heading: set text(navy)
-#show link: underline
+#docStyle[
 
 #align(center)[#documentTitle(content: ("GravityZone",))]
-//Studio della piattaforma GravityZone
 
 
 #pagebreak()
@@ -362,3 +355,4 @@ Dalla pagina degli incidenti è infatti possibile visualizzare le azioni consigl
   caption: [Lista operazioni consigliate],
 )
 
+]

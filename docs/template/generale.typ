@@ -1,3 +1,17 @@
+
+#let docStyle(doc) = {
+  set heading(numbering: "1.")
+  set text(
+    font: "Cambria",
+    size: 12pt
+  )
+  set page(numbering: "1")
+  show heading: set text(navy)
+  show link: underline
+
+  [#doc]
+}
+
 #let versionTable(
   content: ("",),
 ) = {
@@ -25,8 +39,7 @@
 }
 
 #let bestPractices(body) = {
-  show heading: set text(red, style: "italic")
-  set text(red, style: "italic")
+  show heading: set text(blue, style: "italic")
+  set text(blue, style: "italic")
   [#body]
 }
-
