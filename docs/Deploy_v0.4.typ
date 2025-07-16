@@ -194,10 +194,14 @@ Qui è possibile associare alla policy una maintenance window creata precedentem
 
 === Device Control
   - *Rules:* Nella schermata rules è possibile bloccare determinati tipi di dispositivi divisi per categorie, in caso non si volesse bloccare un'intera categoria ma una specifica tipologia di dispositivo per quella categoria, è possibile selezionare la categoria, premere su custom, e settare su "block" solo quella tipologia. Ad esempio, per bloccare le chiavette USB, selezionare "External Storage" e settare solo "USB" su "block".
-  - *Exclusions:* Qui è possibile aggiungere determinati dispositivi "fidati" che potranno esssere utilizzati nonstante le regole di blocco, nel caso delle USB si possono inserire da dispositivi già conosciuti, oppure manualmente tramite ID.
+  #figure(
+    image("img/device_control.png", width: 75%),
+    caption: [Impostazioni di scansione],
+  )
+  - *Exclusions:* Qui è possibile aggiungere determinati dispositivi "fidati" che potranno essere utilizzati nonostante le regole di blocco, nel caso delle USB si possono inserire da dispositivi già conosciuti, oppure manualmente tramite ID.
 #bestPractices()[
 ==== Best Practices
-
+Collegare prima i dispositivi fidati e dopo attivare il blocco, in questo modo sarà possibile aggiungerli nelle esclusioni direttamente da "from discovered devices". 
 ]
 
 
