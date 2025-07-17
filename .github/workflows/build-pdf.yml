@@ -130,15 +130,17 @@ jobs:
                        
                        .document-list li {
                          background-color: var(--list-bg-color);
-                         border: 1px solid #ddd;
-                         margin-bottom: 0.4rem;
-                         padding: 1rem 1.5rem;
-                         border-radius: 6px;
-                         transition: background-color 0.2s ease, box-shadow 0.2s ease;
-                         display: flex;
-                         align-items: center;
-                         justify-content: space-between;
-                         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                          border: 1px solid #ddd;
+                          margin-bottom: 0.4rem;
+                          padding: 1rem 1.5rem;
+                          border-radius: 6px;
+                          transition: background-color 0.2s ease, box-shadow 0.2s ease;
+                          display: flex;
+                          align-items: flex-start; /* cambia da center a flex-start */
+                          justify-content: space-between;
+                          box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                          white-space: normal; /* assicura che il testo vada a capo */
+                          word-break: break-word; /* evita overflow di parole lunghe */
                        }
                        
                        .document-list li:hover {
@@ -178,7 +180,7 @@ jobs:
                             }
 
                             .document-list li a {
-                              font-size: 3em;
+                              font-size: 2em;
                             }
                             
                         }
@@ -193,7 +195,7 @@ jobs:
                               max-width: 100%;
                             }
                             .document-list li a {
-                              font-size: 1.2em;
+                              font-size: 2em;
                             }
                         }   
                     </style>
