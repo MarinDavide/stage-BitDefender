@@ -200,6 +200,7 @@ Qui è possibile associare alla policy una maintenance window creata precedentem
 Collegare prima i dispositivi fidati e dopo attivare il blocco, in questo modo sarà possibile aggiungerli nelle esclusioni direttamente da "from discovered devices". 
 ]
 
+
 === Incident Sensor
 Questo modulo è fondamentale per poter utilizzare la funzionalità di rilevamento incidenti, e relativa pagina "Incidents" nel menu a sinistra.
 
@@ -264,7 +265,9 @@ Per associare il tag alla policy desiderata sarà sufficiente andare nella sezio
 #pagebreak()
 = Guida al patch management
 Bitdefender offre anche la gestione delle patch per tutti i tipi di programmi.
+Per poter usufruire di questa funzionalità, bisogna innanzitutto creare e assegnare alle policy una maintenance window, per vedere come fare, far riferimento al paragrafo "#link(<maintenanceWindow>)[Creazione Maintenance Window]".
 
+Una volta che gli endpoint eseguiranno le scansioni patch, sarà possibile visualizzare la lista di tutte quelle trovate nella sezione "Network -> Patch Inventory" del menu a sinistra. 
 #pagebreak()
 = Altre funzionalità
 
