@@ -5,10 +5,8 @@
     font: "Cambria",
     size: 12pt
   )
-  set page(numbering: "1")
   show heading: set text(navy)
   show link: underline
-
   [#doc]
 }
 
@@ -23,18 +21,35 @@
     table.header([*Versione*], [*Data*], [*Redattore*], [*Descrizione*]),
     ..content
   )
+  pagebreak()
 }
 
-#let documentTitle(
-  content: "",
-) = {
-
-  text(
+#let documentTitle(title) = {
+  set align(center)
+  set text(
     fill: blue,
     size: 45pt,
     weight: "regular",
-    ..content
   )
+  [#title]
+}
+
+#let indiceDoc() = {
+show outline: it => if query(it.target) != () { it }
+if outline() != () [
+  #outline(
+    title: [Indice],
+    depth: 3
+  )
+  #pagebreak(weak: true)
+]
+if outline() != () [
+  #outline(
+  target: figure,
+  title: [Lista delle immagini],
+  )
+  #pagebreak(weak: true)
+]
 
 }
 
@@ -43,3 +58,4 @@
   set text(blue, style: "italic")
   [#body]
 }
+

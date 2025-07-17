@@ -1,9 +1,8 @@
 #import "template/generale.typ": *
 #docStyle[
+#documentTitle[Deploy - How to]
 
-#align(center)[#documentTitle(content: ("Deploy - How to",))]
-#pagebreak()
-
+#set page(numbering: "1")
 #versionTable(content:(
   [0.4],
   [16/07/2025],
@@ -25,17 +24,8 @@
   [Davide Marin],
   [Creazione documento e inizio stesura]
 ))
-#pagebreak()
-#outline(
-  title: [Indice],
-  depth: 3
-)
-#pagebreak()
-#outline(
-  target: figure,
-  title: [Lista delle immagini],
-)
-#pagebreak()
+#indiceDoc()
+
 = Guida al deploy di GravityZone
 Questa guida ha lo scopo di essere più diretta e semplice possibile, per permettere un'installazione semplice e veloce di GravityZone.
 La guida ufficiale e completa è invece disponibile #link("https://www.bitdefender.com/business/support/en/77209-77397-installation.html")[*qui*].
@@ -147,6 +137,7 @@ Il modulo antimalware è molto completo, e diviso in diverse sezioni:
     image("img/scan_settings.png", width: 95%),
     caption: [Impostazioni di scansione],
   )
+  
   - *Anti Tampering:* Qui è possibile attivare o disattivare i controlli anti-tampering, in particolare sui driver sensibili e sulle call-back evasion.
   - *Hyper Detect:* In questa pagina è possibile attivare e configurare per quali minacce utilizzare Hyper Detect, un sistema di analisi di Bitdefender basato su machine learning.
   - *Advanced Anti-exploit:* Qui si possono gestire i controlli su diversi tipi di exploit, 
@@ -168,6 +159,7 @@ Si consiglia di attivare la funzione, mantenendo però la "analysis mode" su "Mo
 === Firewall   
 Il firewall di bitdefender permette di controllare le connessioni in entrata e in uscita direttamente sul endpoint.
   - *General:*
+
   - *Settings:*
   - *Rules:*
 
@@ -189,7 +181,7 @@ Il modulo Network Protection permetta di applicare filtri e controlli su web e a
   - *Network Attacks:* Attivare RDP traffic e settare tutti i controlli su "block".
 ]
 
-=== Patch Management
+=== Patch Management <patchManagement>
 Qui è possibile associare alla policy una maintenance window creata precedentemente, per crearne una fare riferimento al paragrafo "#link(<maintenanceWindow>)[5.1 Creazione Maintenance Windows]"
 
 === Device Control
@@ -246,13 +238,39 @@ Si consiglia di attivarla, in quanto non comporta nessun carico extra finché no
 
 #pagebreak()
 = Guida alla gestione dei tag
+== Creazione del tag
+I tag sono sono uno strumento utile che permette di raggruppare gli endpoint per diversi criteri, per poi assegnare le policy di protezione direttamente ai gruppi risparmiando tempo e semplificando l'operazione.
+
+Per creare un tag, andare in "Network -> Tags management" dal menu a sinistra, a questo punto premere su "Add tag". Nella schermata che si apre è possibile creare un tag in modalità custom, ovvero sarà necessario poi scegliere manualmente a quali endpoint assegnarlo, oppure in modalità automatica, ovvero il tag sarà assegnato automaticamente in base ai filtri inseriti di seguito.
+
+Selezionando "Automatic", sarà possibile inserire i filtri per nome (anche con wildcard), IP, sistema operativo e tipologia di endpoint (workstation/server/ecc.). Inserendo più filtri, il tag si applicherà agli endpoint che li rispettano tutti.
+#figure(
+  image("img/tags.png", width: 95%),
+  caption: [Creazione Tag],
+)
+
+Se si è creato un tag "Custom" invece, sarà necessario andare nella sezione "Network" e selezionare dalla lista degli endpoint tutti quelli a cui vogliamo assegnare il tag, una volta selezionati premere "Action -> Assign tags" e selezionare il tag desiderato.
+
+== Associazione di tag e policy
+Per associare il tag alla policy desiderata sarà sufficiente andare nella sezione "Policy -> Assignment Rules", in questa schermata premere su "Add -> Endpoint tag rule". Nella finestra che si è aperta, compilare i campi in base alla policy e al tag che si vuole associare
+
+#figure(
+  image("img/assignment_rule.png", width: 95%),
+  caption: [Creazione Assignment Rule],
+)
+
 #pagebreak()
 = Guida al patch management
+Bitdefender offre anche la gestione delle patch per tutti i tipi di programmi.
+
 #pagebreak()
 = Altre funzionalità
+
 == Creazione Maintenance Windows <maintenanceWindow>
-È possibile creare una maintenance window nella sezione "Policies -> Configuration Profiles -> Maintenance Windows" del menu a sinistra.
-Nella schermata che si apre premere "Add Window". A questo punto sarà possibile decidere se solo scansionare o anche applicare le patch trovate. Per entrambe le operazioni sono disponibili diverse impostazioni.
+La maintenance window definisce la politica di scansione e applicazione delle patch, una volta creata è possibile associarla alle policy desiderate direttamente nella sezione "#link(<patchManagement>)[Patch Management]" all'interno della policy.
+
+Per creare una maintenance window andare nella sezione "Policies -> Configuration Profiles -> Maintenance Windows" del menu a sinistra.
+Nella schermata che si apre premere "Add Window". A questo punto sarà possibile decidere se solo scansionare o anche applicare le patch trovate. Per entrambe le operazioni sono disponibili le impostazioni di ricorrenza e orario di esecuzione.
 
 #figure(
   image("img/maintenance_window_1.png", width: 95%),

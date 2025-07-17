@@ -1,10 +1,9 @@
 #import "template/generale.typ": *
 #docStyle[
 
-#align(center)[#documentTitle(content: ("GravityZone",))]
+#documentTitle[Studio GravityZone]
 
-
-#pagebreak()
+#set page(numbering: "1")
 #versionTable(content: (
   [0.6],
   [11/07/2025],
@@ -36,16 +35,8 @@
   [Davide Marin],
   [Inserimento capitolo "GravityZone"],
 ))
-#pagebreak()
-#outline(
-  title: [Indice],
-)
-#pagebreak()
-#outline(
-  target: figure,
-  title: [Lista delle immagini],
-)
-#pagebreak()
+#indiceDoc()
+
 = GravityZone
 Piattaforma di cybersecurity che gestisce prevenzione, protezione, rilevamento e risposta ad attacchi cyber per aziende di qualsiasi dimensione, comprendendo protezione per server cloud e anche terminali utente, compresi dispositivi mobili.
 

@@ -1,17 +1,14 @@
 #import "template/generale.typ": *
 #docStyle[
 
-#align(center)[#documentTitle(content: ("Diario dei progressi",))]
-#pagebreak()
+#documentTitle[Diario dei progressi]
 
+#set page(numbering: "1")
 #versionTable(content:(
   [0.10],
   [10/07],
   [Davide Marin],
   [Aggiunte sezioni "Martedì 08, Mercoledì 09 e Giovedì 10/07"],
-
-  [0.9],
-  [09/07],
 
   [0.9],
   [02/07],
@@ -58,18 +55,8 @@
   [Davide Marin],
   [Creazione documento, aggiunte sezioni riassunto e "Lunedì 24/06"]
 ))
+#indiceDoc()
 
-#pagebreak()
-#outline(
-  title: [Indice],
-  depth: 2
-)
-#pagebreak()
-#outline(
-  target: figure,
-  title: [Lista delle immagini],
-)
-#pagebreak()
 = Prima settimana (19-27/06)
 == Riassunto giorni passati
 Da giovedì 19 a lunedì 23 ho effettuato uno studio il più approfondito possibile, ma prettamente teorico, sullo strumento antivirus Bitdefender GravityZone.
