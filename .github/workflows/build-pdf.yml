@@ -29,6 +29,7 @@ jobs:
             filename=$(basename "$file" .typ)
             if [[ "$filename" != Diario* ]]; then
               typst compile "$file" output/"$filename.pdf"
+            fi
           done
         
       - name: Create simple HTML index
