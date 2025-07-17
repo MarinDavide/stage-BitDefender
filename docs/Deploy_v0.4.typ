@@ -4,6 +4,11 @@
 
 #set page(numbering: "1")
 #versionTable(content:(
+  [0.5],
+  [17/07/2025],
+  [Davide Marin],
+  [Continuo stesura capitoli 2, 3, 4 e 5],
+
   [0.4],
   [16/07/2025],
   [Davide Marin],

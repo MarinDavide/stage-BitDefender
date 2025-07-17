@@ -26,8 +26,8 @@ jobs:
           cp assets/pdf-icon.png output/assets/
           cp assets/title.png output/assets/
           for file in ./docs/*.typ; do
-            filename=$(basename "$file" .typ)
-          typst compile "$file" output/"$filename.pdf"
+            if [[ "$filename" != Diario* ]]; then
+            typst compile "$file" output/"$filename.pdf"
           done
         
       - name: Create simple HTML index
