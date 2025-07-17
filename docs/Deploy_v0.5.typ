@@ -38,12 +38,12 @@ La guida ufficiale e completa è invece disponibile #link("https://www.bitdefend
 == Accedere a GravityZone Control Center
 Questa è la parte più semplice, ma fondamentale. Collegarsi alla pagina di login di GravityZone, e inserire le credenziali relative al proprio account, impostare il 2FA o SSO e continuare. 
 
-A questo punto ci verrà richiesto di creare almeno un pacchetto di installazione per i nostri agent che dovremmo installare sugli endpoint.
+A questo punto ci verrà richiesto di creare almeno un pacchetto di installazione per i nostri agent che dovremo installare sugli endpoint.
 
 == Installare Security Server (solo per endpoint con poche risorse)
-Security server è necessario da essere installato su uno o più host, in base a quante macchine si devono gestire. L'host con security server installato centralizza la maggior parte delle attività anti-malware, e si comporta come un server per scansionare le macchine.
+Security server può essere installato su uno o più host, in base a quante macchine si devono gestire. L'host con security server installato centralizza la maggior parte delle attività anti-malware, e si comporta come un server per scansionare le macchine, alleggerendo il carico sulle macchine.
 
-Innanzitutto, scaricare il pacchetto di installazione di Security Server di default (disponibile in Network -> Installation Packages), poi, installarlo sul endpoint che si vuole utilizzare come Security Server.
+Per installarlo, innanzitutto scaricare il pacchetto di installazione di Security Server di default (disponibile in Network -> Installation Packages), poi, installarlo sul endpoint che si vuole utilizzare come Security Server.
 
 Successivamente è richiesto di configurare il Security Server si può fare tramite interfaccia locale, guida dettagliata disponibile #link("https://www.bitdefender.com/business/support/en/77209-215480-install-security-server-through-control-center.html#UUID-8f4072e1-37ed-4156-de58-85ef0d7d9aec_sidebar-idm4631416721104033093504368548_body")[*qui*], oppure tramite "sva-setup command", con guida dettagliata disponibile #link("https://www.bitdefender.com/business/support/en/77209-215480-install-security-server-through-control-center.html#UUID-8f4072e1-37ed-4156-de58-85ef0d7d9aec_sidebar-idm4631417086515233093426156546_body")[*qui*]
 
@@ -51,8 +51,8 @@ Successivamente è richiesto di configurare il Security Server si può fare tram
 == Installare gli agenti
 
 Per garantire la sicurezza degli endpoint (fisici e virtuali), è necessario installare l'agente di sicurezza su ciascun dispositivo. GravityZone offre diversi metodi per l'installazione degli agenti:
-  - *Installazione locale*
-  - *Installazione da remoto*: modalità in cui mi concentrerò in questa guida.
+  - *Installazione locale:* Classico tramite eseguibile.
+  - *Installazione da remoto:* Modalità in cui mi concentrerò in questa guida.
 
 È importante che al primo endpoint sul quale andiamo ad installare l'agente venga assegnato il ruolo di Relay, questo per poter installare da remoto gli agenti sugli altri endpoint.
 Inoltre, l'endpoint che ha il ruolo di Relay deve essere sempre acceso e connesso alla rete per permettere agli altri endpoint di comunicare con il Control Center.
@@ -86,7 +86,7 @@ Dalla finestra che si apre, è possibile definire nello specifico la policy, esp
 Sotto a "General" è possibile definire le impostazioni relative alla policy e agli agenti.
 
 === Policy
-Nella sezione "policy" è possibile definire le informazioni base della policy.
+Nella sezione "Policy" è possibile definire le informazioni base della policy.
 
   - *Details:* Qui è possibile definire il nome della politica e se essa è collaborativa o meno. È inoltre possibile inserire i contatti del supporto tecnico visualizzati dagli utenti sui loro endpoint, che di base sono quelli del supporto ufficiale di Bitdefender.
   - *Inheritance Rules:* In questa pagina è possibile scegliere se "ereditare" la configurazione di un determinato modulo da un'altra policy. Attenzione, scegliendo di ereditare le regole da un'altra policy, si andrà a creare "un puntatore" alla policy da cui si ereditano le regole, e non una copia delle regole; modificando la policy da cui si ereditano le regole quindi, le modifiche verranno applicate anche a quella corrente.
@@ -163,14 +163,13 @@ Si consiglia di attivare la funzione, mantenendo però la "analysis mode" su "Mo
 
 === Firewall   
 Il firewall di bitdefender permette di controllare le connessioni in entrata e in uscita direttamente sul endpoint.
-  - *General:*
-
-  - *Settings:*
-  - *Rules:*
+  - *General:* Qui è possibile attivare il firewall e decidere se controllare anche le connessioni wi-fi e lo scanning delle porte inserendo anche eventuali esclusioni.
+  - *Settings:* Qui è possibile creare diverse categorie di rete (ufficio, casa, fidata, ecc.) per poi potergli affidare diverse regole di controllo.
+  - *Rules:* Qui è possibile creare le regole di controllo e assegnarle alle varie categorie di rete.
 
 #bestPractices()[
 ==== Best Practices
-Per quanto riguarda il firewall, in caso il cliente disponesse già di un firewall esterno  è possibile anche disattivare il modulo, ricordandosi di deselezionare la spunta "Firewall" all'interno della sezione #link(<notifications>)[Agent -> Notifications]. In caso si volesse mantenere il firewall invece, lasciare le impostazioni di default ricordandosi di aggiungere le porte da escludere in Firewall -> General. Inserire poi tutte le regole necessarie in FIrewall -> Rules.
+Per quanto riguarda il firewall, in caso il cliente disponesse già di un firewall esterno  è possibile anche disattivare il modulo, ricordandosi di deselezionare la spunta "Firewall" all'interno della sezione #link(<notifications>)[Agent -> Notifications]. In caso si volesse mantenere il firewall invece, lasciare le impostazioni di default ricordandosi di aggiungere le porte da escludere in Firewall -> General. Creare le categorie desiderate in Firewall -> Settings e poi tutte le regole necessarie in Firewall -> Rules
 ]
 === Network Protection
 Il modulo Network Protection permetta di applicare filtri e controlli su web e applicazioni.
@@ -201,10 +200,8 @@ Qui è possibile associare alla policy una maintenance window creata precedentem
 Collegare prima i dispositivi fidati e dopo attivare il blocco, in questo modo sarà possibile aggiungerli nelle esclusioni direttamente da "from discovered devices". 
 ]
 
-
 === Incident Sensor
 Questo modulo è fondamentale per poter utilizzare la funzionalità di rilevamento incidenti, e relativa pagina "Incidents" nel menu a sinistra.
-
 
 === Risk Management
 Questa pagina permette di configurare la regola di scansione dei rischi, queste scansioni individuano vulnerabilità date da impostazioni delle applicazioni o da registri di sistema inutilizzati, inoltre individuano anche il rischio associato ad ogni utente. Sempre in questa schermata è possibile abilitare il PHASR, sistema di machine learning che, dopo un periodo di training (circa 30 giorni), fornisce consigli su che modifiche applicare ai vari utenti per migliorarne la sicurezza.
