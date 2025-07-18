@@ -167,11 +167,16 @@ Il modulo antimalware è molto completo, e diviso in diverse sezioni:
 Per quanto riguarda il modulo antimalware, il consiglio è quello di attivare tutti i controlli disponibili (di default dovrebbero tutti essere attivi tranne la mitigazione ransomware all'interno di "On-Execute"). Per quanto riguarda lo scan On-Demand, è consigliato impostare una full scan, magari a giorni alterni, in un momento in cui le macchine sono accese ma non utilizzate (la scansione NON impedisce nessuna operazione sulla macchina, ma potrebbe appesantirne il carico di lavoro).
 
 ]
-=== Sandbox Analyzer
+=== Sandbox Analyzer <sandboxPolicy>
 Il sandbox analyzer permette di analizzare i file sospetti in un ambiente sicuro, attivando la funzione, verranno inviati automaticamente al sandbox i file individuati. 
 #bestPractices()[
 ==== Best Practices
 Si consiglia di attivare la funzione, mantenendo però la "analysis mode" su "Monitoring" e la default action "report only", in questo modo non verranno mai bloccati file senza motivazioni certe.
+
+#figure(
+  image("img/sandbox_policy.png", width: 95%),
+  caption: [Configurazione Sandbox nella policy],
+)
 ]
 
 === Firewall   
@@ -436,7 +441,7 @@ Una volta inserito nel sandbox, il file viene “detonato” all'interno di un a
   - Ogni istruzione API eseguita
   - Ogni connessione di rete
 
-I file sospetti vengono inviati automaticamente al sandbox se è attiva l'opzione nella policy, come spiegato nel paragrafo "".
+I file sospetti vengono inviati automaticamente al sandbox se è attiva l'opzione nella policy, come spiegato nel paragrafo "#link(<sandboxPolicy>)[2.2.2 Sandbox Analyzer]".
 
 È anche possibile inviare manualmente dei file al sandbox, direttamente dalla sezione "Sandbox Analyzer -> Manual submission". Una volta aperta la schermata, sarà possibile selezionare il file/archivio da mandare al sandbox direttamente dalle cartelle del dispositivo, inoltre è possibile inserire la password, se necessaria, per aprire/eseguire i file inviati.
 
