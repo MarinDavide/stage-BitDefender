@@ -4,6 +4,11 @@
 
 #set page(numbering: "1")
 #versionTable(content:(
+  [0.6],
+  [18/07/2025],
+  [Davide Marin],
+  [Continuo stesura capitoli vecchi, aggiunto "Gestione dei Report"],
+
   [0.5],
   [17/07/2025],
   [Davide Marin],
@@ -148,7 +153,7 @@ Il modulo antimalware è molto completo, e diviso in diverse sezioni:
   - *Advanced Anti-exploit:* Qui si possono gestire i controlli su diversi tipi di exploit, 
   - *Security Servers:* Qui è possibile associare un security server alla policy, per farlo è sufficiente selezionare il Security Server desiderato dal menu a scomparsa e premere "+".
   - *Settings:* Qui sono disponibili alcune opzioni aggiuntive per la policy, in particolare relativi alla quarantena dei file.
-  - *Exclusions:* Qui è possibile creare delle esclusioni per determinati file ,applicazioni o processi, oppure è possibile associare una lista di esclusioni precedentemente creata, per vedere come crearne una, fare riferimento al paragrafo "#link(<listeEsclusioni>)[5.3 Creazione liste di esclusioni]"
+  - *Exclusions:* Qui è possibile creare delle esclusioni per determinati file ,applicazioni o processi, oppure è possibile associare una lista di esclusioni precedentemente creata, per vedere come crearne una, fare riferimento al paragrafo "#link(<listeEsclusioni>)[6.3 Creazione liste di esclusioni]"
 #bestPractices()[
 ==== Best Practices
 Per quanto riguarda il modulo antimalware, il consiglio è quello di attivare tutti i controlli disponibili (di default dovrebbero tutti essere attivi tranne la mitigazione ransomware all'interno di "On-Execute"). Per quanto riguarda lo scan On-Demand, è consigliato impostare una full scan, magari a giorni alterni, in un momento in cui le macchine sono accese ma non utilizzate (la scansione NON impedisce nessuna operazione sulla macchina, ma potrebbe appesantirne il carico di lavoro).
@@ -174,19 +179,19 @@ Per quanto riguarda il firewall, in caso il cliente disponesse già di un firewa
 === Network Protection
 Il modulo Network Protection permetta di applicare filtri e controlli su web e applicazioni.
   - *General:* Qui si imposta se controllare o meno anche il traffico criptato e di quale tipo, e si aggiungo le eventuali esclusioni ai controlli (sia URL o IP sia applicazioni) <networkGeneral>
-  - *Content Control:* Nella schermata content control è possibile attivare il controllo web, selezionando una regola precedentemente creata, per farlo seguire la guida al paragrafo "#link(<webAccessControl>)[5.2 Creazione Web Access Control Scheduler]". È anche possibile creare una blacklist di applicazioni per impedirne l'esecuzione. Infine, è possibile inserire una lista di dati sensibili, questa lista bloccherà l'invio di questi dati scansionando tutte le tipologie di traffico spuntate nella sezione #link(<networkGeneral>)[Network Protection -> General], in caso di blocco l'utente visualizzerà un alert.
+  - *Content Control:* Nella schermata content control è possibile attivare il controllo web, selezionando una regola precedentemente creata, per farlo seguire la guida al paragrafo "#link(<webAccessControl>)[6.2 Creazione Web Access Control Scheduler]". È anche possibile creare una blacklist di applicazioni per impedirne l'esecuzione. Infine, è possibile inserire una lista di dati sensibili, questa lista bloccherà l'invio di questi dati scansionando tutte le tipologie di traffico spuntate nella sezione #link(<networkGeneral>)[Network Protection -> General], in caso di blocco l'utente visualizzerà un alert.
   - *Web Protection:* Qui è possibile attivare il controllo phishing, il controllo web in real time e la scansione email.
   - *Network Attacks:* Qui è possibile attivare e impostare la difesa dagli attacchi web. È possibile scegliere per ogni tipologia di attacco se bloccarne l'accesso o creare solamente un alert nel Control Center.
 #bestPractices()[
 ==== Best Practices
   - *General:* Attivare la scansione del traffico criptato e anche il controllo https. Aggiungere alle esclusioni siti e applicazioni utilizzati frequentemente e/o sensibili (es. banca, gestionali, ecc.).
-  - *Content Control:* se presente, assegnare al web access control la schedule creata precedentemente come spiegato nel paragrafo "#link(<webAccessControl>)[5.2 Creazione Web Access Control Scheduler]". In caso si volessero aggiungere dei dati sensibili al Data Protection, si consiglia di non aggiungere, ad esempio, una password per intero, ma piuttosto una sua parte univoca (es. con password "Psd!23@" inserire "!23@").
+  - *Content Control:* se presente, assegnare al web access control la schedule creata precedentemente come spiegato nel paragrafo "#link(<webAccessControl>)[6.2 Creazione Web Access Control Scheduler]". In caso si volessero aggiungere dei dati sensibili al Data Protection, si consiglia di non aggiungere, ad esempio, una password per intero, ma piuttosto una sua parte univoca (es. con password "Psd!23@" inserire "!23@").
   - *Web Protection:* Mantenere le impostazioni di default, ovvero tutto attivo tranne il controllo mail (senza exchange protection configurato non ha alcun effetto).
   - *Network Attacks:* Attivare RDP traffic e settare tutti i controlli su "block".
 ]
 
 === Patch Management <patchManagement>
-Qui è possibile associare alla policy una maintenance window creata precedentemente, per crearne una fare riferimento al paragrafo "#link(<maintenanceWindow>)[5.1 Creazione Maintenance Windows]"
+Qui è possibile associare alla policy una maintenance window creata precedentemente, per crearne una fare riferimento al paragrafo "#link(<maintenanceWindow>)[6.1 Creazione Maintenance Windows]"
 
 === Device Control
   - *Rules:* Nella schermata rules è possibile bloccare determinati tipi di dispositivi divisi per categorie, in caso non si volesse bloccare un'intera categoria ma una specifica tipologia di dispositivo per quella categoria, è possibile selezionare la categoria, premere su custom, e settare su "block" solo quella tipologia. Ad esempio, per bloccare le chiavette USB, selezionare "External Storage" e settare solo "USB" su "block".
@@ -264,10 +269,21 @@ Per associare il tag alla policy desiderata sarà sufficiente andare nella sezio
 
 #pagebreak()
 = Guida al patch management
-Bitdefender offre anche la gestione delle patch per tutti i tipi di programmi.
-Per poter usufruire di questa funzionalità, bisogna innanzitutto creare e assegnare alle policy una maintenance window, per vedere come fare, far riferimento al paragrafo "#link(<maintenanceWindow>)[Creazione Maintenance Window]".
+La funzione di patch management di GravityZone trova bug, errori di configurazione e obsolescenze che possono essere sfruttati per degli attacchi, e ne ricerca le patch, permettendo poi di installarle in automatico.
 
-Una volta che gli endpoint eseguiranno le scansioni patch, sarà possibile visualizzare la lista di tutte quelle trovate nella sezione "Network -> Patch Inventory" del menu a sinistra. 
+GravityZone mette a disposizione uno strumento per eseguire scansioni delle patch disponibili per le proprie macchine, è possibile avviarle manualmente (on-demand) selezionando la macchina desiderata nella sezione “Network” e premendo su "Action -> Patch Scan", oppure è possibile farle eseguire automaticamente creando prima una "Maintenance Window" e poi assegnandola alla policy, per vedere come crearla, far riferimento al paragrafo "#link(<maintenanceWindow>)[6.1 Creazione Maintenance Window]".
+
+Una volta che gli endpoint eseguiranno le scansioni patch, sarà possibile visualizzare la lista di tutte quelle trovate nella sezione "Network -> Patch Inventory" del menu a sinistra. Direttamente in questa schermata, sarà possibile spuntare le patch desiderate e poi premere su "Install" per installarle su tutti gli endpoint che le richiedono. Se nella maintenance window si è spuntata l'opzione "Patch Install", questa operazione sarà necessaria solo per alcune patch che richiedono approvazione manuale.
+
+#figure(
+  image("img/patch_inventory.png", width: 98%),
+  caption: [Patch Inventory],
+)
+
+Per avere una panoramica dello stato delle patch su ogni endpoint, è possibile creare un report apposito chiamato "Network Patch Status", per vedere come creare un report, fare riferimento al paragrafo "#link(<gestioneReport>)[5 Gestione dei Report]"
+#pagebreak()
+= Gestione dei Report <gestioneReport>
+
 #pagebreak()
 = Altre funzionalità
 
@@ -314,5 +330,5 @@ Innanzitutto, andare alla sezione "Policy -> Configuration Profiles -> Exclusion
 
 Altrimenti, è anche possibile creare direttamente un'esclusione tramite pulsante "Add Exclusion", e poi è possibile assegnarla a tutte le liste che vogliamo selezionandola e premendo su "Assign to Lists".
 
-
+== Creazione delle Blocklist
 ]
