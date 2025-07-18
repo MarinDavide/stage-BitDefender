@@ -43,12 +43,12 @@ La guida ufficiale e completa è invece disponibile #link("https://www.bitdefend
 == Accedere a GravityZone Control Center
 Questa è la parte più semplice, ma fondamentale. Collegarsi alla pagina di login di GravityZone, e inserire le credenziali relative al proprio account, impostare il 2FA o SSO e continuare. 
 
-A questo sarà necessario creare almeno un pacchetto di installazione per i nostri agent che dovremo installare sugli endpoint, per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[6.1 Creazione Installation Packages]".
+A questo sarà necessario creare almeno un pacchetto di installazione per i nostri agent che dovremo installare sugli endpoint, per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[7.1 Creazione Installation Packages]".
 
 == Installare Security Server (solo per endpoint con poche risorse)
 Security server può essere installato su uno o più host, in base a quante macchine si devono gestire. L'host con security server installato centralizza la maggior parte delle attività anti-malware, e si comporta come un server per scansionare le macchine, alleggerendo il carico sulle macchine.
 
-Per installarlo, innanzitutto scaricare il pacchetto di installazione di Security Server di default (per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[6.1 Creazione Installation Packages]""), poi, installarlo sul endpoint che si vuole utilizzare come Security Server.
+Per installarlo, innanzitutto scaricare il pacchetto di installazione di Security Server di default (per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[7.1 Creazione Installation Packages]""), poi, installarlo sul endpoint che si vuole utilizzare come Security Server.
 
 Successivamente è richiesto di configurare il Security Server si può fare tramite interfaccia locale, guida ufficiale dettagliata disponibile #link("https://www.bitdefender.com/business/support/en/77209-215480-install-security-server-through-control-center.html#UUID-8f4072e1-37ed-4156-de58-85ef0d7d9aec_sidebar-idm4631416721104033093504368548_body")[*qui*], oppure tramite "sva-setup command", con guida ufficiale dettagliata disponibile #link("https://www.bitdefender.com/business/support/en/77209-215480-install-security-server-through-control-center.html#UUID-8f4072e1-37ed-4156-de58-85ef0d7d9aec_sidebar-idm4631417086515233093426156546_body")[*qui*].
 
@@ -56,11 +56,11 @@ Successivamente è richiesto di configurare il Security Server si può fare tram
 == Installare gli agenti
 
 Per garantire la sicurezza degli endpoint (fisici e virtuali), è necessario installare l'agente di sicurezza su ciascun dispositivo. GravityZone offre diversi metodi per l'installazione degli agenti:
-  - *Installazione locale:* Si scarica il pacchetto di installazione e si installa manualmente sugli endpoint, per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[6.1 Creazione Installation Packages]".
+  - *Installazione locale:* Si scarica il pacchetto di installazione e si installa manualmente sugli endpoint, per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[7.1 Creazione Installation Packages]".
   - *Installazione da remoto:* Modalità in cui mi concentrerò in questa guida.
 
 === Installazione da remoto
-È importante che al primo endpoint sul quale andiamo ad installare l'agente venga assegnato il ruolo di Relay, questo per poter installare da remoto gli agenti sugli altri endpoint, per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[6.1 Creazione Installation Packages]".
+È importante che al primo endpoint sul quale andiamo ad installare l'agente venga assegnato il ruolo di Relay, questo per poter installare da remoto gli agenti sugli altri endpoint, per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[7.1 Creazione Installation Packages]".
 Inoltre, l'endpoint che ha il ruolo di Relay deve essere sempre acceso e connesso alla rete per permettere agli altri endpoint di comunicare con il Control Center.
 
 Una volta installato l'agente con ruolo Relay e creato un pacchetto di installazione per gli altri endpoint. sarà possibile installare gli agenti sugli altri endpoint da remoto; per farlo, andare nella pagina "Network", selezionare dalla lista tutti gli endpoint sui quali si vuole installare l'agente, a questo punto cliccare "Action" e poi "install agent". 
@@ -161,7 +161,7 @@ Il modulo antimalware è molto completo, e diviso in diverse sezioni:
   - *Advanced Anti-exploit:* Qui si possono gestire i controlli su diversi tipi di exploit, 
   - *Security Servers:* Qui è possibile associare un security server alla policy, per farlo è sufficiente selezionare il Security Server desiderato dal menu a scomparsa e premere "+".
   - *Settings:* Qui sono disponibili alcune opzioni aggiuntive per la policy, in particolare relativi alla quarantena dei file.
-  - *Exclusions:* Qui è possibile creare delle esclusioni per determinati file ,applicazioni o processi, oppure è possibile associare una lista di esclusioni precedentemente creata, per vedere come crearne una, fare riferimento al paragrafo "#link(<listeEsclusioni>)[6.4 Creazione liste di esclusioni]"
+  - *Exclusions:* Qui è possibile creare delle esclusioni per determinati file ,applicazioni o processi, oppure è possibile associare una lista di esclusioni precedentemente creata, per vedere come crearne una, fare riferimento al paragrafo "#link(<listeEsclusioni>)[7.4 Creazione liste di esclusioni]"
 #bestPractices()[
 ==== Best Practices
 Per quanto riguarda il modulo antimalware, il consiglio è quello di attivare tutti i controlli disponibili (di default dovrebbero tutti essere attivi tranne la mitigazione ransomware all'interno di "On-Execute"). Per quanto riguarda lo scan On-Demand, è consigliato impostare una full scan, magari a giorni alterni, in un momento in cui le macchine sono accese ma non utilizzate (la scansione NON impedisce nessuna operazione sulla macchina, ma potrebbe appesantirne il carico di lavoro).
@@ -187,19 +187,19 @@ Per quanto riguarda il firewall, in caso il cliente disponesse già di un firewa
 === Network Protection
 Il modulo Network Protection permetta di applicare filtri e controlli su web e applicazioni.
   - *General:* Qui si imposta se controllare o meno anche il traffico criptato e di quale tipo, e si aggiungo le eventuali esclusioni ai controlli (sia URL o IP sia applicazioni) <networkGeneral>
-  - *Content Control:* Nella schermata content control è possibile attivare il controllo web, selezionando una regola precedentemente creata, per farlo seguire la guida al paragrafo "#link(<webAccessControl>)[6.3 Creazione Web Access Control Scheduler]". È anche possibile creare una blacklist di applicazioni per impedirne l'esecuzione. Infine, è possibile inserire una lista di dati sensibili, questa lista bloccherà l'invio di questi dati scansionando tutte le tipologie di traffico spuntate nella sezione #link(<networkGeneral>)[Network Protection -> General], in caso di blocco l'utente visualizzerà un alert.
+  - *Content Control:* Nella schermata content control è possibile attivare il controllo web, selezionando una regola precedentemente creata, per farlo seguire la guida al paragrafo "#link(<webAccessControl>)[7.3 Creazione Web Access Control Scheduler]". È anche possibile creare una blacklist di applicazioni per impedirne l'esecuzione. Infine, è possibile inserire una lista di dati sensibili, questa lista bloccherà l'invio di questi dati scansionando tutte le tipologie di traffico spuntate nella sezione #link(<networkGeneral>)[Network Protection -> General], in caso di blocco l'utente visualizzerà un alert.
   - *Web Protection:* Qui è possibile attivare il controllo phishing, il controllo web in real time e la scansione email.
   - *Network Attacks:* Qui è possibile attivare e impostare la difesa dagli attacchi web. È possibile scegliere per ogni tipologia di attacco se bloccarne l'accesso o creare solamente un alert nel Control Center.
 #bestPractices()[
 ==== Best Practices
   - *General:* Attivare la scansione del traffico criptato e anche il controllo https. Aggiungere alle esclusioni siti e applicazioni utilizzati frequentemente e/o sensibili (es. banca, gestionali, ecc.).
-  - *Content Control:* se presente, assegnare al web access control la schedule creata precedentemente come spiegato nel paragrafo "#link(<webAccessControl>)[6.3 Creazione Web Access Control Scheduler]". In caso si volessero aggiungere dei dati sensibili al Data Protection, si consiglia di non aggiungere, ad esempio, una password per intero, ma piuttosto una sua parte univoca (es. con password "Psd!23@" inserire "!23@").
+  - *Content Control:* se presente, assegnare al web access control la schedule creata precedentemente come spiegato nel paragrafo "#link(<webAccessControl>)[7.3 Creazione Web Access Control Scheduler]". In caso si volessero aggiungere dei dati sensibili al Data Protection, si consiglia di non aggiungere, ad esempio, una password per intero, ma piuttosto una sua parte univoca (es. con password "Psd!23@" inserire "!23@").
   - *Web Protection:* Mantenere le impostazioni di default, ovvero tutto attivo tranne il controllo mail (senza exchange protection configurato non ha alcun effetto).
   - *Network Attacks:* Attivare RDP traffic e settare tutti i controlli su "block".
 ]
 
 === Patch Management <patchManagement>
-Qui è possibile associare alla policy una maintenance window creata precedentemente, per crearne una fare riferimento al paragrafo "#link(<maintenanceWindow>)[6.2 Creazione Maintenance Windows]"
+Qui è possibile associare alla policy una maintenance window creata precedentemente, per crearne una fare riferimento al paragrafo "#link(<maintenanceWindow>)[7.2 Creazione Maintenance Windows]"
 
 === Device Control
   - *Rules:* Nella schermata rules è possibile bloccare determinati tipi di dispositivi divisi per categorie, in caso non si volesse bloccare un'intera categoria ma una specifica tipologia di dispositivo per quella categoria, è possibile selezionare la categoria, premere su custom, e settare su "block" solo quella tipologia. Ad esempio, per bloccare le chiavette USB, selezionare "External Storage" e settare solo "USB" su "block".
@@ -273,7 +273,7 @@ Per associare il tag alla policy desiderata sarà sufficiente andare nella sezio
 = Guida al patch management
 La funzione di patch management di GravityZone trova bug, errori di configurazione e obsolescenze che possono essere sfruttati per degli attacchi, e ne ricerca le patch, permettendo poi di installarle in automatico.
 
-GravityZone mette a disposizione uno strumento per eseguire scansioni delle patch disponibili per le proprie macchine, è possibile avviarle manualmente (on-demand) selezionando la macchina desiderata nella sezione “Network” e premendo su "Action -> Patch Scan", oppure è possibile farle eseguire automaticamente creando prima una "Maintenance Window" e poi assegnandola alla policy, per vedere come crearla, far riferimento al paragrafo "#link(<maintenanceWindow>)[6.2 Creazione Maintenance Window]".
+GravityZone mette a disposizione uno strumento per eseguire scansioni delle patch disponibili per le proprie macchine, è possibile avviarle manualmente (on-demand) selezionando la macchina desiderata nella sezione “Network” e premendo su "Action -> Patch Scan", oppure è possibile farle eseguire automaticamente creando prima una "Maintenance Window" e poi assegnandola alla policy, per vedere come crearla, far riferimento al paragrafo "#link(<maintenanceWindow>)[7.2 Creazione Maintenance Window]".
 
 Una volta che gli endpoint eseguiranno le scansioni patch, sarà possibile visualizzare la lista di tutte quelle trovate nella sezione "Network -> Patch Inventory" del menu a sinistra. Direttamente in questa schermata, sarà possibile spuntare le patch desiderate e poi premere su "Install" per installarle su tutti gli endpoint che le richiedono. Se nella maintenance window si è spuntata l'opzione "Patch Install", questa operazione sarà necessaria solo per alcune patch che richiedono approvazione manuale.
 
@@ -313,6 +313,53 @@ Attenzione, in questo caso i report saranno solo di tipo rapido, non è possibil
 Nella creazione di report con schedule, il file PDF solitamente ha una panoramica molto riassuntiva dei dati del report, se si volessero numeri e dati precisi (spesso suddivisi anche per endpoint), è consigliato allegare anche il file CSV.
 ]
 
+= Risk Management <riskManagement>
+GravityZone mette a disposizione anche uno strumento per visualizzare tutte le vulnerabilità trovate sui vari endpoint, che non rispettano le varie tipologie di compliance. È possibile visualizzare i rischi dovuti a impostazioni di applicazioni o registri di sistema, gestione degli utenti, o alle versioni vulnerabili di applicazioni.
+== Findings <findings>
+All'interno della sezione "Risk Management -> Findings" del menu a sinistra, è possibile visualizzare la lista di tutte le vulnerabilità, trovate nei vari endpoint, relative a impostazioni di applicazioni o a registri di sistema, per ogni finding è inoltre disponibile un dettaglio che spiega cosa fare per risolverlo. Sono disponibili anche vari filtri per ricercare le vulnerabilità desiderate.
+
+
+Da questa schermata, inoltre, è possibile risolvere le vulnerabilità trovate (se esse sono risolvibili automaticamente), per farlo selezionare le vulnerabilità desiderate e premere "Fix Issue".
+
+#bestPractices()[
+=== Best Practices
+In questa schermata, è possibile visualizzare ad esempio quali vulnerabilità non fanno rispettare una determinata compliance (es. ISO), per tutti o anche un determinato endpoint.
+#figure(
+  image("img/findings_iso.png", width: 95%),
+  caption: [ISO non rispettate per singolo endpoint],
+)
+]
+
+== Identity Risk <identityRisk>
+Similarmente a "Findings", l'identity risk evidenzia quali impostazioni degli utenti risultano in vulnerabilità e le compliance ad esse associate.
+#figure(
+  image("img/identity_risk.png", width: 95%),
+  caption: [Identity Risk],
+)
+
+== Resources
+Questa schermata elenca ogni endpoint presente nella rete associandone un livello di rischio basato sul numero di findings trovati e sul livello di rischio degli utenti che lo utilizzano.
+
+Premendo su un endpoint, è visualizzabile la lista delle vulnerabilità trovate e quali compliance esse non rispettano.
+#figure(
+  image("img/resources_risk.png", width: 95%),
+  caption: [Resources Risk],
+)
+== Identities
+Questa schermata elenca tutti gli utenti presenti nella rete associandone un livello di rischio basato su quanti e quali "Identity Risk" presentano.
+
+Premendo su un utente, è visualizzabile la lista delle vulnerabilità trovate e quali compliance esse non rispettano.
+
+== Vulnerabilities
+Questa schermata mostra tutte le vulnerabilità di applicazioni o sistemi operativi, per le quali però GravityZone non offre rimedio automatico. Le vulnerabilità trovate qui possono essere quindi di due tipi: patch ancora non disponibile, oppure versione troppo obsoleta e va quindi aggiornata manualmente.
+
+== Compliance Manager
+Infine, è possibile creare dei report per certificare il livello di compliance direttamente con Bitdefender, purtroppo per le compliance "avanzate" (come ISO ecc.) è necessaria una licenza specifica per ognuna.
+
+#bestPractices()[
+=== Best Practices
+Per sapere se si è compliant, basterà filtrare per le varie compliance nelle sezioni "#link(<findings>)[6.1 Findings]" e "#link(<identityRisk>)[6.2 Identity Risk]", il report è utile soltanto per certificare lo stato di compliance.
+]
 
 #pagebreak()
 = Altre funzionalità
@@ -379,4 +426,24 @@ Per creare una regola, andare nella sezione "Incidents -> Blocklist" nel menu a 
 
 Una volta creati i blocchi, essi saranno automaticamente aggiunti a tutte le policy che hanno attivi i corrispondenti moduli.
 
+== Utilizzo del Sandbox Analyzer
+Il servizio di Sandbox utilizza degli ambenti virtuali hostati da Bitdefender per analizzare a fondo i file sospetti.
+
+Una volta inserito nel sandbox, il file viene “detonato” all'interno di un ambiente simile in tutto e per tutto a quelli standard, evitando quindi misure di controllo invasive che possano allertare il file sospetto. L'ambiente rimane in ascolto, controllando e registrando nello specifico:
+  - Ogni file che è stato modificato, eliminato, creato o cambiato
+  - Ogni chiave del Registro di sistema modificata, creata o eliminata
+  - Ogni processo creato, terminato o iniettato
+  - Ogni istruzione API eseguita
+  - Ogni connessione di rete
+
+I file sospetti vengono inviati automaticamente al sandbox se è attiva l'opzione nella policy, come spiegato nel paragrafo "".
+
+È anche possibile inviare manualmente dei file al sandbox, direttamente dalla sezione "Sandbox Analyzer -> Manual submission". Una volta aperta la schermata, sarà possibile selezionare il file/archivio da mandare al sandbox direttamente dalle cartelle del dispositivo, inoltre è possibile inserire la password, se necessaria, per aprire/eseguire i file inviati.
+
+Dopo qualche minuto, il risultato del controllo sarà disponibile nella sezione "Sandbox Analyzer" del menu a sinistra. In questa schermata saranno mostrati tutti i file inviati al sandbox e relativo stato di sicurezza.
+
+#figure(
+  image("img/sandbox_analyzer.png", width: 90%),
+  caption: [Risultati Sandbox Analyzer],
+)
 ]
