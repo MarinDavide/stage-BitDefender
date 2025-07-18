@@ -7,7 +7,7 @@
   [0.6],
   [18/07/2025],
   [Davide Marin],
-  [Continuo stesura capitoli vecchi, aggiunto "Gestione dei Report"],
+  [Continuo stesura capitoli vecchi, aggiunto "Risk Management" e "Gestione dei Report"],
 
   [0.5],
   [17/07/2025],
