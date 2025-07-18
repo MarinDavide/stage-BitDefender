@@ -43,31 +43,39 @@ La guida ufficiale e completa è invece disponibile #link("https://www.bitdefend
 == Accedere a GravityZone Control Center
 Questa è la parte più semplice, ma fondamentale. Collegarsi alla pagina di login di GravityZone, e inserire le credenziali relative al proprio account, impostare il 2FA o SSO e continuare. 
 
-A questo punto ci verrà richiesto di creare almeno un pacchetto di installazione per i nostri agent che dovremo installare sugli endpoint.
+A questo sarà necessario creare almeno un pacchetto di installazione per i nostri agent che dovremo installare sugli endpoint, per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[6.1 Creazione Installation Packages]".
 
 == Installare Security Server (solo per endpoint con poche risorse)
 Security server può essere installato su uno o più host, in base a quante macchine si devono gestire. L'host con security server installato centralizza la maggior parte delle attività anti-malware, e si comporta come un server per scansionare le macchine, alleggerendo il carico sulle macchine.
 
-Per installarlo, innanzitutto scaricare il pacchetto di installazione di Security Server di default (disponibile in Network -> Installation Packages), poi, installarlo sul endpoint che si vuole utilizzare come Security Server.
+Per installarlo, innanzitutto scaricare il pacchetto di installazione di Security Server di default (per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[6.1 Creazione Installation Packages]""), poi, installarlo sul endpoint che si vuole utilizzare come Security Server.
 
-Successivamente è richiesto di configurare il Security Server si può fare tramite interfaccia locale, guida dettagliata disponibile #link("https://www.bitdefender.com/business/support/en/77209-215480-install-security-server-through-control-center.html#UUID-8f4072e1-37ed-4156-de58-85ef0d7d9aec_sidebar-idm4631416721104033093504368548_body")[*qui*], oppure tramite "sva-setup command", con guida dettagliata disponibile #link("https://www.bitdefender.com/business/support/en/77209-215480-install-security-server-through-control-center.html#UUID-8f4072e1-37ed-4156-de58-85ef0d7d9aec_sidebar-idm4631417086515233093426156546_body")[*qui*]
+Successivamente è richiesto di configurare il Security Server si può fare tramite interfaccia locale, guida ufficiale dettagliata disponibile #link("https://www.bitdefender.com/business/support/en/77209-215480-install-security-server-through-control-center.html#UUID-8f4072e1-37ed-4156-de58-85ef0d7d9aec_sidebar-idm4631416721104033093504368548_body")[*qui*], oppure tramite "sva-setup command", con guida ufficiale dettagliata disponibile #link("https://www.bitdefender.com/business/support/en/77209-215480-install-security-server-through-control-center.html#UUID-8f4072e1-37ed-4156-de58-85ef0d7d9aec_sidebar-idm4631417086515233093426156546_body")[*qui*].
 
 
 == Installare gli agenti
 
 Per garantire la sicurezza degli endpoint (fisici e virtuali), è necessario installare l'agente di sicurezza su ciascun dispositivo. GravityZone offre diversi metodi per l'installazione degli agenti:
-  - *Installazione locale:* Classico tramite eseguibile.
+  - *Installazione locale:* Si scarica il pacchetto di installazione e si installa manualmente sugli endpoint, per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[6.1 Creazione Installation Packages]".
   - *Installazione da remoto:* Modalità in cui mi concentrerò in questa guida.
 
-È importante che al primo endpoint sul quale andiamo ad installare l'agente venga assegnato il ruolo di Relay, questo per poter installare da remoto gli agenti sugli altri endpoint.
+=== Installazione da remoto
+È importante che al primo endpoint sul quale andiamo ad installare l'agente venga assegnato il ruolo di Relay, questo per poter installare da remoto gli agenti sugli altri endpoint, per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[6.1 Creazione Installation Packages]".
 Inoltre, l'endpoint che ha il ruolo di Relay deve essere sempre acceso e connesso alla rete per permettere agli altri endpoint di comunicare con il Control Center.
 
-Una volta installato l'agente con ruolo Relay, sarà possibile, tramite la finestra all'interno della sezione "Network", installare gli agenti sugli altri endpoint da remoto. Per farlo, bisogna prima creare un pacchetto di installazione, operazione possibile nella finestra che si apre selezionando  "Installation packages" nel menu a sinistra.
+Una volta installato l'agente con ruolo Relay e creato un pacchetto di installazione per gli altri endpoint. sarà possibile installare gli agenti sugli altri endpoint da remoto; per farlo, andare nella pagina "Network", selezionare dalla lista tutti gli endpoint sui quali si vuole installare l'agente, a questo punto cliccare "Action" e poi "install agent". 
 
-Sulla finestra che si apre, cliccare su "Create", compilare i campi e prestare attenzione a selezionare tutti i moduli che si vogliono utilizzare sugli endpoint (è comunque possibile modificare i moduli in seguito, per ogni endpoint), e salvare.
-
-Una volta creato il pacchetto, andare nella pagina "Network", selezionare tutti gli endpoint sui quali si vuole installare l'agente e cliccare "Action" e poi "install agent". Nella finestra che si apre, bisogna inserire le credenziali di amministratore dell'endpoint (se si ha selezionato un gruppo di endpoint sotto ad un DC, inserire le credenziali del domain administrator), selezionare il Relay a cui fare "affidamento" ed infine il pacchetto di installazione desiderato.
+Nella finestra che si apre, bisogna inserire le credenziali di amministratore dell'endpoint (se si ha selezionato un gruppo di endpoint sotto ad un DC, inserire le credenziali del domain administrator), selezionare il Relay a cui fare "affidamento" ed infine il pacchetto di installazione desiderato.
 Questo installerà l'agente su tutti gli endpoint selezionati. 
+
+#figure(
+  image("img/remoteAgent_01.png", width: 85%),
+  caption: [Installazione Agent Remoto - prima parte],
+)
+#figure(
+  image("img/remoteAgent_02.png", width: 85%),
+  caption: [Installazione Agent Remoto - seconda parte],
+)
 
 == Integrazione di Active Directory
 Per integrare Active Directory con GravityZone, è sufficiente accedere a GravityZone Control Center, andare nella sezione "Network" e selezionare l'endpoint che si vuole utilizzare come integratore di Active Directory. Una volta selezionato, cliccare su "Action" e poi "Set as Active Directory Integrator".
@@ -153,7 +161,7 @@ Il modulo antimalware è molto completo, e diviso in diverse sezioni:
   - *Advanced Anti-exploit:* Qui si possono gestire i controlli su diversi tipi di exploit, 
   - *Security Servers:* Qui è possibile associare un security server alla policy, per farlo è sufficiente selezionare il Security Server desiderato dal menu a scomparsa e premere "+".
   - *Settings:* Qui sono disponibili alcune opzioni aggiuntive per la policy, in particolare relativi alla quarantena dei file.
-  - *Exclusions:* Qui è possibile creare delle esclusioni per determinati file ,applicazioni o processi, oppure è possibile associare una lista di esclusioni precedentemente creata, per vedere come crearne una, fare riferimento al paragrafo "#link(<listeEsclusioni>)[6.3 Creazione liste di esclusioni]"
+  - *Exclusions:* Qui è possibile creare delle esclusioni per determinati file ,applicazioni o processi, oppure è possibile associare una lista di esclusioni precedentemente creata, per vedere come crearne una, fare riferimento al paragrafo "#link(<listeEsclusioni>)[6.4 Creazione liste di esclusioni]"
 #bestPractices()[
 ==== Best Practices
 Per quanto riguarda il modulo antimalware, il consiglio è quello di attivare tutti i controlli disponibili (di default dovrebbero tutti essere attivi tranne la mitigazione ransomware all'interno di "On-Execute"). Per quanto riguarda lo scan On-Demand, è consigliato impostare una full scan, magari a giorni alterni, in un momento in cui le macchine sono accese ma non utilizzate (la scansione NON impedisce nessuna operazione sulla macchina, ma potrebbe appesantirne il carico di lavoro).
@@ -179,19 +187,19 @@ Per quanto riguarda il firewall, in caso il cliente disponesse già di un firewa
 === Network Protection
 Il modulo Network Protection permetta di applicare filtri e controlli su web e applicazioni.
   - *General:* Qui si imposta se controllare o meno anche il traffico criptato e di quale tipo, e si aggiungo le eventuali esclusioni ai controlli (sia URL o IP sia applicazioni) <networkGeneral>
-  - *Content Control:* Nella schermata content control è possibile attivare il controllo web, selezionando una regola precedentemente creata, per farlo seguire la guida al paragrafo "#link(<webAccessControl>)[6.2 Creazione Web Access Control Scheduler]". È anche possibile creare una blacklist di applicazioni per impedirne l'esecuzione. Infine, è possibile inserire una lista di dati sensibili, questa lista bloccherà l'invio di questi dati scansionando tutte le tipologie di traffico spuntate nella sezione #link(<networkGeneral>)[Network Protection -> General], in caso di blocco l'utente visualizzerà un alert.
+  - *Content Control:* Nella schermata content control è possibile attivare il controllo web, selezionando una regola precedentemente creata, per farlo seguire la guida al paragrafo "#link(<webAccessControl>)[6.3 Creazione Web Access Control Scheduler]". È anche possibile creare una blacklist di applicazioni per impedirne l'esecuzione. Infine, è possibile inserire una lista di dati sensibili, questa lista bloccherà l'invio di questi dati scansionando tutte le tipologie di traffico spuntate nella sezione #link(<networkGeneral>)[Network Protection -> General], in caso di blocco l'utente visualizzerà un alert.
   - *Web Protection:* Qui è possibile attivare il controllo phishing, il controllo web in real time e la scansione email.
   - *Network Attacks:* Qui è possibile attivare e impostare la difesa dagli attacchi web. È possibile scegliere per ogni tipologia di attacco se bloccarne l'accesso o creare solamente un alert nel Control Center.
 #bestPractices()[
 ==== Best Practices
   - *General:* Attivare la scansione del traffico criptato e anche il controllo https. Aggiungere alle esclusioni siti e applicazioni utilizzati frequentemente e/o sensibili (es. banca, gestionali, ecc.).
-  - *Content Control:* se presente, assegnare al web access control la schedule creata precedentemente come spiegato nel paragrafo "#link(<webAccessControl>)[6.2 Creazione Web Access Control Scheduler]". In caso si volessero aggiungere dei dati sensibili al Data Protection, si consiglia di non aggiungere, ad esempio, una password per intero, ma piuttosto una sua parte univoca (es. con password "Psd!23@" inserire "!23@").
+  - *Content Control:* se presente, assegnare al web access control la schedule creata precedentemente come spiegato nel paragrafo "#link(<webAccessControl>)[6.3 Creazione Web Access Control Scheduler]". In caso si volessero aggiungere dei dati sensibili al Data Protection, si consiglia di non aggiungere, ad esempio, una password per intero, ma piuttosto una sua parte univoca (es. con password "Psd!23@" inserire "!23@").
   - *Web Protection:* Mantenere le impostazioni di default, ovvero tutto attivo tranne il controllo mail (senza exchange protection configurato non ha alcun effetto).
   - *Network Attacks:* Attivare RDP traffic e settare tutti i controlli su "block".
 ]
 
 === Patch Management <patchManagement>
-Qui è possibile associare alla policy una maintenance window creata precedentemente, per crearne una fare riferimento al paragrafo "#link(<maintenanceWindow>)[6.1 Creazione Maintenance Windows]"
+Qui è possibile associare alla policy una maintenance window creata precedentemente, per crearne una fare riferimento al paragrafo "#link(<maintenanceWindow>)[6.2 Creazione Maintenance Windows]"
 
 === Device Control
   - *Rules:* Nella schermata rules è possibile bloccare determinati tipi di dispositivi divisi per categorie, in caso non si volesse bloccare un'intera categoria ma una specifica tipologia di dispositivo per quella categoria, è possibile selezionare la categoria, premere su custom, e settare su "block" solo quella tipologia. Ad esempio, per bloccare le chiavette USB, selezionare "External Storage" e settare solo "USB" su "block".
@@ -265,7 +273,7 @@ Per associare il tag alla policy desiderata sarà sufficiente andare nella sezio
 = Guida al patch management
 La funzione di patch management di GravityZone trova bug, errori di configurazione e obsolescenze che possono essere sfruttati per degli attacchi, e ne ricerca le patch, permettendo poi di installarle in automatico.
 
-GravityZone mette a disposizione uno strumento per eseguire scansioni delle patch disponibili per le proprie macchine, è possibile avviarle manualmente (on-demand) selezionando la macchina desiderata nella sezione “Network” e premendo su "Action -> Patch Scan", oppure è possibile farle eseguire automaticamente creando prima una "Maintenance Window" e poi assegnandola alla policy, per vedere come crearla, far riferimento al paragrafo "#link(<maintenanceWindow>)[6.1 Creazione Maintenance Window]".
+GravityZone mette a disposizione uno strumento per eseguire scansioni delle patch disponibili per le proprie macchine, è possibile avviarle manualmente (on-demand) selezionando la macchina desiderata nella sezione “Network” e premendo su "Action -> Patch Scan", oppure è possibile farle eseguire automaticamente creando prima una "Maintenance Window" e poi assegnandola alla policy, per vedere come crearla, far riferimento al paragrafo "#link(<maintenanceWindow>)[6.2 Creazione Maintenance Window]".
 
 Una volta che gli endpoint eseguiranno le scansioni patch, sarà possibile visualizzare la lista di tutte quelle trovate nella sezione "Network -> Patch Inventory" del menu a sinistra. Direttamente in questa schermata, sarà possibile spuntare le patch desiderate e poi premere su "Install" per installarle su tutti gli endpoint che le richiedono. Se nella maintenance window si è spuntata l'opzione "Patch Install", questa operazione sarà necessaria solo per alcune patch che richiedono approvazione manuale.
 
@@ -300,11 +308,26 @@ Questi report però, saranno solo per l'intera rete aziendale, se si volesse cre
 
 Attenzione, in questo caso i report saranno solo di tipo rapido, non è possibile infatti creare schedule di report per singoli endpoint o gruppi.
 
-
+#bestPractices()[
+== Best Practices
+Nella creazione di report con schedule, il file PDF solitamente ha una panoramica molto riassuntiva dei dati del report, se si volessero numeri e dati precisi (spesso suddivisi anche per endpoint), è consigliato allegare anche il file CSV.
+]
 
 
 #pagebreak()
 = Altre funzionalità
+
+== Creazione Installation Packages <installationPackage>
+I pacchetti di installazione definiscono quali moduli ed eventuali privilegi saranno attribuiti agli endpoint.
+
+Per creare un pacchetto, andare nella sezione "Network -> Installation Packages" del menu a sinistra, nella finestra che si apre, premere su "Create". A questo punto, nella schermata aperta, sarà possibile inserire il nome del pacchetto e selezionare tutti i moduli desiderati da essere installati. È inoltre possibile settare altre impostazioni, come richiedere una password per la disinstallazione dell'agent, se installare il pacchetto in un percorso specifico, se utilizzare un server di proxy per comunicare con il Control Center.
+
+#bestPractices()[
+== Best Practices
+Per la creazione dei pacchetti, si consiglia di selezionare tutti i moduli disponibili, tranne "Power User", in modo da rendere più agevole la gestione degli endpoint e la creazione delle policy, senza dare inutilmente privilegi agli utenti.
+
+È consigliato impostare una password per la disinstallazione dell'agent e di spuntare "remove competitors".
+]
 
 == Creazione Maintenance Windows <maintenanceWindow>
 La maintenance window definisce la politica di scansione e applicazione delle patch, una volta creata è possibile associarla alle policy desiderate direttamente nella sezione "#link(<patchManagement>)[Patch Management]" all'interno della policy.
@@ -347,7 +370,13 @@ Perché la schedule funzioni a dovere, è necessario aver attivato la scansione 
 Tramite le liste di esclusioni, è possibile creare dei gruppi di esclusioni, in modo da poterle aggiungere a più policy in maniera rapida e semplice.
 Innanzitutto, andare alla sezione "Policy -> Configuration Profiles -> Exclusions". Se non si ha già una lista, premere su "New List", a questo punto inserire un nome e tutte le esclusioni che vogliamo.
 
-Altrimenti, è anche possibile creare direttamente un'esclusione tramite pulsante "Add Exclusion", e poi è possibile assegnarla a tutte le liste che vogliamo selezionandola e premendo su "Assign to Lists".
+Altrimenti, è anche possibile creare direttamente un'esclusione tramite pulsante "Add Exclusion", e poi assegnarla a tutte le liste che vogliamo selezionandola dall'elenco e premendo su "Assign to Lists".
 
 == Creazione delle Blocklist
+Le blocklist permettono di avere delle liste di applicazioni o processi bloccati "prestabilite" da poter essere incluse in tutte le policy che vogliamo, senza doverle ricreare in ogni policy.
+
+Per creare una regola, andare nella sezione "Incidents -> Blocklist" nel menu a sinistra e, nella finestra che si apre, premere "Add rule". Una volta premuto "Add Rule" ci verrà richiesto di scegliere quale tipo di blocco vogliamo creare, e poi i dettagli riguardanti all'elemento da bloccare (Percorso app, IP, ecc.).
+
+Una volta creati i blocchi, essi saranno automaticamente aggiunti a tutte le policy che hanno attivi i corrispondenti moduli.
+
 ]
