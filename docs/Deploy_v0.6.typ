@@ -238,12 +238,6 @@ Attivando la live search si rende possibile effettuare delle query per ottenere 
 Si consiglia di attivarla, in quanto non comporta nessun carico extra finché non vengono eseguite delle query dalla schermata apposita.
 ]
 
-
-
-
-
-
-
 #pagebreak()
 = Guida alla gestione dei tag
 == Creazione del tag
@@ -281,8 +275,33 @@ Una volta che gli endpoint eseguiranno le scansioni patch, sarà possibile visua
 )
 
 Per avere una panoramica dello stato delle patch su ogni endpoint, è possibile creare un report apposito chiamato "Network Patch Status", per vedere come creare un report, fare riferimento al paragrafo "#link(<gestioneReport>)[5 Gestione dei Report]"
+
 #pagebreak()
 = Gestione dei Report <gestioneReport>
+GravityZone permette di controllare lo stato degli endpoint, della rete e anche del servizio attraverso un grande numero di report. 
+
+== Creazione di Report
+È possibile creare un report andando nella sezione "Reports" del menu a sinistra, nella pagina che si apre premere "Add". Nella schermata che si apre, selezionare il tipo di report desiderato dalla lista proposta, per alcuni tipi di report saranno disponibili ulteriori filtri una volta selezionati.
+
+A questo punto è possibile scegliere se generare un report rapido, che sarà visualizzato direttamente in questa pagina, oppure aggiungere una schedule e inviarlo per mail agli indirizzi desiderati con ricorrenza e orari a piacere.
+
+#figure(
+  image("img/reportSchedule.png", width: 95%),
+  caption: [Report Schedule],
+)
+
+== Creazione report per singoli endpoint o gruppi
+Questi report però, saranno solo per l'intera rete aziendale, se si volesse creare un report per uno specifico endpoint o un gruppo, ad esempio, è possibile farlo dalla sezione "Network" del menu a sinistra. Una volta che si visualizza la lista degli endpoint, è possibile selezionare gli endpoint desiderati e poi premere su "Reports".
+
+#figure(
+  image("img/reportSingoloEndpoint.png", width: 75%),
+  caption: [Report Singolo Endpoint],
+)
+
+Attenzione, in questo caso i report saranno solo di tipo rapido, non è possibile infatti creare schedule di report per singoli endpoint o gruppi.
+
+
+
 
 #pagebreak()
 = Altre funzionalità
