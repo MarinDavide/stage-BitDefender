@@ -282,7 +282,7 @@ Una volta che gli endpoint eseguiranno le scansioni patch, sarà possibile visua
   caption: [Patch Inventory],
 )
 
-Per avere una panoramica dello stato delle patch su ogni endpoint, è possibile creare un report apposito chiamato "Network Patch Status", per vedere come creare un report, fare riferimento al paragrafo "#link(<gestioneReport>)[5 Gestione dei Report]"
+Per avere una panoramica dello stato delle patch su ogni endpoint, è possibile creare un report apposito chiamato "Network Patch Status", per vedere come creare un report, fare riferimento al paragrafo "#link(<gestioneReport>)[5 Gestione dei Report]".
 
 #pagebreak()
 = Gestione dei Report <gestioneReport>
