@@ -4,6 +4,11 @@
 
 #set page(numbering: "1")
 #versionTable(content:(
+  [0.7],
+  [21/07/2025],
+  [Davide Marin],
+  [Modifiche e migliorie al documento],
+
   [0.6],
   [18/07/2025],
   [Davide Marin],
@@ -204,15 +209,18 @@ Il modulo Network Protection permetta di applicare filtri e controlli su web e a
 ]
 
 === Patch Management <patchManagement>
-Qui è possibile associare alla policy una maintenance window creata precedentemente, per crearne una fare riferimento al paragrafo "#link(<maintenanceWindow>)[7.2 Creazione Maintenance Windows]"
+Qui è possibile associare alla policy una maintenance window creata precedentemente, per crearne una fare riferimento al paragrafo "#link(<maintenanceWindow>)[7.2 Creazione Maintenance Windows]".
+
+Le maintenance windows definiscono le politica di scansione e applicazione delle patch sugli endpoint associati.
 
 === Device Control
-  - *Rules:* Nella schermata rules è possibile bloccare determinati tipi di dispositivi divisi per categorie, in caso non si volesse bloccare un'intera categoria ma una specifica tipologia di dispositivo per quella categoria, è possibile selezionare la categoria, premere su custom, e settare su "block" solo quella tipologia. Ad esempio, per bloccare le chiavette USB, selezionare "External Storage" e settare solo "USB" su "block".
+Il modulo Device Control permette di bloccare l'accesso a determinate categorie di dispositivi (archiviazione esterna, bluetooth, ecc.), ma anche per tipologia di periferica (chiavette USB, PCI, ecc.).
+  - *Rules:* Nella schermata rules è possibile bloccare determinati tipi di dispositivi divisi per categorie. È possibile anche bloccare una sola tipologia di periferica senza bloccare l'intera categoria. Per farlo selezionare la categoria, premere su custom, e settare su "block" solo quella tipologia (ad esempio, per bloccare le chiavette USB, selezionare "External Storage", selezionare l'opzione "Custom" e settare solo "USB" su "Blocked").
   #figure(
     image("img/device_control.png", width: 75%),
     caption: [Device Control],
   )
-  - *Exclusions:* Qui è possibile aggiungere determinati dispositivi "fidati" che potranno essere utilizzati nonostante le regole di blocco, nel caso delle USB si possono inserire da dispositivi già conosciuti, oppure manualmente tramite ID.
+  - *Exclusions:* Qui è possibile aggiungere determinati dispositivi "fidati" che potranno essere utilizzati nonostante le regole di blocco, si possono inserire da dispositivi già conosciuti, oppure manualmente tramite ID.
 #bestPractices()[
 ==== Best Practices
 Collegare prima i dispositivi fidati e dopo attivare il blocco, in questo modo sarà possibile aggiungerli nelle esclusioni direttamente da "from discovered devices". 
@@ -234,7 +242,9 @@ Impostare la scansione anche ogni giorno, meglio in orari dove il computer non �
 ]
 
 === Blocklist
-Nella pagina blocklist è possibile configurare quali controlli saranno efficaci su questa policy. Disattivando "Application path" ad esempio, se fossero presenti delle applicazioni inserite tramite path nella blocklist, esse non sarebbero bloccate per gli utenti con questa policy.
+Nella pagina blocklist è possibile configurare quali controlli delle liste, create nella sezione "Blocklist" del menu a sinistra, saranno efficaci su questa policy. Per vedere come creare una blocklist, fare riferimento al paragrafo "#link(<blocklist>)[7.6 Creazione delle Blocklist]".
+
+Disattivando "Application path" ad esempio, se fossero presenti delle applicazioni inserite nella blocklist, esse non sarebbero bloccate per gli utenti con questa policy.
 #figure(
   image("img/blocklist.png", width: 85%),
   caption: [Configurazione Blocklist], 
@@ -245,7 +255,7 @@ Spuntare tutte le tipologie di controllo, tranne DDL files e Script files per no
 ]
 
 === Live Search
-Attivando la live search si rende possibile effettuare delle query per ottenere informazioni sugli endpoint. Le informazioni possono essere utili per la diagnostica in caso di incidenti nella rete. Per effettuare le ricerche in tempo reale è necessario creare le query nella pagina "Incidents -> Search" nel menu a sinistra.
+Attivando la live search si rende possibile effettuare delle query per ottenere informazioni sugli endpoint. Le informazioni possono essere utili per la diagnostica in caso di incidenti nella rete. Per effettuare le ricerche in tempo reale è necessario creare le query nella pagina "Incidents -> Search" del menu a sinistra.
 #bestPractices()[
 ==== Best Practices
 Si consiglia di attivarla, in quanto non comporta nessun carico extra finché non vengono eseguite delle query dalla schermata apposita.
@@ -424,7 +434,7 @@ Innanzitutto, andare alla sezione "Policy -> Configuration Profiles -> Exclusion
 
 Altrimenti, è anche possibile creare direttamente un'esclusione tramite pulsante "Add Exclusion", e poi assegnarla a tutte le liste che vogliamo selezionandola dall'elenco e premendo su "Assign to Lists".
 
-== Creazione delle Blocklist
+== Creazione delle Blocklist <blocklist>
 Le blocklist permettono di avere delle liste di applicazioni o processi bloccati "prestabilite" da poter essere incluse in tutte le policy che vogliamo, senza doverle ricreare in ogni policy.
 
 Per creare una regola, andare nella sezione "Incidents -> Blocklist" nel menu a sinistra e, nella finestra che si apre, premere "Add rule". Una volta premuto "Add Rule" ci verrà richiesto di scegliere quale tipo di blocco vogliamo creare, e poi i dettagli riguardanti all'elemento da bloccare (Percorso app, IP, ecc.).
