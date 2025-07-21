@@ -314,7 +314,7 @@ A questo punto è possibile scegliere se generare un report rapido, che sarà vi
 )
 
 == Creazione report per singoli endpoint o gruppi
-Questi report però, saranno solo per l'intera rete aziendale, se si volesse creare un report per uno specifico endpoint o un gruppo, ad esempio, è possibile farlo dalla sezione "Network" del menu a sinistra. Una volta che si visualizza la lista degli endpoint, è possibile selezionare gli endpoint desiderati e poi premere su "Reports".
+Se si volesse creare un report per uno specifico endpoint o un gruppo, è possibile farlo dalla sezione "Network" del menu a sinistra. Una volta che si visualizza la lista degli endpoint, è possibile selezionare gli endpoint desiderati e poi premere su "Reports".
 
 #figure(
   image("img/reportSingoloEndpoint.png", width: 75%),
@@ -328,6 +328,7 @@ Attenzione, in questo caso i report saranno solo di tipo rapido, non è possibil
 Nella creazione di report con schedule, il file PDF solitamente ha una panoramica molto riassuntiva dei dati del report, se si volessero numeri e dati precisi (spesso suddivisi anche per endpoint), è consigliato allegare anche il file CSV.
 ]
 
+#pagebreak()
 = Risk Management <riskManagement>
 GravityZone mette a disposizione anche uno strumento per visualizzare tutte le vulnerabilità trovate sui vari endpoint, che non rispettano le varie tipologie di compliance. È possibile visualizzare i rischi dovuti a impostazioni di applicazioni o registri di sistema, gestione degli utenti, o alle versioni vulnerabili di applicazioni.
 == Findings <findings>
@@ -366,7 +367,7 @@ Questa schermata elenca tutti gli utenti presenti nella rete associandone un liv
 Premendo su un utente, è visualizzabile la lista delle vulnerabilità trovate e quali compliance esse non rispettano.
 
 == Vulnerabilities
-Questa schermata mostra tutte le vulnerabilità di applicazioni o sistemi operativi, per le quali però GravityZone non offre rimedio automatico. Le vulnerabilità trovate qui possono essere quindi di due tipi: patch ancora non disponibile, oppure versione troppo obsoleta e va quindi aggiornata manualmente.
+Questa schermata mostra tutte le vulnerabilità di applicazioni o sistemi operativi, per le quali però GravityZone non offre rimedio automatico. Le vulnerabilità trovate qui possono essere quindi di due tipi: patch ancora non disponibile, oppure versione dell'applicazione troppo obsoleta e va quindi aggiornata manualmente.
 
 == Compliance Manager
 Infine, è possibile creare dei report per certificare il livello di compliance direttamente con Bitdefender, purtroppo per le compliance "avanzate" (come ISO ecc.) è necessaria una licenza specifica per ognuna.
