@@ -53,7 +53,7 @@ A questo sarà necessario creare almeno un pacchetto di installazione per i nost
 == Installare Security Server (solo per endpoint con poche risorse)
 Security server può essere installato su uno o più host, in base a quante macchine si devono gestire. L'host con security server installato centralizza la maggior parte delle attività anti-malware, e si comporta come un server per scansionare le macchine, alleggerendo il carico sulle macchine.
 
-Per installarlo, innanzitutto scaricare il pacchetto di installazione di Security Server di default (per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[7.1 Creazione Installation Packages]""), poi, installarlo sul endpoint che si vuole utilizzare come Security Server.
+Per installarlo, innanzitutto scaricare il pacchetto di installazione di Security Server di default, poi, installarlo sul endpoint che si vuole utilizzare come Security Server.
 
 Successivamente è richiesto di configurare il Security Server si può fare tramite interfaccia locale, guida ufficiale dettagliata disponibile #link("https://www.bitdefender.com/business/support/en/77209-215480-install-security-server-through-control-center.html#UUID-8f4072e1-37ed-4156-de58-85ef0d7d9aec_sidebar-idm4631416721104033093504368548_body")[*qui*], oppure tramite "sva-setup command", con guida ufficiale dettagliata disponibile #link("https://www.bitdefender.com/business/support/en/77209-215480-install-security-server-through-control-center.html#UUID-8f4072e1-37ed-4156-de58-85ef0d7d9aec_sidebar-idm4631417086515233093426156546_body")[*qui*].
 
@@ -61,11 +61,11 @@ Successivamente è richiesto di configurare il Security Server si può fare tram
 == Installare gli agenti
 
 Per garantire la sicurezza degli endpoint (fisici e virtuali), è necessario installare l'agente di sicurezza su ciascun dispositivo. GravityZone offre diversi metodi per l'installazione degli agenti:
-  - *Installazione locale:* Si scarica il pacchetto di installazione e si installa manualmente sugli endpoint, per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[7.1 Creazione Installation Packages]".
+  - *Installazione locale:* Si scarica il pacchetto di installazione e si installa manualmente sugli endpoint.
   - *Installazione da remoto:* Modalità in cui mi concentrerò in questa guida.
 
 === Installazione da remoto
-È importante che al primo endpoint sul quale andiamo ad installare l'agente venga assegnato il ruolo di Relay, questo per poter installare da remoto gli agenti sugli altri endpoint, per vedere come creare un pacchetto di installazione, fare riferimento al paragrafo "#link(<installationPackage>)[7.1 Creazione Installation Packages]".
+È importante che al primo endpoint sul quale andiamo ad installare l'agente venga assegnato il ruolo di Relay, questo per poter installare da remoto gli agenti sugli altri endpoint.
 Inoltre, l'endpoint che ha il ruolo di Relay deve essere sempre acceso e connesso alla rete per permettere agli altri endpoint di comunicare con il Control Center.
 
 Una volta installato l'agente con ruolo Relay e creato un pacchetto di installazione per gli altri endpoint. sarà possibile installare gli agenti sugli altri endpoint da remoto; per farlo, andare nella pagina "Network", selezionare dalla lista tutti gli endpoint sui quali si vuole installare l'agente, a questo punto cliccare "Action" e poi "install agent". 
