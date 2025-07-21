@@ -395,12 +395,18 @@ Per la creazione dei pacchetti, si consiglia di selezionare tutti i moduli dispo
 == Creazione Maintenance Windows <maintenanceWindow>
 La maintenance window definisce la politica di scansione e applicazione delle patch, una volta creata è possibile associarla alle policy desiderate direttamente nella sezione "#link(<patchManagement>)[Patch Management]" all'interno della policy.
 
-Per creare una maintenance window andare nella sezione "Policies -> Configuration Profiles -> Maintenance Windows" del menu a sinistra.
-Nella schermata che si apre premere "Add Window". A questo punto sarà possibile decidere se solo scansionare o anche applicare le patch trovate. Per entrambe le operazioni sono disponibili le impostazioni di ricorrenza e orario di esecuzione.
+Per creare una maintenance window andare nella sezione "Policies -> Configuration Profiles" del menu a sinistra, nella finestra che si apre selezionare "Maintenance Windows".
+Nella schermata che si apre premere "Add Window", a questo punto sarà possibile decidere se solo scansionare gli endpoint, o se anche applicare le patch trovate. Per entrambe le operazioni sono disponibili le impostazioni di ricorrenza e orario di esecuzione.
 
 #figure(
   image("img/maintenance_window_1.png", width: 95%),
   caption: [Maintenance Window],
+)
+
+Se si è impostato un endpoint come server di cache per le patch qui è possibile assegnarlo alla window, in questo modo le patch saranno scaricate sul endpoint dal server di cache e non dal sito del vendor.
+#figure(
+  image("img/maintenance_window_2.png", width: 95%),
+  caption: [Patch Caching Server],
 )
 #bestPractices()[
 === Best Practices
@@ -408,37 +414,32 @@ Si consiglia di attivare sia la scansione sia l'applicazione delle patch, e di s
 
 Per quanto riguarda la ricorrenza, è consigliato effettuare la scansione abbastanza spesso, ad esempio una volta ogni 2 giorni e in orari in cui le macchine sono accese (in ogni caso lasciare spuntata l'opzione "if missed run ASAP").
 
-Se si è impostato un endpoint come server di cache per le patch qui è possibile assegnarlo alla window, in questo modo le patch saranno scaricate dal server di patch e non dal sito del vendor.
-#figure(
-  image("img/maintenance_window_2.png", width: 95%),
-  caption: [Patch Caching Server],
-)
 ]
 
 == Creazione Web Access Control Scheduler <webAccessControl>
-È possibile creare un Web Access Control Scheduler nella sezione "Policies -> Configuration Profiles -> Web Access Control Scheduler". 
+È possibile creare un Web Access Control Scheduler dalla sezione "Policies -> Configuration Profiles" del menu a sinistra, e poi selezionando "Web Access Control Scheduler" dalla finestra che si apre. 
 
-Nella schermata che si apre, è possibile creare una o più regole di controllo, il sistema propone categorie di siti selezionabili per il controllo (come social network, gioco d'azzardo, shopping ecc.). Per ogni regola è possibile selezionare gli intervalli di tempo per cui essa sarà in vigore e anche se bloccare completamente le pagine oppure mostrare solo un warning all'utente.
+Nella schermata che si apre, premendo "Add Schedule", è possibile creare una o più regole di controllo. Il sistema propone categorie di siti selezionabili per il controllo (come social network, gioco d'azzardo, shopping ecc.). Per ogni regola è possibile selezionare gli intervalli di tempo per cui essa sarà in vigore e anche se bloccare completamente le pagine oppure mostrare solo un warning all'utente.
 #figure(
   image("img/webAccess_scheduler.png", width: 95%),
   caption: [Creazione Web Access Control Scheduler],
 )
 #bestPractices()[
 === Best Practices
-Perché la schedule funzioni a dovere, è necessario aver attivato la scansione HTTPS in Network Protection -> General.
+Perché la schedule funzioni a dovere, è necessario aver attivato la scansione HTTPS in Network Protection -> General, altrimenti le pagine con quel protocollo non saranno controllate. Inoltre, i tentati accessi ai siti saranno mostrati nella pagina "Threats Explorer" del menu a sinistra, solo se la tipologia di action è settata su "Block".
 
 ]
 
 == Creazione liste di esclusioni <listeEsclusioni>
 Tramite le liste di esclusioni, è possibile creare dei gruppi di esclusioni, in modo da poterle aggiungere a più policy in maniera rapida e semplice.
-Innanzitutto, andare alla sezione "Policy -> Configuration Profiles -> Exclusions". Se non si ha già una lista, premere su "New List", a questo punto inserire un nome e tutte le esclusioni che vogliamo.
+Innanzitutto, andare alla sezione "Policy -> Configuration Profiles" del menu a sinistra, nella schermata che si apre selezionare "Exclusions". Se non si ha già una lista, premere su "New List", a questo punto inserire un nome e tutte le esclusioni che vogliamo.
 
 Altrimenti, è anche possibile creare direttamente un'esclusione tramite pulsante "Add Exclusion", e poi assegnarla a tutte le liste che vogliamo selezionandola dall'elenco e premendo su "Assign to Lists".
 
 == Creazione delle Blocklist <blocklist>
 Le blocklist permettono di avere delle liste di applicazioni o processi bloccati "prestabilite" da poter essere incluse in tutte le policy che vogliamo, senza doverle ricreare in ogni policy.
 
-Per creare una regola, andare nella sezione "Incidents -> Blocklist" nel menu a sinistra e, nella finestra che si apre, premere "Add rule". Una volta premuto "Add Rule" ci verrà richiesto di scegliere quale tipo di blocco vogliamo creare, e poi i dettagli riguardanti all'elemento da bloccare (Percorso app, IP, ecc.).
+Per creare una regola, andare nella sezione "Incidents -> Blocklist" nel menu a sinistra e, nella finestra che si apre, premere "Add rule". Una volta premuto "Add Rule" ci verrà richiesto di scegliere quale tipo di blocco vogliamo creare, e poi i dettagli riguardanti l'elemento da bloccare (Percorso app, IP, ecc.).
 
 Una volta creati i blocchi, essi saranno automaticamente aggiunti a tutte le policy che hanno attivi i corrispondenti moduli.
 
@@ -454,7 +455,7 @@ Una volta inserito nel sandbox, il file viene “detonato” all'interno di un a
 
 I file sospetti vengono inviati automaticamente al sandbox se è attiva l'opzione nella policy, come spiegato nel paragrafo "#link(<sandboxPolicy>)[2.2.2 Sandbox Analyzer]".
 
-È anche possibile inviare manualmente dei file al sandbox, direttamente dalla sezione "Sandbox Analyzer -> Manual submission". Una volta aperta la schermata, sarà possibile selezionare il file/archivio da mandare al sandbox direttamente dalle cartelle del dispositivo, inoltre è possibile inserire la password, se necessaria, per aprire/eseguire i file inviati.
+È anche possibile inviare manualmente dei file al sandbox, direttamente dalla sezione "Sandbox Analyzer -> Manual submission" del menu a sinistra. Una volta aperta la schermata, sarà possibile selezionare il file/archivio da mandare al sandbox direttamente dalle cartelle del dispositivo, inoltre è possibile inserire la password, se necessaria, per aprire/eseguire i file inviati.
 
 Dopo qualche minuto, il risultato del controllo sarà disponibile nella sezione "Sandbox Analyzer" del menu a sinistra. In questa schermata saranno mostrati tutti i file inviati al sandbox e relativo stato di sicurezza.
 
