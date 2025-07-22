@@ -4,6 +4,11 @@
 
 #set page(numbering: "1")
 #versionTable(content:(
+  [0.8],
+  [22/07/2025],
+  [Davide Marin],
+  [Aggiunto paragrafo "Threats Explorer", ritocchi al contenuto],
+
   [0.7],
   [21/07/2025],
   [Davide Marin],
@@ -173,7 +178,7 @@ Per quanto riguarda il modulo antimalware, il consiglio è quello di attivare tu
 
 ]
 === Sandbox Analyzer <sandboxPolicy>
-Il sandbox analyzer permette di analizzare i file sospetti in un ambiente sicuro, attivando la funzione, verranno inviati automaticamente al sandbox i file individuati. 
+Il sandbox analyzer permette di analizzare i file sospetti in un ambiente sicuro, attivando la funzione, verranno inviati automaticamente al sandbox i file individuati. Per vedere il funzionamento del sandbox, fare riferimento al paragrafo "#link(<sandBox>)[7.6  Utilizzo del Sandbox Analyzer]"
 #bestPractices()[
 ==== Best Practices
 Si consiglia di attivare la funzione, mantenendo però la "analysis mode" su "Monitoring" e la default action "report only", in questo modo non verranno mai bloccati file senza motivazioni certe.
@@ -223,7 +228,7 @@ Il modulo Device Control permette di bloccare l'accesso a determinate categorie 
   - *Exclusions:* Qui è possibile aggiungere determinati dispositivi "fidati" che potranno essere utilizzati nonostante le regole di blocco, si possono inserire da dispositivi già conosciuti, oppure manualmente tramite ID.
 #bestPractices()[
 ==== Best Practices
-Collegare prima i dispositivi fidati e dopo attivare il blocco, in questo modo sarà possibile aggiungerli nelle esclusioni direttamente da "from discovered devices". 
+Collegare prima i dispositivi fidati e dopo attivare il blocco, in questo modo sarà possibile aggiungerli nelle esclusioni direttamente da "from discovered devices".
 ]
 
 
@@ -242,7 +247,7 @@ Impostare la scansione anche ogni giorno, meglio in orari dove il computer non �
 ]
 
 === Blocklist
-Nella pagina blocklist è possibile configurare quali controlli delle liste, create nella sezione "Blocklist" del menu a sinistra, saranno efficaci su questa policy. Per vedere come creare una blocklist, fare riferimento al paragrafo "#link(<blocklist>)[7.6 Creazione delle Blocklist]".
+Nella pagina blocklist è possibile configurare quali controlli delle liste, create nella sezione "Blocklist" del menu a sinistra, saranno efficaci su questa policy. Per vedere come creare una blocklist, fare riferimento al paragrafo "#link(<blocklist>)[7.5 Creazione delle Blocklist]".
 
 Disattivando "Application path" ad esempio, se fossero presenti delle applicazioni inserite nella blocklist, esse non sarebbero bloccate per gli utenti con questa policy.
 #figure(
@@ -386,7 +391,7 @@ I pacchetti di installazione definiscono quali moduli ed eventuali privilegi sar
 Per creare un pacchetto, andare nella sezione "Network -> Installation Packages" del menu a sinistra, nella finestra che si apre, premere su "Create". A questo punto, nella schermata aperta, sarà possibile inserire il nome del pacchetto e selezionare tutti i moduli desiderati da essere installati. È inoltre possibile settare altre impostazioni, come richiedere una password per la disinstallazione dell'agent, se installare il pacchetto in un percorso specifico, se utilizzare un server di proxy per comunicare con il Control Center.
 
 #bestPractices()[
-== Best Practices
+=== Best Practices
 Per la creazione dei pacchetti, si consiglia di selezionare tutti i moduli disponibili, tranne "Power User", in modo da rendere più agevole la gestione degli endpoint e la creazione delle policy, senza dare inutilmente privilegi agli utenti.
 
 È consigliato impostare una password per la disinstallazione dell'agent e di spuntare "remove competitors".
@@ -426,8 +431,10 @@ Nella schermata che si apre, premendo "Add Schedule", è possibile creare una o 
 )
 #bestPractices()[
 === Best Practices
-Perché la schedule funzioni a dovere, è necessario aver attivato la scansione HTTPS in Network Protection -> General, altrimenti le pagine con quel protocollo non saranno controllate. Inoltre, i tentati accessi ai siti saranno mostrati nella pagina "Threats Explorer" del menu a sinistra, solo se la tipologia di action è settata su "Block".
+Perché la schedule funzioni a dovere, è necessario aver attivato la scansione HTTPS in Network Protection -> General, altrimenti le pagine con quel protocollo non saranno controllate. 
 
+Attenzione, i tentati accessi ai siti saranno mostrati nella pagina "Threats Explorer", solo se la tipologia di action è settata su "Block".
+Per vedere il funzionamento della pagina, fare riferimento al paragrafo "#link(<threatExplorer>)[7.7 Threats Explorer]"."
 ]
 
 == Creazione liste di esclusioni <listeEsclusioni>
@@ -443,7 +450,7 @@ Per creare una regola, andare nella sezione "Incidents -> Blocklist" nel menu a 
 
 Una volta creati i blocchi, essi saranno automaticamente aggiunti a tutte le policy che hanno attivi i corrispondenti moduli.
 
-== Utilizzo del Sandbox Analyzer
+== Utilizzo del Sandbox Analyzer <sandBox>
 Il servizio di Sandbox utilizza degli ambenti virtuali hostati da Bitdefender per analizzare a fondo i file sospetti.
 
 Una volta inserito nel sandbox, il file viene “detonato” all'interno di un ambiente simile in tutto e per tutto a quelli standard, evitando quindi misure di controllo invasive che possano allertare il file sospetto. L'ambiente rimane in ascolto, controllando e registrando nello specifico:
@@ -463,4 +470,18 @@ Dopo qualche minuto, il risultato del controllo sarà disponibile nella sezione 
   image("img/sandbox_analyzer.png", width: 90%),
   caption: [Risultati Sandbox Analyzer],
 )
+
+== Threats Explorer <threatExplorer>
+Il threats explorer, disponibile nella sezione "Threats Explorer" del menu a sinistra, raccoglie ed elenca tutti i possibili pericoli individuati dalle diverse tecnologie di GravityZone.
+
+Qui sono anche elencati i pericoli bloccati seguendo le impostazioni delle policy, come quelli di controllo dispositivi (es. tentato utilizzo chiavetta USB), ma anche del controllo dei contenuti (es. tentati accessi ai social network).
+#figure(
+  image("img/threats_explorer.png", width: 90%),
+  caption: [Pagina Threats Explorer],
+)
+
+#bestPractices()[
+=== Best Practices
+Purtroppo anche inserendoli nelle esclusioni, alcuni "dispositivi" di sistema vengono sempre elencati nella "General View" con stato "Allowed". È consigliato creare una vista personalizzata rimuovendo i pericoli con stato "Allowed" per maggiore chiarezza visiva.
+]
 ]
