@@ -206,7 +206,7 @@ Per quanto riguarda il firewall, in caso il cliente disponesse già di un firewa
 ]
 === Network Protection
 Il modulo Network Protection permetta di applicare filtri e controlli su web e applicazioni.
-  - *General:* Qui si imposta se controllare o meno anche il traffico criptato e di quale tipo, e si aggiungo le eventuali esclusioni ai controlli (sia URL o IP sia applicazioni) <networkGeneral>
+  - *General:* Qui si imposta se controllare o meno anche il traffico criptato e di quale tipo, e si aggiungo le eventuali esclusioni ai controlli (sia URL o IP sia applicazioni), se le esclusioni sono molte e saranno applicate a più policy, è possibile creare delle "custom exclusion rules", per vedere come fare, fare riferimento al paragrafo "#link(<exclusionRules>)[7.8 Custom Exclusion Rules]". <networkGeneral>
   - *Content Control:* Nella schermata content control è possibile attivare il controllo web, selezionando una regola precedentemente creata, per farlo seguire la guida al paragrafo "#link(<webAccessControl>)[7.3 Creazione Web Access Control Scheduler]". È anche possibile creare una blacklist di applicazioni per impedirne l'esecuzione. Infine, è possibile inserire una lista di dati sensibili, questa lista bloccherà l'invio di questi dati scansionando tutte le tipologie di traffico spuntate nella sezione #link(<networkGeneral>)[Network Protection -> General], in caso di blocco l'utente visualizzerà un alert.
   - *Web Protection:* Qui è possibile attivare il controllo phishing, il controllo web in real time e la scansione email.
   - *Network Attacks:* Qui è possibile attivare e impostare la difesa dagli attacchi web. È possibile scegliere per ogni tipologia di attacco se bloccarne l'accesso o creare solamente un alert nel Control Center.
