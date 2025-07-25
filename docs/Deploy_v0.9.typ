@@ -4,6 +4,11 @@
 
 #set page(numbering: "1")
 #versionTable(content:(
+  [0.9],
+  [25/07/2025],
+  [Davide Marin],
+  [Aggiunto paragrafo "Custom Exclusion Rules", ritocchi al contenuto],
+
   [0.8],
   [22/07/2025],
   [Davide Marin],
@@ -267,7 +272,7 @@ Si consiglia di attivarla, in quanto non comporta nessun carico extra finché no
 ]
 
 #pagebreak()
-= Guida alla gestione dei tag
+= Guida alla gestione dei tag <gestioneTag>
 == Creazione del tag
 I tag sono sono uno strumento utile che permette di raggruppare gli endpoint per diversi criteri, per poi assegnare le policy di protezione direttamente ai gruppi risparmiando tempo e semplificando l'operazione.
 
@@ -484,4 +489,18 @@ Qui sono anche elencati i pericoli bloccati seguendo le impostazioni delle polic
 === Best Practices
 Purtroppo anche inserendoli nelle esclusioni, alcuni "dispositivi" di sistema vengono sempre elencati nella "General View" con stato "Allowed". È consigliato creare una vista personalizzata rimuovendo i pericoli con stato "Allowed" per maggiore chiarezza visiva.
 ]
+
+
+== Custom Exclusion Rules <exclusionRules>
+Le custom exclusion rules permettono di creare delle eccezioni globali, che una volta attivate saranno applicate a tutti gli endpoint.
+
+Per creare una exclusion rule, andare nella sezione "Incidents -> Custom Exclusion Rules" del menu a sinistra, nella schermata che si apre premere "Add Rule". Nella finestra che si apre, sarà possibile creare la regola, selezionando la tipologia di controllo da effettuare. Proseguendo con la regola sarà possibile assegnarla a tutti gli endpoint o anche a degli specifici tag di endpoint, per vedere come gestire i tag, fare riferimento al paragrafo "#link(<gestioneTag>)[3 Guida alla gestione dei tag]".
+
+Attenzione, alcuni controllo, basati su tecnologie XDR, non è possibile assegnarli ai tag di endpoint, ma sarà possibile soltanto l'opzione per tutti gli endpoint. La tecnologia che utilizza il controllo scelto è visualizzabile nella prima schermata della regola di esclusione.
+
+#figure(
+  image("img/exclusion_rule.png", width: 90%),
+  caption: [Pagina Threats Explorer],
+)
+
 ]
