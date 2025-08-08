@@ -27,7 +27,7 @@ jobs:
           cp assets/title.png output/assets/
           for file in ./docs/*.typ; do
             filename=$(basename "$file" .typ)
-            if [[ "$filename" != Diario* ]]; then
+            if [[ "$filename" != Diario* && "$filename" != Tesi*]]; then
               typst compile "$file" output/"$filename.pdf"
             fi
           done

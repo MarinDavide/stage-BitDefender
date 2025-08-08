@@ -500,7 +500,7 @@ Attenzione, alcuni controllo, basati su tecnologie XDR, non è possibile assegna
 
 #figure(
   image("img/exclusion_rule.png", width: 90%),
-  caption: [Pagina Threats Explorer],
+  caption: [Custom Exclusion Rule],
 )
 
 ]

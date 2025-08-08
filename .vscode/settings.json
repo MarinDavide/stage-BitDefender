@@ -4,7 +4,10 @@
         "Bitdefender",
         "Blocklist",
         "CSPM",
+        "Distline",
         "EICAR",
+        "evco",
+        "Favaro",
         "fileless",
         "hostati",
         "incapacitato",
@@ -12,6 +15,7 @@
         "pagebreak",
         "PHASR",
         "reportistica",
-        "SIEM"
+        "SIEM",
+        "Zanoni"
     ]
 }
