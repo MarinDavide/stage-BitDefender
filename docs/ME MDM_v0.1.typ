@@ -68,13 +68,13 @@ Qui è possibile aggiungere tutte le applicazioni che si desidera rendere dispon
 
 == Altre funzionalità
 === Gestione contenuti
-È possibile condividere documenti e file con i dispositivi registrati, tramite app ME MDM. Per farlo, andare nella sezione "Gestione -> Gestione contenuti", premere "Aggiungi" e caricare il file desiderato. Una volta caricato tutti i dispositivi registrato potranno accedere al file entrando nell'app e premendo su "Content Catalog".
+È possibile condividere documenti e file con i dispositivi registrati, tramite app ME MDM. Per farlo, andare nella sezione "Gestione -> Gestione contenuti", premere "Aggiungi" e caricare il file desiderato. Una volta caricato tutti i dispositivi registrati potranno accedere al file entrando nell'app e premendo su "Content Catalog".
 
 === Annunci
 È possibile inviare annunci ai dispositivi registrati. Per creare un annuncio, andare nella sezione "Gestione -> Annunci", premere "Crea annuncio", inserire il testo dell'annuncio e selezionare come verrà visualizzato dall'utente. Una volta creato, sarà possibile inviarlo a tutti i dispositivi registrati o a gruppi specifici, tramite pulsante "Distribuisci".
 
 === Controllo remoto
-È possibile accedere in remoto ai dispositivi registrati, per fornire supporto o risolvere problemi. Per farlo, andare nella sezione "Gestione -> Controllo remoto", selezionare il dispositivo desiderato e premere su "Vista remota". Sarà necessario approvare la sessione sul dispositivo per poter accedere in remoto,la vista remota non permette l'input di comandi da remoto, ma solo la visualizzazione schermo.
+È possibile accedere in remoto ai dispositivi registrati, per fornire supporto o risolvere problemi. Per farlo, andare nella sezione "Gestione -> Controllo remoto", selezionare il dispositivo desiderato e premere su "Vista remota". Sarà necessario approvare la sessione sul dispositivo per potervi accedere (la vista remota non permette l'input di comandi, ma solo la visualizzazione schermo).
 
 === Geolocalizzazione
 È possibile, per i dispositivi supervisionati, visualizzare la posizione in tempo reale di tutti i dispositivi. Per farlo impostare il profilo di geolocalizzazione nella sezione "Inventario -> Geolocalizzazione".
@@ -83,7 +83,7 @@ Qui è possibile aggiungere tutte le applicazioni che si desidera rendere dispon
   caption: [Impostazioni geolocalizzazione],
 )
 
-A questo punto, sarà possibile vedere la posizione dei dispositivi supervisionati nella sezione "Inventario -> Dati posizione", appariranno come icone nella mappa (facendo un hover o un click con il mouse saranno disponibili più info e opzioni).
+A questo punto, sarà possibile vedere la posizione dei dispositivi supervisionati nella sezione "Inventario -> Dati posizione", essi appariranno come icone nella mappa (facendo un hover o un click con il mouse sull'icona saranno disponibili più info e opzioni).
 #figure(
   image("img/ME_geo2.png", width: 95%),
   caption: [Visualizzazione posizione dispositivi],
