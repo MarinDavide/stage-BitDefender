@@ -4,6 +4,11 @@
 
 #set page(numbering: "1")
 #versionTable(content:(
+  [1.0],
+  [12/08/2025],
+  [Davide Marin],
+  [Correzioni al contenuto],
+
   [0.9],
   [25/07/2025],
   [Davide Marin],

@@ -28,8 +28,7 @@ Per registrare un dispositivo non supervisionato, è necessario seguire questi p
   - A questo punto, il dispositivo sarà registrato e potrà essere gestito tramite il portale MDM, creando un profilo da assegnarli.
 
 == Dispositivi supervisionati
-Per registrare un dispositivo come supervision
-ato, è necessario innanzitutto resettare il dispositivo, e poi seguire i prossimi passaggi in base al sistema operativo desiderato.
+Per registrare un dispositivo come supervisionato, è necessario innanzitutto resettare il dispositivo, e poi seguire i prossimi passaggi in base al sistema operativo desiderato.
 
 === Dispositivi iOS
 Per prima cosa, creare un certificato APN, questo sarà necessario per gestire funzionalità die dispositivi Apple, per crearlo andare nella sezione "Certificato APN" e seguire le istruzioni per generarlo.
