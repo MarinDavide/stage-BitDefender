@@ -4,6 +4,11 @@
 
 #set page(numbering: "1")
 #versionTable(content:(
+  [1.0],
+  [12/08/2025],
+  [Davide Marin],
+  [Modifiche al documento e approvazione per versione 1.0],
+
   [0.1],
   [11/08/2025],
   [Davide Marin],
@@ -42,7 +47,7 @@ Per registrare un dispositivo android come supervisionato sono disponibili diver
   - *Codice QR:* Una volta resettato il dispositivo, sarà sufficiente scansionare il codice QR generato nella sezione "Registrazione del codice QR" del portale MDM. In questo modo il profilo MDM verrà installato automaticamente, sarà sufficiente dare le conferme richieste dal dispositivo. In questo caso si possono solamente registrare i dispositivi uno alla volta.
   - *Zero touch:* Permette di registrare dispositivi in blocco, ma richiede un account Android for Work da essere collegato al portale "Zero touch". Per aprire il portale, andare nella sezione "Registrazione Zero Touch" e premere su "Avvia portale Zero Touch". 
   - *Samsung Knox:* Se si dispone di dispositivi samsung con Knox, è possibile registrarli in blocco utilizzando Samsung Knox. Per vedere passo passo come fare, andare nella sezione "Registrazione Samsung Knox" e premere su "Guarda la dimostrazione" (oppure premere #link("https://www.manageengine.com/eu/mobile-device-management/demo/samsung-knox-enrollment-with-mdm-video.html?mdmod")[qui])
-  - *NFC:* È possibile registrare i dispositivi tramite NFC, per farlo è necessario disporre di un dispositivo amministratore sul quale installare l'app NFC ManageEngine, a questo punto sarà sufficiente avvicinare il dispositivo da registrare a quello amministratore e verrà installato il profilo MDM.
+  - *NFC:* È possibile registrare i dispositivi tramite NFC, per farlo è necessario disporre di un dispositivo amministratore sul quale installare l'app NFC ManageEngine, a questo punto sarà sufficiente avvicinare il dispositivo da registrare a quello amministratore e verrà installato il profilo MDM su quello da registrare.
 
 
 #pagebreak()
